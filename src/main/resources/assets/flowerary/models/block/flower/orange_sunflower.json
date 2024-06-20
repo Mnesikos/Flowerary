@@ -1,8 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "flowerary:block/sunflower",
   "textures": {
-    "particle": "flowerary:block/flower/orange_sunflower",
-    "cross": "flowerary:block/flower/orange_sunflower"
+    "front": "flowerary:block/flower/orange_sunflower"
   }
 }
-

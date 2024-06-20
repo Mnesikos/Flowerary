@@ -1,8 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "flowerary:block/foxglove",
   "textures": {
-    "particle": "flowerary:block/flower/red_foxglove",
     "cross": "flowerary:block/flower/red_foxglove"
   }
 }
-

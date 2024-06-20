@@ -2,8 +2,7 @@
   "credit": "Made with Blockbench",
   "ambientocclusion": false,
   "textures": {
-    "particle": "flowerary:block/flower/foxglove_stage3",
-    "cross": "flowerary:block/flower/foxglove_stage3"
+    "particle": "#cross"
   },
   "elements": [
     {

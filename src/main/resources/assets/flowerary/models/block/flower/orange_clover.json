@@ -1,8 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "flowerary:block/flower_carpet",
   "textures": {
-    "particle": "flowerary:block/flower/orange_clover",
-    "cross": "flowerary:block/flower/orange_clover"
+    "1": "flowerary:block/flower/orange_clover"
   }
 }
-

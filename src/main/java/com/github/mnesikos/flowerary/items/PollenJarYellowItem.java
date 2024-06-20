@@ -29,7 +29,8 @@ public class PollenJarYellowItem extends Item {
         super(properties);
     }
 
-    public ActionResultType onItemUse(ItemUseContext context) {
+    @Override
+    public ActionResultType useOn(ItemUseContext context) {
         World world = context.getLevel();
         BlockPos pos = context.getClickedPos();
         BlockState state = world.getBlockState(pos);

@@ -250,7 +250,6 @@ public class BlockCandle extends HorizontalBlock {
         return context.getItemInHand().getItem() == this.asItem() && state.getValue(CANDLES) < 4 || super.canBeReplaced(state, context);
     }
 
-
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader blockReader, BlockPos pos, ISelectionContext selectionContext) {
         Direction direction = state.getValue(FACING);

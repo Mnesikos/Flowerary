@@ -13,6 +13,7 @@ public class BlockFlowerCarpet extends BushBlock {
         super(p_i48440_1_);
     }
 
+    @Override
     public OffsetType getOffsetType() {
         return OffsetType.XZ;
     }

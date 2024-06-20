@@ -38,24 +38,24 @@ public class PollenJarWhiteItem extends Item {
 
         if (player != null && !world.isClientSide) {
             Block crop = null;
-            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.CROP_WHITE_ROSE.get();
-            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.CROP_WHITE_DANDELION.get();
-            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.CROP_WHITE_POPPY.get();
-            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.CROP_WHITE_ORCHID.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.CROP_WHITE_ALLIUM.get();
-            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.CROP_WHITE_AZURE_BLUET.get();
-            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.CROP_WHITE_TULIP.get();
-            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.CROP_WHITE_TULIP.get();
-            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.CROP_WHITE_TULIP.get();
-            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.CROP_WHITE_TULIP.get();
-            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.CROP_WHITE_DAISY.get();
-            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.CROP_WHITE_CORNFLOWER.get();
-            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.CROP_WHITE_LILY.get();
-            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.CROP_WHITE_WITHER_ROSE.get();
-            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.CROP_WHITE_SUNFLOWER.get();
-            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.CROP_WHITE_LILAC.get();
-            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.CROP_WHITE_PEONY.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.CROP_WHITE_ALLIUM.get();
+            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.WHITE_ROSE_PLANT.get();
+            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.WHITE_DANDELION_PLANT.get();
+            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.WHITE_POPPY_PLANT.get();
+            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.WHITE_ORCHID_PLANT.get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.WHITE_ALLIUM_PLANT.get();
+            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.WHITE_AZURE_BLUET_PLANT.get();
+            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.WHITE_TULIP_PLANT.get();
+            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.WHITE_TULIP_PLANT.get();
+            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.WHITE_TULIP_PLANT.get();
+            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.WHITE_TULIP_PLANT.get();
+            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.WHITE_DAISY_PLANT.get();
+            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.WHITE_CORNFLOWER_PLANT.get();
+            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.WHITE_LILY_PLANT.get();
+            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.WHITE_WITHER_ROSE_PLANT.get();
+            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.WHITE_SUNFLOWER_PLANT.get();
+            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.WHITE_LILAC_PLANT.get();
+            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.WHITE_PEONY_PLANT.get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.WHITE_ALLIUM_PLANT.get();
 
             if (crop != null) {
 //                world.addParticle(ParticleTypes.EXPLOSION, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);

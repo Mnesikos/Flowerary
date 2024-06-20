@@ -38,24 +38,24 @@ public class PollenJarYellowItem extends Item {
 
         if (player != null && !world.isClientSide) {
             Block crop = null;
-            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.CROP_YELLOW_ROSE.get();
-            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.CROP_YELLOW_DANDELION.get();
-            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.CROP_YELLOW_POPPY.get();
-            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.CROP_YELLOW_ORCHID.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.CROP_YELLOW_ALLIUM.get();
-            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.CROP_YELLOW_AZURE_BLUET.get();
-            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.CROP_YELLOW_TULIP.get();
-            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.CROP_YELLOW_TULIP.get();
-            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.CROP_YELLOW_TULIP.get();
-            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.CROP_YELLOW_TULIP.get();
-            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.CROP_YELLOW_DAISY.get();
-            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.CROP_YELLOW_CORNFLOWER.get();
-            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.CROP_YELLOW_LILY.get();
-            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.CROP_YELLOW_WITHER_ROSE.get();
-            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.CROP_YELLOW_SUNFLOWER.get();
-            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.CROP_YELLOW_LILAC.get();
-            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.CROP_YELLOW_PEONY.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.CROP_YELLOW_ALLIUM.get();
+            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.YELLOW_ROSE_PLANT.get();
+            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.YELLOW_DANDELION_PLANT.get();
+            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.YELLOW_POPPY_PLANT.get();
+            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.YELLOW_ORCHID_PLANT.get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.YELLOW_ALLIUM_PLANT.get();
+            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.YELLOW_AZURE_BLUET_PLANT.get();
+            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.YELLOW_TULIP_PLANT.get();
+            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.YELLOW_TULIP_PLANT.get();
+            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.YELLOW_TULIP_PLANT.get();
+            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.YELLOW_TULIP_PLANT.get();
+            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.YELLOW_DAISY_PLANT.get();
+            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.YELLOW_CORNFLOWER_PLANT.get();
+            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.YELLOW_LILY_PLANT.get();
+            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.YELLOW_WITHER_ROSE_PLANT.get();
+            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.YELLOW_SUNFLOWER_PLANT.get();
+            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.YELLOW_LILAC_PLANT.get();
+            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.YELLOW_PEONY_PLANT.get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.YELLOW_ALLIUM_PLANT.get();
 
             if (crop != null) {
 //                world.addParticle(ParticleTypes.EXPLOSION, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);

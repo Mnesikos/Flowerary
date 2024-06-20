@@ -38,24 +38,24 @@ public class PollenJarPinkItem extends Item {
 
         if (player != null && !world.isClientSide) {
             Block crop = null;
-            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.CROP_PINK_ROSE.get();
-            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.CROP_PINK_DANDELION.get();
-            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.CROP_PINK_POPPY.get();
-            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.CROP_PINK_ORCHID.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.CROP_PINK_ALLIUM.get();
-            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.CROP_PINK_AZURE_BLUET.get();
-            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.CROP_PINK_TULIP.get();
-            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.CROP_PINK_TULIP.get();
-            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.CROP_PINK_TULIP.get();
-            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.CROP_PINK_TULIP.get();
-            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.CROP_PINK_DAISY.get();
-            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.CROP_PINK_CORNFLOWER.get();
-            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.CROP_PINK_LILY.get();
-            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.CROP_PINK_WITHER_ROSE.get();
-            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.CROP_PINK_SUNFLOWER.get();
-            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.CROP_PINK_LILAC.get();
-            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.CROP_PINK_PEONY.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.CROP_PINK_ALLIUM.get();
+            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.PINK_ROSE_PLANT.get();
+            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.PINK_DANDELION_PLANT.get();
+            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.PINK_POPPY_PLANT.get();
+            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.PINK_ORCHID_PLANT.get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.PINK_ALLIUM_PLANT.get();
+            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.PINK_AZURE_BLUET_PLANT.get();
+            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.PINK_TULIP_PLANT.get();
+            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.PINK_TULIP_PLANT.get();
+            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.PINK_TULIP_PLANT.get();
+            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.PINK_TULIP_PLANT.get();
+            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.PINK_DAISY_PLANT.get();
+            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.PINK_CORNFLOWER_PLANT.get();
+            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.PINK_LILY_PLANT.get();
+            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.PINK_WITHER_ROSE_PLANT.get();
+            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.PINK_SUNFLOWER_PLANT.get();
+            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.PINK_LILAC_PLANT.get();
+            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.PINK_PEONY_PLANT.get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.PINK_ALLIUM_PLANT.get();
 
             if (crop != null) {
 //                world.addParticle(ParticleTypes.EXPLOSION, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);

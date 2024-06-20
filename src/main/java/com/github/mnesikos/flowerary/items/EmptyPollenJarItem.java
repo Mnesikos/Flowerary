@@ -39,7 +39,6 @@ public class EmptyPollenJarItem extends Item {
             Item crop = null;
             if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryItems.POLLEN_JAR_ROSE.get();
             else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryItems.POLLEN_JAR_WITHER_ROSE.get();
-            else if (state.getBlock().equals(POPPY)) crop = FloweraryItems.POLLEN_JAR_ROSE.get();
             else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryItems.POLLEN_JAR_ORCHID.get();
             else if (state.getBlock().equals(ALLIUM)) crop = FloweraryItems.POLLEN_JAR_ALLIUM.get();
             else if (state.getBlock().equals(DANDELION)) crop = FloweraryItems.POLLEN_JAR_DANDELION.get();
@@ -52,7 +51,6 @@ public class EmptyPollenJarItem extends Item {
             else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryItems.POLLEN_JAR_DAISY.get();
             else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryItems.POLLEN_JAR_CORNFLOWER.get();
             else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryItems.POLLEN_JAR_LILY_OF_THE_VALLEY.get();
-            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryItems.POLLEN_JAR_WITHER_ROSE.get();
             else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryItems.POLLEN_JAR_SUNFLOWER.get();
             else if (state.getBlock().equals(LILAC)) crop = FloweraryItems.POLLEN_JAR_LILAC.get();
             else if (state.getBlock().equals(PEONY)) crop = FloweraryItems.POLLEN_JAR_PEONY.get();

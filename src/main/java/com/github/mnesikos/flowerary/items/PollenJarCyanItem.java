@@ -2,15 +2,15 @@ package com.github.mnesikos.flowerary.items;
 
 import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
-import net.minecraft.particles.ParticleTypes;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
@@ -31,94 +31,50 @@ public class PollenJarCyanItem extends Item {
 
     public ActionResultType onItemUse(ItemUseContext context) {
         World world = context.getLevel();
-        BlockPos blockpos = context.getClickedPos();
-        BlockState blockstate = world.getBlockState(blockpos);
-        LivingEntity player = context.getPlayer();
-        ItemStack itemstack = context.getItemInHand();
+        BlockPos pos = context.getClickedPos();
+        BlockState state = world.getBlockState(pos);
+        PlayerEntity player = context.getPlayer();
+        ItemStack stack = context.getItemInHand();
 
-        //if it is a viable flower
-        if (blockstate.getBlock().equals(ROSE_BUSH) || blockstate.getBlock().equals(WITHER_ROSE) || blockstate.getBlock().equals(DANDELION) || blockstate.getBlock().equals(POPPY) || blockstate.getBlock().equals(BLUE_ORCHID) || blockstate.getBlock().equals(ALLIUM) || blockstate.getBlock()
-                .equals(AZURE_BLUET) || blockstate.getBlock()
-                .equals(RED_TULIP) || blockstate.getBlock()
-                .equals(ORANGE_TULIP) || blockstate.getBlock()
-                .equals(WHITE_TULIP) || blockstate.getBlock()
-                .equals(PINK_TULIP) || blockstate.getBlock()
-                .equals(OXEYE_DAISY) || blockstate.getBlock()
-                .equals(CORNFLOWER) || blockstate.getBlock()
-                .equals(LILY_OF_THE_VALLEY) || blockstate.getBlock()
-                .equals(SUNFLOWER) || blockstate.getBlock()
-                .equals(LILAC) || blockstate.getBlock()
-                .equals(PEONY)) {
-            PlayerEntity playerentity = context.getPlayer();
-            world.playSound(playerentity, blockpos, SoundEvents.AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            if (!world.isClientSide) {
-                //This replaces the jar item with full jar
-                if (player == null || !playerentity.abilities.instabuild) {
-                    itemstack.shrink(1);
-                }
-                if (player == null || !playerentity.abilities.instabuild) {
-                    if (itemstack.isEmpty()) {
-                        playerentity.inventory.add(new ItemStack(FloweraryItems.EMPTY_POLLEN_JAR.get()));
-                    }
-                }
+        if (player != null && !world.isClientSide) {
+            Block crop = null;
+            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.CROP_CYAN_ROSE.get();
+            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.CROP_CYAN_DANDELION.get();
+            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.CROP_CYAN_POPPY.get();
+            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.CROP_CYAN_ORCHID.get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.CROP_CYAN_ALLIUM.get();
+            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.CROP_CYAN_AZURE_BLUET.get();
+            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.CROP_CYAN_TULIP.get();
+            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.CROP_CYAN_TULIP.get();
+            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.CROP_CYAN_TULIP.get();
+            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.CROP_CYAN_TULIP.get();
+            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.CROP_CYAN_DAISY.get();
+            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.CROP_CYAN_CORNFLOWER.get();
+            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.CROP_CYAN_LILY.get();
+            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.CROP_CYAN_WITHER_ROSE.get();
+            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.CROP_CYAN_SUNFLOWER.get();
+            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.CROP_CYAN_LILAC.get();
+            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.CROP_CYAN_PEONY.get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.CROP_CYAN_ALLIUM.get();
 
-                if (blockstate.getBlock().equals(ROSE_BUSH)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_ROSE.get());
-                } else if (blockstate.getBlock().equals(DANDELION)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_DANDELION.get());
-                } else if (blockstate.getBlock().equals(POPPY)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_POPPY.get());
-                } else if (blockstate.getBlock().equals(BLUE_ORCHID)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_ORCHID.get());
-                } else if (blockstate.getBlock().equals(ALLIUM)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_ALLIUM.get());
-                } else if (blockstate.getBlock().equals(AZURE_BLUET)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_AZURE_BLUET.get());
-                } else if (blockstate.getBlock().equals(RED_TULIP)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_TULIP.get());
-                } else if (blockstate.getBlock().equals(ORANGE_TULIP)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_TULIP.get());
-                } else if (blockstate.getBlock().equals(WHITE_TULIP)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_TULIP.get());
-                } else if (blockstate.getBlock().equals(PINK_TULIP)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_TULIP.get());
-                } else if (blockstate.getBlock().equals(OXEYE_DAISY)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_DAISY.get());
-                } else if (blockstate.getBlock().equals(CORNFLOWER)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_CORNFLOWER.get());
-                } else if (blockstate.getBlock().equals(LILY_OF_THE_VALLEY)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_LILY.get());
-                } else if (blockstate.getBlock().equals(WITHER_ROSE)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_WITHER_ROSE.get());
-                } else if (blockstate.getBlock().equals(SUNFLOWER)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_SUNFLOWER.get());
-                } else if (blockstate.getBlock().equals(LILAC)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_LILAC.get());
-                } else if (blockstate.getBlock().equals(PEONY)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_PEONY.get());
-                } else if (blockstate.getBlock().equals(ALLIUM)) {
-                    net.minecraft.entity.item.ItemEntity ent = player.spawnAtLocation(FloweraryBlocks.CROP_CYAN_ALLIUM.get());
-                }
+            if (crop != null) {
+//                world.addParticle(ParticleTypes.EXPLOSION, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);
+                world.playSound(player, pos, SoundEvents.AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                player.spawnAtLocation(crop);
 
-                // ADD PARTICLE EFFECT (DOESNT WORK
-                world.addParticle(ParticleTypes.EXPLOSION, blockpos.getX(), blockpos.getY(), blockpos.getZ(), 0.0D, 0.0D, 0.0D);
-
-                if (player instanceof ServerPlayerEntity) {
-                    CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayerEntity) player, itemstack);
-                }
-
-                //it ends here
-                if (playerentity != null) {
-                    context.getItemInHand().hurtAndBreak(1, playerentity, (p_220040_1_) -> {
-                        p_220040_1_.broadcastBreakEvent(context.getHand());
-                    });
+                if (player instanceof ServerPlayerEntity)
+                    CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayerEntity) player, stack);
+                player.awardStat(Stats.ITEM_USED.get(this));
+                if (!player.abilities.instabuild) {
+                    stack.shrink(1);
+                    if (stack.isEmpty())
+                        player.inventory.add(new ItemStack((FloweraryItems.EMPTY_POLLEN_JAR.get())));
                 }
                 return ActionResultType.SUCCESS;
-            } else {
-                return ActionResultType.PASS;
-            }
-        }
-        return ActionResultType.SUCCESS;
+
+            } else return ActionResultType.PASS;
+
+        } else return ActionResultType.sidedSuccess(world.isClientSide);
     }
 
     @Override

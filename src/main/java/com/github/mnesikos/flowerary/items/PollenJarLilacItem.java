@@ -39,24 +39,24 @@ public class PollenJarLilacItem extends Item {
 
         if (player != null && !world.isClientSide) {
             Block crop = null;
-            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.LILAC_ROSE_BUSHLET_PLANT.get();
-            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.LILAC_DANDELION_PLANT.get();
-            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.LILAC_POPPY_PLANT.get();
-            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.LILAC_CLEMATIS_PLANT.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.LILAC_ALLIUM_PLANT.get();
-            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.LILAC_CLOVER_PLANT.get();
-            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.LILAC_HYACINTH_PLANT.get();
-            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.LILAC_HYACINTH_PLANT.get();
-            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.LILAC_HYACINTH_PLANT.get();
-            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.LILAC_HYACINTH_PLANT.get();
-            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.LILAC_DAISY_PLANT.get();
-            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.LILAC_DIANTHUS_PLANT.get();
-            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.LILAC_BOUGAINVILLEA_PLANT.get();
-            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.LILAC_FAIRY_ROSE_PLANT.get();
-            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.LILAC_SUNFLOWER_PLANT.get();
-            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.LILAC_JASMINE_PLANT.get();
-            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.LILAC_FOXGLOVE_PLANT.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.LILAC_ALLIUM_PLANT.get();
+            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.ROSE_BUSHLET_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.DANDELION_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.POPPY_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.CLEMATIS_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.ALLIUM_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.CLOVER_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.DAISY_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.DIANTHUS_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.BOUGAINVILLEA_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.FAIRY_ROSE_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.SUNFLOWER_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.JASMINE_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.FOXGLOVE_PLANT.get("lilac").get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.ALLIUM_PLANT.get("lilac").get();
 
             if (crop != null) {
 //                world.addParticle(ParticleTypes.EXPLOSION, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);

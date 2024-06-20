@@ -14,11 +14,14 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(Flowerary.MOD_ID)
 public class Flowerary {
     public static final String MOD_ID = "flowerary";
+    public static final String[] COLORS_LIST = new String[]{
+            "black", "blue", "cyan", "red", "magenta", "orange", "pink", "white", "yellow", "lilac"
+    };
 
     public static final ItemGroup FLOWERARY_GROUP = new ItemGroup(MOD_ID + ".flowerary_group") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(FloweraryBlocks.PINK_POPPY.get());
+            return new ItemStack(FloweraryBlocks.POPPY.get("pink").get());
         }
     };
 

@@ -4,9 +4,13 @@ import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
 import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.Util;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public final class FloweraryItems {
     public static final DeferredRegister<Item> REGISTRAR = DeferredRegister.create(ForgeRegistries.ITEMS, Flowerary.MOD_ID);
@@ -30,144 +34,60 @@ public final class FloweraryItems {
     public static final RegistryObject<Item> POLLEN_JAR_LILAC = REGISTRAR.register("pollen_jar_lilac", () -> new PollenJarLilacItem(new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
     public static final RegistryObject<Item> POLLEN_JAR_PEONY = REGISTRAR.register("pollen_jar_peony", () -> new PollenJarPinkItem(new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
 
-    public static final RegistryObject<Item> BLACK_ROSE_BUSHLET_SEEDS = REGISTRAR.register("black_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_ROSE_BUSHLET_SEEDS = REGISTRAR.register("blue_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_ROSE_BUSHLET_SEEDS = REGISTRAR.register("cyan_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_ROSE_BUSHLET_SEEDS = REGISTRAR.register("red_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_ROSE_BUSHLET_SEEDS = REGISTRAR.register("magenta_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_ROSE_BUSHLET_SEEDS = REGISTRAR.register("orange_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_ROSE_BUSHLET_SEEDS = REGISTRAR.register("pink_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_ROSE_BUSHLET_SEEDS = REGISTRAR.register("white_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_ROSE_BUSHLET_SEEDS = REGISTRAR.register("yellow_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_ROSE_BUSHLET_SEEDS = REGISTRAR.register("lilac_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_ROSE_BUSHLET_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_POPPY_SEEDS = REGISTRAR.register("black_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_POPPY_SEEDS = REGISTRAR.register("blue_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_POPPY_SEEDS = REGISTRAR.register("cyan_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_POPPY_SEEDS = REGISTRAR.register("red_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_POPPY_SEEDS = REGISTRAR.register("magenta_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_POPPY_SEEDS = REGISTRAR.register("orange_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_POPPY_SEEDS = REGISTRAR.register("pink_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_POPPY_SEEDS = REGISTRAR.register("white_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_POPPY_SEEDS = REGISTRAR.register("yellow_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_POPPY_SEEDS = REGISTRAR.register("lilac_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_POPPY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_DANDELION_SEEDS = REGISTRAR.register("black_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_DANDELION_SEEDS = REGISTRAR.register("blue_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_DANDELION_SEEDS = REGISTRAR.register("cyan_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_DANDELION_SEEDS = REGISTRAR.register("red_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_DANDELION_SEEDS = REGISTRAR.register("magenta_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_DANDELION_SEEDS = REGISTRAR.register("orange_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_DANDELION_SEEDS = REGISTRAR.register("pink_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_DANDELION_SEEDS = REGISTRAR.register("white_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_DANDELION_SEEDS = REGISTRAR.register("yellow_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_DANDELION_SEEDS = REGISTRAR.register("lilac_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_DANDELION_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_CLEMATIS_SEEDS = REGISTRAR.register("black_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_CLEMATIS_SEEDS = REGISTRAR.register("blue_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_CLEMATIS_SEEDS = REGISTRAR.register("cyan_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_CLEMATIS_SEEDS = REGISTRAR.register("red_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_CLEMATIS_SEEDS = REGISTRAR.register("magenta_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_CLEMATIS_SEEDS = REGISTRAR.register("orange_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_CLEMATIS_SEEDS = REGISTRAR.register("pink_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_CLEMATIS_SEEDS = REGISTRAR.register("white_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_CLEMATIS_SEEDS = REGISTRAR.register("yellow_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_CLEMATIS_SEEDS = REGISTRAR.register("lilac_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_CLEMATIS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_ALLIUM_SEEDS = REGISTRAR.register("black_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_ALLIUM_SEEDS = REGISTRAR.register("blue_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_ALLIUM_SEEDS = REGISTRAR.register("cyan_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_ALLIUM_SEEDS = REGISTRAR.register("red_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_ALLIUM_SEEDS = REGISTRAR.register("magenta_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_ALLIUM_SEEDS = REGISTRAR.register("orange_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_ALLIUM_SEEDS = REGISTRAR.register("pink_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_ALLIUM_SEEDS = REGISTRAR.register("white_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_ALLIUM_SEEDS = REGISTRAR.register("yellow_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_ALLIUM_SEEDS = REGISTRAR.register("lilac_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_ALLIUM_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_CLOVER_SEEDS = REGISTRAR.register("black_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_CLOVER_SEEDS = REGISTRAR.register("blue_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_CLOVER_SEEDS = REGISTRAR.register("cyan_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_CLOVER_SEEDS = REGISTRAR.register("red_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_CLOVER_SEEDS = REGISTRAR.register("magenta_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_CLOVER_SEEDS = REGISTRAR.register("orange_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_CLOVER_SEEDS = REGISTRAR.register("pink_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_CLOVER_SEEDS = REGISTRAR.register("white_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_CLOVER_SEEDS = REGISTRAR.register("yellow_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_CLOVER_SEEDS = REGISTRAR.register("lilac_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_CLOVER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_HYACINTH_SEEDS = REGISTRAR.register("black_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_HYACINTH_SEEDS = REGISTRAR.register("blue_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_HYACINTH_SEEDS = REGISTRAR.register("cyan_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_HYACINTH_SEEDS = REGISTRAR.register("red_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_HYACINTH_SEEDS = REGISTRAR.register("magenta_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_HYACINTH_SEEDS = REGISTRAR.register("orange_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_HYACINTH_SEEDS = REGISTRAR.register("pink_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_HYACINTH_SEEDS = REGISTRAR.register("white_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_HYACINTH_SEEDS = REGISTRAR.register("yellow_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_HYACINTH_SEEDS = REGISTRAR.register("lilac_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_HYACINTH_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_DAISY_SEEDS = REGISTRAR.register("black_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_DAISY_SEEDS = REGISTRAR.register("blue_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_DAISY_SEEDS = REGISTRAR.register("cyan_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_DAISY_SEEDS = REGISTRAR.register("red_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_DAISY_SEEDS = REGISTRAR.register("magenta_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_DAISY_SEEDS = REGISTRAR.register("orange_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_DAISY_SEEDS = REGISTRAR.register("pink_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_DAISY_SEEDS = REGISTRAR.register("white_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_DAISY_SEEDS = REGISTRAR.register("yellow_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_DAISY_SEEDS = REGISTRAR.register("lilac_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_DAISY_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_DIANTHUS_SEEDS = REGISTRAR.register("black_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_DIANTHUS_SEEDS = REGISTRAR.register("blue_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_DIANTHUS_SEEDS = REGISTRAR.register("cyan_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_DIANTHUS_SEEDS = REGISTRAR.register("red_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_DIANTHUS_SEEDS = REGISTRAR.register("magenta_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_DIANTHUS_SEEDS = REGISTRAR.register("orange_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_DIANTHUS_SEEDS = REGISTRAR.register("pink_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_DIANTHUS_SEEDS = REGISTRAR.register("white_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_DIANTHUS_SEEDS = REGISTRAR.register("yellow_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_DIANTHUS_SEEDS = REGISTRAR.register("lilac_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_DIANTHUS_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_BOUGAINVILLEA_SEEDS = REGISTRAR.register("black_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_BOUGAINVILLEA_SEEDS = REGISTRAR.register("blue_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_BOUGAINVILLEA_SEEDS = REGISTRAR.register("cyan_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_BOUGAINVILLEA_SEEDS = REGISTRAR.register("red_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_BOUGAINVILLEA_SEEDS = REGISTRAR.register("magenta_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_BOUGAINVILLEA_SEEDS = REGISTRAR.register("orange_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_BOUGAINVILLEA_SEEDS = REGISTRAR.register("pink_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_BOUGAINVILLEA_SEEDS = REGISTRAR.register("white_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_BOUGAINVILLEA_SEEDS = REGISTRAR.register("yellow_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_BOUGAINVILLEA_SEEDS = REGISTRAR.register("lilac_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_BOUGAINVILLEA_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_FAIRY_ROSE_SEEDS = REGISTRAR.register("black_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_FAIRY_ROSE_SEEDS = REGISTRAR.register("blue_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_FAIRY_ROSE_SEEDS = REGISTRAR.register("cyan_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_FAIRY_ROSE_SEEDS = REGISTRAR.register("red_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_FAIRY_ROSE_SEEDS = REGISTRAR.register("magenta_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_FAIRY_ROSE_SEEDS = REGISTRAR.register("orange_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_FAIRY_ROSE_SEEDS = REGISTRAR.register("pink_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_FAIRY_ROSE_SEEDS = REGISTRAR.register("white_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_FAIRY_ROSE_SEEDS = REGISTRAR.register("yellow_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_FAIRY_ROSE_SEEDS = REGISTRAR.register("lilac_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_FAIRY_ROSE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_SUNFLOWER_SEEDS = REGISTRAR.register("black_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_SUNFLOWER_SEEDS = REGISTRAR.register("blue_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_SUNFLOWER_SEEDS = REGISTRAR.register("cyan_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_SUNFLOWER_SEEDS = REGISTRAR.register("red_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_SUNFLOWER_SEEDS = REGISTRAR.register("magenta_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_SUNFLOWER_SEEDS = REGISTRAR.register("orange_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_SUNFLOWER_SEEDS = REGISTRAR.register("pink_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_SUNFLOWER_SEEDS = REGISTRAR.register("white_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_SUNFLOWER_SEEDS = REGISTRAR.register("yellow_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_SUNFLOWER_SEEDS = REGISTRAR.register("lilac_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_SUNFLOWER_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_JASMINE_SEEDS = REGISTRAR.register("black_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_JASMINE_SEEDS = REGISTRAR.register("blue_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_JASMINE_SEEDS = REGISTRAR.register("cyan_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_JASMINE_SEEDS = REGISTRAR.register("red_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_JASMINE_SEEDS = REGISTRAR.register("magenta_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_JASMINE_SEEDS = REGISTRAR.register("orange_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_JASMINE_SEEDS = REGISTRAR.register("pink_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_JASMINE_SEEDS = REGISTRAR.register("white_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_JASMINE_SEEDS = REGISTRAR.register("yellow_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_JASMINE_SEEDS = REGISTRAR.register("lilac_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_JASMINE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLACK_FOXGLOVE_SEEDS = REGISTRAR.register("black_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLACK_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> BLUE_FOXGLOVE_SEEDS = REGISTRAR.register("blue_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLUE_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> CYAN_FOXGLOVE_SEEDS = REGISTRAR.register("cyan_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.CYAN_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> RED_FOXGLOVE_SEEDS = REGISTRAR.register("red_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.RED_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> MAGENTA_FOXGLOVE_SEEDS = REGISTRAR.register("magenta_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.MAGENTA_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> ORANGE_FOXGLOVE_SEEDS = REGISTRAR.register("orange_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORANGE_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> PINK_FOXGLOVE_SEEDS = REGISTRAR.register("pink_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.PINK_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> WHITE_FOXGLOVE_SEEDS = REGISTRAR.register("white_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.WHITE_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> YELLOW_FOXGLOVE_SEEDS = REGISTRAR.register("yellow_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.YELLOW_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> LILAC_FOXGLOVE_SEEDS = REGISTRAR.register("lilac_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_FOXGLOVE_PLANT.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final Map<String, RegistryObject<Item>> ROSE_BUSHLET_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.ROSE_BUSHLET_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> POPPY_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.POPPY_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> DANDELION_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.DANDELION_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> CLEMATIS_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.CLEMATIS_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> ALLIUM_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.ALLIUM_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> CLOVER_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.CLOVER_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> HYACINTH_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.HYACINTH_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> DAISY_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.DAISY_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> DIANTHUS_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.DIANTHUS_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> BOUGAINVILLEA_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.BOUGAINVILLEA_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> FAIRY_ROSE_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.FAIRY_ROSE_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> SUNFLOWER_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.SUNFLOWER_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> JASMINE_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.JASMINE_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
+    public static final Map<String, RegistryObject<Item>> FOXGLOVE_SEEDS = Util.make(new HashMap<>(), map -> {
+        for (String color : Flowerary.COLORS_LIST)
+            map.put(color, REGISTRAR.register(color + "_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.FOXGLOVE_PLANT.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+    });
 }

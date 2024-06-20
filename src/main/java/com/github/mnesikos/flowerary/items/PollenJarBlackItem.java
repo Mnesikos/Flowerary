@@ -39,24 +39,24 @@ public class PollenJarBlackItem extends Item {
 
         if (player != null && !world.isClientSide) {
             Block crop = null;
-            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.BLACK_ROSE_BUSHLET_PLANT.get();
-            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.BLACK_DANDELION_PLANT.get();
-            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.BLACK_POPPY_PLANT.get();
-            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.BLACK_CLEMATIS_PLANT.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.BLACK_ALLIUM_PLANT.get();
-            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.BLACK_CLOVER_PLANT.get();
-            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.BLACK_HYACINTH_PLANT.get();
-            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.BLACK_HYACINTH_PLANT.get();
-            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.BLACK_HYACINTH_PLANT.get();
-            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.BLACK_HYACINTH_PLANT.get();
-            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.BLACK_DAISY_PLANT.get();
-            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.BLACK_DIANTHUS_PLANT.get();
-            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.BLACK_BOUGAINVILLEA_PLANT.get();
-            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.BLACK_FAIRY_ROSE_PLANT.get();
-            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.BLACK_SUNFLOWER_PLANT.get();
-            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.BLACK_JASMINE_PLANT.get();
-            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.BLACK_FOXGLOVE_PLANT.get();
-            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.BLACK_ALLIUM_PLANT.get();
+            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.ROSE_BUSHLET_PLANT.get("black").get();
+            else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.DANDELION_PLANT.get("black").get();
+            else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.POPPY_PLANT.get("black").get();
+            else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.CLEMATIS_PLANT.get("black").get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.ALLIUM_PLANT.get("black").get();
+            else if (state.getBlock().equals(AZURE_BLUET)) crop = FloweraryBlocks.CLOVER_PLANT.get("black").get();
+            else if (state.getBlock().equals(RED_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get("black").get();
+            else if (state.getBlock().equals(ORANGE_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get("black").get();
+            else if (state.getBlock().equals(WHITE_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get("black").get();
+            else if (state.getBlock().equals(PINK_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get("black").get();
+            else if (state.getBlock().equals(OXEYE_DAISY)) crop = FloweraryBlocks.DAISY_PLANT.get("black").get();
+            else if (state.getBlock().equals(CORNFLOWER)) crop = FloweraryBlocks.DIANTHUS_PLANT.get("black").get();
+            else if (state.getBlock().equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.BOUGAINVILLEA_PLANT.get("black").get();
+            else if (state.getBlock().equals(WITHER_ROSE)) crop = FloweraryBlocks.FAIRY_ROSE_PLANT.get("black").get();
+            else if (state.getBlock().equals(SUNFLOWER)) crop = FloweraryBlocks.SUNFLOWER_PLANT.get("black").get();
+            else if (state.getBlock().equals(LILAC)) crop = FloweraryBlocks.JASMINE_PLANT.get("black").get();
+            else if (state.getBlock().equals(PEONY)) crop = FloweraryBlocks.FOXGLOVE_PLANT.get("black").get();
+            else if (state.getBlock().equals(ALLIUM)) crop = FloweraryBlocks.ALLIUM_PLANT.get("black").get();
 
             if (crop != null) {
 //                world.addParticle(ParticleTypes.EXPLOSION, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);

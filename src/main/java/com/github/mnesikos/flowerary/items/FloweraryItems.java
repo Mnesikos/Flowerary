@@ -16,23 +16,23 @@ public final class FloweraryItems {
     public static final DeferredRegister<Item> REGISTRAR = DeferredRegister.create(ForgeRegistries.ITEMS, Flowerary.MOD_ID);
 
     public static final RegistryObject<Item> EMPTY_POLLEN_JAR = REGISTRAR.register("empty_pollen_jar", () -> new EmptyPollenJarItem(new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_ROSE = REGISTRAR.register("pollen_jar_rose", () -> new PollenJarItem("red", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_WITHER_ROSE = REGISTRAR.register("pollen_jar_wither_rose", () -> new PollenJarItem("black", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_POPPY = REGISTRAR.register("pollen_jar_poppy", () -> new PollenJarItem("red", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_DANDELION = REGISTRAR.register("pollen_jar_dandelion", () -> new PollenJarItem("yellow", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_ORCHID = REGISTRAR.register("pollen_jar_orchid", () -> new PollenJarItem("cyan", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_ALLIUM = REGISTRAR.register("pollen_jar_allium", () -> new PollenJarItem("magenta", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_AZURE_BLUET = REGISTRAR.register("pollen_jar_azure_bluet", () -> new PollenJarItem("white", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_RED_TULIP = REGISTRAR.register("pollen_jar_red_tulip", () -> new PollenJarItem("red", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_ORANGE_TULIP = REGISTRAR.register("pollen_jar_orange_tulip", () -> new PollenJarItem("orange", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_WHITE_TULIP = REGISTRAR.register("pollen_jar_white_tulip", () -> new PollenJarItem("white", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_PINK_TULIP = REGISTRAR.register("pollen_jar_pink_tulip", () -> new PollenJarItem("pink", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_DAISY = REGISTRAR.register("pollen_jar_daisy", () -> new PollenJarItem("white", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_CORNFLOWER = REGISTRAR.register("pollen_jar_cornflower", () -> new PollenJarItem("blue", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_LILY_OF_THE_VALLEY = REGISTRAR.register("pollen_jar_lily_of_the_valley", () -> new PollenJarItem("white", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_SUNFLOWER = REGISTRAR.register("pollen_jar_sunflower", () -> new PollenJarItem("yellow", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_LILAC = REGISTRAR.register("pollen_jar_lilac", () -> new PollenJarItem("lilac", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
-    public static final RegistryObject<Item> POLLEN_JAR_PEONY = REGISTRAR.register("pollen_jar_peony", () -> new PollenJarItem("pink", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> ROSE_POLLEN_JAR = REGISTRAR.register("rose_pollen_jar", () -> new PollenJarItem("red", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> WITHER_ROSE_POLLEN_JAR = REGISTRAR.register("wither_rose_pollen_jar", () -> new PollenJarItem("black", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> POPPY_POLLEN_JAR = REGISTRAR.register("poppy_pollen_jar", () -> new PollenJarItem("red", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> DANDELION_POLLEN_JAR = REGISTRAR.register("dandelion_pollen_jar", () -> new PollenJarItem("yellow", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> ORCHID_POLLEN_JAR = REGISTRAR.register("orchid_pollen_jar", () -> new PollenJarItem("cyan", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> ALLIUM_POLLEN_JAR = REGISTRAR.register("allium_pollen_jar", () -> new PollenJarItem("magenta", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> AZURE_BLUET_POLLEN_JAR = REGISTRAR.register("azure_bluet_pollen_jar", () -> new PollenJarItem("white", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> RED_TULIP_POLLEN_JAR = REGISTRAR.register("red_tulip_pollen_jar", () -> new PollenJarItem("red", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> ORANGE_TULIP_POLLEN_JAR = REGISTRAR.register("orange_tulip_pollen_jar", () -> new PollenJarItem("orange", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> WHITE_TULIP_POLLEN_JAR = REGISTRAR.register("white_tulip_pollen_jar", () -> new PollenJarItem("white", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> PINK_TULIP_POLLEN_JAR = REGISTRAR.register("pink_tulip_pollen_jar", () -> new PollenJarItem("pink", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> DAISY_POLLEN_JAR = REGISTRAR.register("daisy_pollen_jar", () -> new PollenJarItem("white", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> CORNFLOWER_POLLEN_JAR = REGISTRAR.register("cornflower_pollen_jar", () -> new PollenJarItem("blue", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> LILY_OF_THE_VALLEY_POLLEN_JAR = REGISTRAR.register("lily_of_the_valley_pollen_jar", () -> new PollenJarItem("white", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> SUNFLOWER_POLLEN_JAR = REGISTRAR.register("sunflower_pollen_jar", () -> new PollenJarItem("yellow", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> LILAC_POLLEN_JAR = REGISTRAR.register("lilac_pollen_jar", () -> new PollenJarItem("lilac", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+    public static final RegistryObject<Item> PEONY_POLLEN_JAR = REGISTRAR.register("peony_pollen_jar", () -> new PollenJarItem("pink", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
 
     public static final Map<String, RegistryObject<Item>> ROSE_BUSHLET_SEEDS = Util.make(new HashMap<>(), map -> {
         for (String color : Flowerary.COLORS_LIST)

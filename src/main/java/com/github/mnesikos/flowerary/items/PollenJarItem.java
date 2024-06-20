@@ -1,13 +1,10 @@
 package com.github.mnesikos.flowerary.items;
 
 import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
@@ -40,23 +37,23 @@ public class PollenJarItem extends Item {
         Block block = state.getBlock();
         Block crop = null;
 
-        if (block.equals(ROSE_BUSH)) crop = FloweraryBlocks.ROSE_BUSHLET_PLANT.get(color).get();
-        else if (block.equals(DANDELION)) crop = FloweraryBlocks.DANDELION_PLANT.get(color).get();
-        else if (block.equals(POPPY)) crop = FloweraryBlocks.POPPY_PLANT.get(color).get();
-        else if (block.equals(BLUE_ORCHID)) crop = FloweraryBlocks.CLEMATIS_PLANT.get(color).get();
-        else if (block.equals(ALLIUM)) crop = FloweraryBlocks.ALLIUM_PLANT.get(color).get();
-        else if (block.equals(AZURE_BLUET)) crop = FloweraryBlocks.CLOVER_PLANT.get(color).get();
-        else if (block.equals(RED_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get(color).get();
-        else if (block.equals(ORANGE_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get(color).get();
-        else if (block.equals(WHITE_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get(color).get();
-        else if (block.equals(PINK_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANT.get(color).get();
-        else if (block.equals(OXEYE_DAISY)) crop = FloweraryBlocks.DAISY_PLANT.get(color).get();
-        else if (block.equals(CORNFLOWER)) crop = FloweraryBlocks.DIANTHUS_PLANT.get(color).get();
-        else if (block.equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.BOUGAINVILLEA_PLANT.get(color).get();
-        else if (block.equals(WITHER_ROSE)) crop = FloweraryBlocks.FAIRY_ROSE_PLANT.get(color).get();
-        else if (block.equals(SUNFLOWER)) crop = FloweraryBlocks.SUNFLOWER_PLANT.get(color).get();
-        else if (block.equals(LILAC)) crop = FloweraryBlocks.JASMINE_PLANT.get(color).get();
-        else if (block.equals(PEONY)) crop = FloweraryBlocks.FOXGLOVE_PLANT.get(color).get();
+        if (block.equals(ROSE_BUSH)) crop = FloweraryBlocks.ROSE_BUSHLET_PLANTS.get(color).get();
+        else if (block.equals(DANDELION)) crop = FloweraryBlocks.DANDELION_PLANTS.get(color).get();
+        else if (block.equals(POPPY)) crop = FloweraryBlocks.POPPY_PLANTS.get(color).get();
+        else if (block.equals(BLUE_ORCHID)) crop = FloweraryBlocks.CLEMATIS_PLANTS.get(color).get();
+        else if (block.equals(ALLIUM)) crop = FloweraryBlocks.ALLIUM_PLANTS.get(color).get();
+        else if (block.equals(AZURE_BLUET)) crop = FloweraryBlocks.CLOVER_PLANTS.get(color).get();
+        else if (block.equals(RED_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANTS.get(color).get();
+        else if (block.equals(ORANGE_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANTS.get(color).get();
+        else if (block.equals(WHITE_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANTS.get(color).get();
+        else if (block.equals(PINK_TULIP)) crop = FloweraryBlocks.HYACINTH_PLANTS.get(color).get();
+        else if (block.equals(OXEYE_DAISY)) crop = FloweraryBlocks.DAISY_PLANTS.get(color).get();
+        else if (block.equals(CORNFLOWER)) crop = FloweraryBlocks.DIANTHUS_PLANTS.get(color).get();
+        else if (block.equals(LILY_OF_THE_VALLEY)) crop = FloweraryBlocks.BOUGAINVILLEA_PLANTS.get(color).get();
+        else if (block.equals(WITHER_ROSE)) crop = FloweraryBlocks.FAIRY_ROSE_PLANTS.get(color).get();
+        else if (block.equals(SUNFLOWER)) crop = FloweraryBlocks.SUNFLOWER_PLANTS.get(color).get();
+        else if (block.equals(LILAC)) crop = FloweraryBlocks.JASMINE_PLANTS.get(color).get();
+        else if (block.equals(PEONY)) crop = FloweraryBlocks.FOXGLOVE_PLANTS.get(color).get();
 
         if (crop != null && context.getPlayer() != null) {
             PlayerEntity player = context.getPlayer();

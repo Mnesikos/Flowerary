@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "red_dye",
+  "ingredients": [
+    {
+      "item": "flowerary:red_bougainvillea"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_dye"
+  }
+}

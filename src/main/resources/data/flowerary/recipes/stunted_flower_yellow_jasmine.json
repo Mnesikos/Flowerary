@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "W"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "flowerary:yellow_jasmine"
+    }
+  },
+  "result": {
+    "item": "flowerary:stunted_yellow_jasmine"  }
+}

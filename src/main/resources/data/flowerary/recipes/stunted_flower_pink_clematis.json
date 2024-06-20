@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "W"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "flowerary:pink_clematis"
+    }
+  },
+  "result": {
+    "item": "flowerary:stunted_pink_clematis"  }
+}

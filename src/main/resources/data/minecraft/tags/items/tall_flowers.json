@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "flowerary:black_sunflower",
+    "flowerary:blue_sunflower",
+    "flowerary:cyan_sunflower",
+    "flowerary:red_sunflower",
+    "flowerary:magenta_sunflower",
+    "flowerary:orange_sunflower",
+    "flowerary:pink_sunflower",
+    "flowerary:white_sunflower",
+    "flowerary:yellow_sunflower",
+    "flowerary:lilac_sunflower",
+    "flowerary:black_foxglove",
+    "flowerary:blue_foxglove",
+    "flowerary:cyan_foxglove",
+    "flowerary:red_foxglove",
+    "flowerary:magenta_foxglove",
+    "flowerary:orange_foxglove",
+    "flowerary:pink_foxglove",
+    "flowerary:white_foxglove",
+    "flowerary:yellow_foxglove",
+    "flowerary:lilac_foxglove"
+  ]
+}

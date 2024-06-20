@@ -7,7 +7,6 @@
         "age=4": { "model": "flowerary:block/flower_plant/rose_bushlet_stage2" },
         "age=5": { "model": "flowerary:block/flower_plant/rose_bushlet_stage3" },
         "age=6": { "model": "flowerary:block/flower_plant/rose_bushlet_stage3" },
-        "age=7": { "model": "flowerary:block/flower_plant/white_rose_bushlet"}
+        "age=7": { "model": "flowerary:block/flower/white_rose_bushlet"}
     }
 }
-

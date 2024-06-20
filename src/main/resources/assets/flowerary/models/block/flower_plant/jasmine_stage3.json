@@ -1,8 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "flowerary:block/vine_plant_stage3",
   "textures": {
-    "particle": "flowerary:block/flower_plant/jasmine_stage3",
-    "cross": "flowerary:block/flower_plant/jasmine_stage3"
+    "vine": "flowerary:block/flower_plant/jasmine_stage3"
   }
 }
-

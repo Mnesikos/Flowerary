@@ -1,8 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "flowerary:block/vine_plant_stage0",
   "textures": {
-    "particle": "flowerary:block/flower_plant/clematis_stage0",
-    "cross": "flowerary:block/flower_plant/clematis_stage0"
+    "vine": "flowerary:block/flower_plant/clematis_stage0"
   }
 }
-

@@ -1,0 +1,6 @@
+{
+  "parent": "flowerary:block/vine_2_opposite",
+  "textures": {
+    "vine": "flowerary:block/flower/red_clematis"
+  }
+}

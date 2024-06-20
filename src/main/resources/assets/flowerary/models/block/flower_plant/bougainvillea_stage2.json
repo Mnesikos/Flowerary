@@ -1,8 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "flowerary:block/vine_plant_stage2",
   "textures": {
-    "particle": "flowerary:block/flower_plant/bougainvillea_stage2",
-    "cross": "flowerary:block/flower_plant/bougainvillea_stage2"
+    "vine": "flowerary:block/flower_plant/bougainvillea_stage2"
   }
 }
-

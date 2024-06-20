@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "flowerary:block/flowercrops/crop_poppy_stage3",
-    "cross": "flowerary:block/flowercrops/crop_poppy_stage3"
-  }
-}

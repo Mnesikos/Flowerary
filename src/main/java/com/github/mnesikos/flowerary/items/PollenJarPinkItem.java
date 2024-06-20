@@ -38,7 +38,7 @@ public class PollenJarPinkItem extends Item {
 
         if (player != null && !world.isClientSide) {
             Block crop = null;
-            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.PINK_ROSE_PLANT.get();
+            if (state.getBlock().equals(ROSE_BUSH)) crop = FloweraryBlocks.PINK_ROSE_BUSHLET_PLANT.get();
             else if (state.getBlock().equals(DANDELION)) crop = FloweraryBlocks.PINK_DANDELION_PLANT.get();
             else if (state.getBlock().equals(POPPY)) crop = FloweraryBlocks.PINK_POPPY_PLANT.get();
             else if (state.getBlock().equals(BLUE_ORCHID)) crop = FloweraryBlocks.PINK_ORCHID_PLANT.get();

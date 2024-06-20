@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "particle": "flowerary:block/flower/lilac_bougainvillea",
+    "cross": "flowerary:block/flower/lilac_bougainvillea"
+  }
+}
+

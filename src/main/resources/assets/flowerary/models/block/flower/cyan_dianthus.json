@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "particle": "flowerary:block/flower/cyan_dianthus",
+    "cross": "flowerary:block/flower/cyan_dianthus"
+  }
+}
+

@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "flowerary:block/flowercrops/crop_sunflower_stage0",
-    "cross": "flowerary:block/flowercrops/crop_sunflower_stage0"
-  }
-}

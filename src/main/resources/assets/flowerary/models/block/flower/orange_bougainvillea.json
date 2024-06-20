@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "particle": "flowerary:block/flower/orange_bougainvillea",
+    "cross": "flowerary:block/flower/orange_bougainvillea"
+  }
+}
+

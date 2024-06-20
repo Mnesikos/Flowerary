@@ -1,7 +1,7 @@
 {
-  "parent": "block/cross",
+  "parent": "flowerary:block/tall_flower",
   "textures": {
-    "particle": "flowerary:block/flower/pink_impala_lily",
     "cross": "flowerary:block/flower/pink_impala_lily"
   }
 }
+

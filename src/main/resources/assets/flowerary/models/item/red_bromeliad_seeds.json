@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "flowerary:item/red_bromeliad_seeds"
+  }
+}

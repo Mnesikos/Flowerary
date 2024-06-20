@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "particle": "flowerary:block/flower/yellow_bromeliad",
+    "cross": "flowerary:block/flower/yellow_bromeliad"
+  }
+}

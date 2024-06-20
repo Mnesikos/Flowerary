@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "acmc:block/flowercrops/crop_cornflower_stage0",
-    "cross": "acmc:block/flowercrops/crop_cornflower_stage0"
-  }
-}

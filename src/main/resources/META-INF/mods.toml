@@ -1,12 +1,16 @@
 modLoader="javafml" #mandatory
-loaderVersion="[28,)" #mandatory (28 is current forge version)
+loaderVersion="[36.2,)"
 license="MIT"
 
 [[mods]] #mandatory
-modId="acmc" #mandatory
+modId="flowerary" #mandatory
 version="${file.jarVersion}" #mandatory
-displayName="LDShadowLady's Flower Breeding Replanted" #mandatory
-authors="LDShadowLady, anar4732" #optional
+displayName="Flowerary" #mandatory
+#updateJSONURL=""
+#displayURL=""
+#logoFile="icon.png"
+#credits=""
+authors="LDShadowLady, anar4732, Mnesikos" #optional
 description='''
 This mod allows you to cross-pollinate vanilla flowers to create different flowers in a variety of colours.
 
@@ -15,3 +19,17 @@ Transfer the pollen onto another vanilla flower to receive seeds.
 The seeds can be planted and farmed like vanilla crops.
 Once they are fully-grown you can harvest the flowers to place elsewhere.
 '''
+
+[[dependencies.flowerary]]
+modId="forge"
+mandatory=true
+versionRange="[36.2,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.flowerary]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.16.5,1.17)"
+ordering="NONE"
+side="BOTH"

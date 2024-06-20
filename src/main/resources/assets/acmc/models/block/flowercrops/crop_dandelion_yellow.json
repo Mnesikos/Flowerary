@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "acmc:block/flowercrops/crop_yellow_dandelion",
-    "cross": "acmc:block/flowercrops/crop_yellow_dandelion"
-  }
-}

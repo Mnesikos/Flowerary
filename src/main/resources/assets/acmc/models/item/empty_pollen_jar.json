@@ -1,6 +1,0 @@
-{
-	"parent": "item/generated",
-	"textures": {
-		"layer0": "acmc:item/empty_pollen_jar"
-	}
-}

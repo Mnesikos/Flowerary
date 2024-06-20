@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "acmc:block/flowercrops/crop_magenta_daisy",
-    "cross": "acmc:block/flowercrops/crop_magenta_daisy"
-  }
-}

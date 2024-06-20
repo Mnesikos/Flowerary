@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "acmc:block/flowercrops/crop_magenta_allium",
-    "cross": "acmc:block/flowercrops/crop_magenta_allium"
-  }
-}

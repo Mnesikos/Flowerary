@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "pink_dye",
+  "ingredients": [
+    {
+      "item": "flowerary:flower_pink_poppy"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pink_dye"
+  }
+}

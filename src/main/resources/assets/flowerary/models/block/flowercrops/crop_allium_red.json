@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "particle": "flowerary:block/flowercrops/crop_red_allium",
+    "cross": "flowerary:block/flowercrops/crop_red_allium"
+  }
+}

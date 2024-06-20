@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "flowerary:block/brown_imperial_chest" },
+    "facing=south": { "model": "flowerary:block/brown_imperial_chest", "y": 180, "uvlock": false},
+    "facing=east": { "model": "flowerary:block/brown_imperial_chest", "y": 90, "uvlock": false},
+    "facing=west": { "model": "flowerary:block/brown_imperial_chest", "y": 270, "uvlock": false}
+  }
+}

@@ -3,6 +3,8 @@ package com.github.mnesikos.flowerary;
 import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
 import com.github.mnesikos.flowerary.items.FlowerComposting;
 import com.github.mnesikos.flowerary.items.FloweraryItems;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -12,6 +14,13 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(Flowerary.MOD_ID)
 public class Flowerary {
     public static final String MOD_ID = "flowerary";
+
+    public static final ItemGroup FLOWERARY_GROUP = new ItemGroup(MOD_ID + ".flowerary_group") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(FloweraryBlocks.FLOWER_PINK_POPPY.get());
+        }
+    };
 
     public Flowerary() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

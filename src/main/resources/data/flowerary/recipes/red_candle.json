@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "W",
+    "C"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "W": {
+      "item": "minecraft:red_dye"
+    },
+    "C": {
+      "item": "minecraft:clay"
+    }
+  },
+  "result": {
+    "item": "flowerary:red_candle"  }
+}

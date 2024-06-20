@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "W"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "flowerary:flower_red_lily"
+    }
+  },
+  "result": {
+    "item": "flowerary:stunted_flower_red_lily"  }
+}

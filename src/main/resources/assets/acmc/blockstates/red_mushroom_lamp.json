@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "acmc:block/red_mushroom_lamp" },
-    "facing=south": { "model": "acmc:block/red_mushroom_lamp", "y": 180, "uvlock": false},
-    "facing=east": { "model": "acmc:block/red_mushroom_lamp", "y": 90, "uvlock": false},
-    "facing=west": { "model": "acmc:block/red_mushroom_lamp", "y": 270, "uvlock": false}
-  }
-}

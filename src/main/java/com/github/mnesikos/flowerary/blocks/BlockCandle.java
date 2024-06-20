@@ -1,4 +1,4 @@
-package com.ldshadowlady.acmc.blocks;
+package com.github.mnesikos.flowerary.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,38 +20,39 @@ import java.util.Random;
 
 public class BlockCandle extends HorizontalBlock {
     public static final IntegerProperty CANDLES = IntegerProperty.create("candles", 1, 4);
-	
+
     //xMin, yMin, zMin, xMax, yMax, zMax); //all decimals
-    protected static final VoxelShape SHAPE_EAST = Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 10.0D, 7.0D, 10.0D);
-    protected static final VoxelShape SHAPE_WEST  = Block.makeCuboidShape(6.0D, 0.0D, 6.0D, 9.0D, 7.0D, 9.0D);
-    protected static final VoxelShape SHAPE_NORTH = Block.makeCuboidShape(7.0D, 0.0D, 6.0D, 10.0D, 7.0D, 9.0D);
-    protected static final VoxelShape SHAPE_SOUTH = Block.makeCuboidShape(6.0D, 0.0D, 7.0D, 9.0D, 7.0D, 10.0D);
-    protected static final VoxelShape SHAPE_MULTI = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 7.0D, 14.0D);
-    
+    protected static final VoxelShape SHAPE_EAST = Block.box(7.0D, 0.0D, 7.0D, 10.0D, 7.0D, 10.0D);
+    protected static final VoxelShape SHAPE_WEST = Block.box(6.0D, 0.0D, 6.0D, 9.0D, 7.0D, 9.0D);
+    protected static final VoxelShape SHAPE_NORTH = Block.box(7.0D, 0.0D, 6.0D, 10.0D, 7.0D, 9.0D);
+    protected static final VoxelShape SHAPE_SOUTH = Block.box(6.0D, 0.0D, 7.0D, 9.0D, 7.0D, 10.0D);
+    protected static final VoxelShape SHAPE_MULTI = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 7.0D, 14.0D);
+
     public BlockCandle(Properties properties) {
         super(properties);
-        this.setDefaultState((this.stateContainer.getBaseState()).with(HORIZONTAL_FACING, Direction.SOUTH).with(CANDLES, 1));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.SOUTH).setValue(CANDLES, 1));
     }
-	@Override
-	public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
-		return super.getLightValue(state, world, pos) + 2 * state.get(CANDLES);
-	}
-	
-	@OnlyIn(Dist.CLIENT)
+
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return super.getLightValue(state, world, pos) + 2 * state.getValue(CANDLES);
+    }
+
+    @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState state, World world, BlockPos pos, Random random) {
-        double posX = (double)pos.getX();
-        double posY = (double)pos.getY();
-        double posZ = (double)pos.getZ();
+        double posX = (double) pos.getX();
+        double posY = (double) pos.getY();
+        double posZ = (double) pos.getZ();
         //world.addParticle(ParticleTypes.SMOKE, posX, posY, posZ, 0.0D, 0.0D, 0.0D);
-        Direction blockDirection = state.get(HORIZONTAL_FACING);
+        Direction blockDirection = state.getValue(FACING);
 
-        Direction FACING = state.get(HORIZONTAL_FACING);
-        Integer CANDLECOUNT = state.get(CANDLES);
+        Direction facing = state.getValue(FACING);
+        int candleCount = state.getValue(CANDLES);
 
-        if (CANDLECOUNT == 1){
+        if (candleCount == 1) {
             Double candleOnePosX = 0.54D;
             Double candleOnePosZ = 0.48D;
-            switch (blockDirection){
+            switch (blockDirection) {
                 case NORTH:
                     candleOnePosX = candleOnePosX;
                     candleOnePosZ = candleOnePosZ;
@@ -69,9 +70,8 @@ public class BlockCandle extends HorizontalBlock {
                     candleOnePosZ = candleOnePosZ;
                     break;
             }
-            world.addParticle(ParticleTypes.FLAME, posX + candleOnePosX, posY + 0.64D, posZ + candleOnePosZ , 0.0D, 0.0D, 0.0D);
-        }
-        else if (CANDLECOUNT == 2){
+            world.addParticle(ParticleTypes.FLAME, posX + candleOnePosX, posY + 0.64D, posZ + candleOnePosZ, 0.0D, 0.0D, 0.0D);
+        } else if (candleCount == 2) {
             Double candleOnePosX = 0.25D;
             Double candleOnePosZ = 0.58D;
             Double candleTwoPosX = 0.7D;
@@ -107,9 +107,8 @@ public class BlockCandle extends HorizontalBlock {
                     break;
             }
             world.addParticle(ParticleTypes.FLAME, posX + transformedcandleOnePosX, posY + 0.58D, posZ + transformedcandleOnePosZ, 0.0D, 0.0D, 0.0D);
-            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleTwoPosX , posY + 0.63D, posZ + transformedcandleTwoPosZ, 0.0D, 0.0D, 0.0D);
-        }
-        else if (CANDLECOUNT == 3){
+            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleTwoPosX, posY + 0.63D, posZ + transformedcandleTwoPosZ, 0.0D, 0.0D, 0.0D);
+        } else if (candleCount == 3) {
             Double candleOnePosX = 0.19D;
             Double candleOnePosZ = 0.58D;
             Double candleTwoPosX = 0.56D;
@@ -157,11 +156,10 @@ public class BlockCandle extends HorizontalBlock {
                     transformedcandleThreePosZ = candleThreePosX;
                     break;
             }
-            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleOnePosX , posY + 0.55D, posZ + transformedcandleOnePosZ, 0.0D, 0.0D, 0.0D);
-            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleTwoPosX , posY +0.48D, posZ + transformedcandleTwoPosZ, 0.0D, 0.0D, 0.0D);
-            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleThreePosX , posY +0.63D, posZ + transformedcandleThreePosZ, 0.0D, 0.0D, 0.0D);
-        }
-        else {
+            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleOnePosX, posY + 0.55D, posZ + transformedcandleOnePosZ, 0.0D, 0.0D, 0.0D);
+            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleTwoPosX, posY + 0.48D, posZ + transformedcandleTwoPosZ, 0.0D, 0.0D, 0.0D);
+            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleThreePosX, posY + 0.63D, posZ + transformedcandleThreePosZ, 0.0D, 0.0D, 0.0D);
+        } else {
 
             Double candleOnePosX = 0.19D;
             Double candleOnePosZ = 0.70D;
@@ -224,57 +222,49 @@ public class BlockCandle extends HorizontalBlock {
 
                     break;
             }
-            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleOnePosX , posY + 0.55D, posZ + transformedcandleOnePosZ, 0.0D, 0.0D, 0.0D);
-            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleTwoPosX , posY + 0.5D, posZ + transformedcandleTwoPosZ, 0.0D, 0.0D, 0.0D);
-            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleThreePosX , posY + 0.64D, posZ + transformedcandleThreePosZ, 0.0D, 0.0D, 0.0D);
-            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleFourPosX , posY + 0.58D, posZ + transformedcandleFourPosZ, 0.0D, 0.0D, 0.0D);
+            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleOnePosX, posY + 0.55D, posZ + transformedcandleOnePosZ, 0.0D, 0.0D, 0.0D);
+            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleTwoPosX, posY + 0.5D, posZ + transformedcandleTwoPosZ, 0.0D, 0.0D, 0.0D);
+            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleThreePosX, posY + 0.64D, posZ + transformedcandleThreePosZ, 0.0D, 0.0D, 0.0D);
+            world.addParticle(ParticleTypes.FLAME, posX + transformedcandleFourPosX, posY + 0.58D, posZ + transformedcandleFourPosZ, 0.0D, 0.0D, 0.0D);
         }
-		
+
     }
 
-
     @Override
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> stateBuilder) {
-        stateBuilder.add(HORIZONTAL_FACING, CANDLES);
+    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> stateBuilder) {
+        stateBuilder.add(FACING, CANDLES);
     }
 
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext context) {
-        BlockState block = context.getWorld().getBlockState(context.getPos());
-        if (block.getBlock() == this)
-        {
-            return (BlockState)this.getDefaultState().with(CANDLES,Math.min(4, (Integer)block.get(CANDLES) + 1)).with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite().getOpposite());
-        }
-        else{
-            return (BlockState)this.getDefaultState().with(CANDLES,1).with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite().getOpposite());
+        BlockState block = context.getLevel().getBlockState(context.getClickedPos());
+        if (block.getBlock() == this) {
+            return (BlockState) this.defaultBlockState().setValue(CANDLES, Math.min(4, (int) block.getValue(CANDLES) + 1)).setValue(FACING, context.getHorizontalDirection().getOpposite().getOpposite());
+        } else {
+            return (BlockState) this.defaultBlockState().setValue(CANDLES, 1).setValue(FACING, context.getHorizontalDirection().getOpposite().getOpposite());
         }
     }
 
     @Override
-    public boolean isReplaceable(BlockState p_196253_1_, BlockItemUseContext p_196253_2_) {
-        return p_196253_2_.getItem().getItem() == this.asItem() && (Integer)p_196253_1_.get(CANDLES) < 4 ? true : super.isReplaceable(p_196253_1_, p_196253_2_);
+    public boolean canBeReplaced(BlockState state, BlockItemUseContext context) {
+        return context.getItemInHand().getItem() == this.asItem() && state.getValue(CANDLES) < 4 || super.canBeReplaced(state, context);
     }
 
 
     @Override
-    public VoxelShape getShape(BlockState state, IBlockReader blockReader, BlockPos pos, ISelectionContext selectionContext)
-    {
-        Direction FACING = state.get(HORIZONTAL_FACING);
-        Integer CANDLECOUNT = state.get(CANDLES);
+    public VoxelShape getShape(BlockState state, IBlockReader blockReader, BlockPos pos, ISelectionContext selectionContext) {
+        Direction direction = state.getValue(FACING);
+        int candleCount = state.getValue(CANDLES);
 
-        if (FACING == Direction.NORTH && CANDLECOUNT == 1){
+        if (direction == Direction.NORTH && candleCount == 1) {
             return SHAPE_NORTH;
-        }
-        else if (FACING == Direction.SOUTH && CANDLECOUNT == 1){
+        } else if (direction == Direction.SOUTH && candleCount == 1) {
             return SHAPE_SOUTH;
-        }
-        else if (FACING == Direction.EAST && CANDLECOUNT == 1) {
+        } else if (direction == Direction.EAST && candleCount == 1) {
             return SHAPE_EAST;
-        }
-        else if (FACING == Direction.WEST && CANDLECOUNT == 1){
+        } else if (direction == Direction.WEST && candleCount == 1) {
             return SHAPE_WEST;
-         }
-        else  {
+        } else {
             return SHAPE_MULTI;
         }
     }

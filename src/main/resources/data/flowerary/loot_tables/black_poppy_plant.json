@@ -12,17 +12,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "flowerary:black_poppy_plant",
+                  "block": "flowerary:black_poppies_plant",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "flowerary:black_poppy"
+              "name": "flowerary:black_poppies"
             },
             {
               "type": "minecraft:item",
-              "name": "flowerary:black_poppy_seeds"
+              "name": "flowerary:black_poppies_seeds"
             }
           ]
         }
@@ -44,13 +44,13 @@
               }
             }
           ],
-          "name": "flowerary:black_poppy_seeds"
+          "name": "flowerary:black_poppies_seeds"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "flowerary:black_poppy_plant",
+          "block": "flowerary:black_poppies_plant",
           "properties": {
             "age": "7"
           }

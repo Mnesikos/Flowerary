@@ -12,17 +12,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "flowerary:red_poppy_plant",
+                  "block": "flowerary:red_poppies_plant",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "flowerary:red_poppy"
+              "name": "flowerary:red_poppies"
             },
             {
               "type": "minecraft:item",
-              "name": "flowerary:red_poppy_seeds"
+              "name": "flowerary:red_poppies_seeds"
             }
           ]
         }
@@ -44,13 +44,13 @@
               }
             }
           ],
-          "name": "flowerary:red_poppy_seeds"
+          "name": "flowerary:red_poppies_seeds"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "flowerary:red_poppy_plant",
+          "block": "flowerary:red_poppies_plant",
           "properties": {
             "age": "7"
           }

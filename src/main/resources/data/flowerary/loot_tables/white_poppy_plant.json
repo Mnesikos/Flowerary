@@ -12,17 +12,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "flowerary:white_poppy_plant",
+                  "block": "flowerary:white_poppies_plant",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "flowerary:white_poppy"
+              "name": "flowerary:white_poppies"
             },
             {
               "type": "minecraft:item",
-              "name": "flowerary:white_poppy_seeds"
+              "name": "flowerary:white_poppies_seeds"
             }
           ]
         }
@@ -44,13 +44,13 @@
               }
             }
           ],
-          "name": "flowerary:white_poppy_seeds"
+          "name": "flowerary:white_poppies_seeds"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "flowerary:white_poppy_plant",
+          "block": "flowerary:white_poppies_plant",
           "properties": {
             "age": "7"
           }

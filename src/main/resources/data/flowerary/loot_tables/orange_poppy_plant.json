@@ -12,17 +12,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "flowerary:orange_poppy_plant",
+                  "block": "flowerary:orange_poppies_plant",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "flowerary:orange_poppy"
+              "name": "flowerary:orange_poppies"
             },
             {
               "type": "minecraft:item",
-              "name": "flowerary:orange_poppy_seeds"
+              "name": "flowerary:orange_poppies_seeds"
             }
           ]
         }
@@ -44,13 +44,13 @@
               }
             }
           ],
-          "name": "flowerary:orange_poppy_seeds"
+          "name": "flowerary:orange_poppies_seeds"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "flowerary:orange_poppy_plant",
+          "block": "flowerary:orange_poppies_plant",
           "properties": {
             "age": "7"
           }

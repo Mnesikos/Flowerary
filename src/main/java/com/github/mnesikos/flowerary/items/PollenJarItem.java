@@ -39,7 +39,7 @@ public class PollenJarItem extends Item {
 
         if (block.equals(ROSE_BUSH)) crop = FloweraryBlocks.ROSE_BUSHLET_PLANTS.get(color).get();
         else if (block.equals(DANDELION)) crop = FloweraryBlocks.DANDELION_PLANTS.get(color).get();
-        else if (block.equals(POPPY)) crop = FloweraryBlocks.POPPY_PLANTS.get(color).get();
+        else if (block.equals(POPPY)) crop = FloweraryBlocks.POPPIES_PLANTS.get(color).get();
         else if (block.equals(BLUE_ORCHID)) crop = FloweraryBlocks.CLEMATIS_PLANTS.get(color).get();
         else if (block.equals(ALLIUM)) crop = FloweraryBlocks.ALLIUM_PLANTS.get(color).get();
         else if (block.equals(AZURE_BLUET)) crop = FloweraryBlocks.CLOVER_PLANTS.get(color).get();

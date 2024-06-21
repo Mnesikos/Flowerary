@@ -21,7 +21,7 @@ public class Flowerary {
     public static final ItemGroup FLOWERARY_GROUP = new ItemGroup(MOD_ID + ".flowerary_group") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(FloweraryBlocks.POPPY.get("pink").get());
+            return new ItemStack(FloweraryBlocks.POPPIES.get("pink").get());
         }
     };
 

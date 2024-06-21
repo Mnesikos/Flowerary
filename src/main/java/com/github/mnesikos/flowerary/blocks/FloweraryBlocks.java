@@ -21,31 +21,11 @@ import java.util.function.Supplier;
 public final class FloweraryBlocks {
     public static final DeferredRegister<Block> REGISTRAR = DeferredRegister.create(ForgeRegistries.BLOCKS, Flowerary.MOD_ID);
 
-    // CROPS
-    public static final Map<String, RegistryObject<Block>> ALLIUM_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> BOUGAINVILLEA_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> CLEMATIS_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> CLOVER_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> DAISY_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> DANDELION_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> DIANTHUS_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> FAIRY_ROSE_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> FOXGLOVE_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> HYACINTH_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> JASMINE_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> POPPY_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> ROSE_BUSHLET_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> SUNFLOWER_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> BLAZING_STAR_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> BROMELIAD_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> HIBISCUS_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> IMPALA_LILY_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> LANTANAS_PLANTS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> WILDFLOWER_PLANTS = new HashMap<>();
-
     // FLOWERS
     public static final Map<String, RegistryObject<Block>> ALLIUM = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> BLAZING_STAR = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> BOUGAINVILLEA = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> BROMELIAD = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CLEMATIS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CLOVER = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> DAISY = new HashMap<>();
@@ -53,16 +33,14 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> DIANTHUS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> FAIRY_ROSE = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> FOXGLOVE = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> HIBISCUS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> HYACINTH = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> IMPALA_LILY = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> JASMINE = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> LANTANAS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POPPY = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> ROSE_BUSHLET = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> SUNFLOWER = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> BLAZING_STAR = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> BROMELIAD = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> HIBISCUS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> IMPALA_LILY = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> LANTANAS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> WILDFLOWER = new HashMap<>();
 
     // POTTED FLOWERS
@@ -71,6 +49,28 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> POTTED_DANDELION = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_FAIRY_ROSE = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_HYACINTH = new HashMap<>();
+
+    // CROPS
+    public static final Map<String, RegistryObject<Block>> ALLIUM_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> BLAZING_STAR_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> BOUGAINVILLEA_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> BROMELIAD_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> CLEMATIS_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> CLOVER_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> DAISY_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> DANDELION_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> DIANTHUS_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> FAIRY_ROSE_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> FOXGLOVE_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> HIBISCUS_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> HYACINTH_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> IMPALA_LILY_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> JASMINE_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> LANTANAS_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> POPPY_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> ROSE_BUSHLET_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> SUNFLOWER_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> WILDFLOWER_PLANTS = new HashMap<>();
 
     public static final RegistryObject<Block> BLACK_CANDLE = registerWithItem("black_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> BLUE_CANDLE = registerWithItem("blue_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
@@ -115,7 +115,9 @@ public final class FloweraryBlocks {
     static {
         for (String color : Flowerary.COLORS_LIST) {
             ALLIUM_PLANTS.put(color, REGISTRAR.register(color + "_allium_plant", () -> new FlowerCropBlock(FloweraryItems.ALLIUM_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            BLAZING_STAR_PLANTS.put(color, REGISTRAR.register(color + "_blazing_star_plant", () -> new FlowerCropBlock(FloweraryItems.BLAZING_STAR_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             BOUGAINVILLEA_PLANTS.put(color, REGISTRAR.register(color + "_bougainvillea_plant", () -> new BlockFlowerVineCrop(FloweraryItems.BOUGAINVILLEA_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            BROMELIAD_PLANTS.put(color, REGISTRAR.register(color + "_bromeliad_plant", () -> new FlowerCropBlock(FloweraryItems.BROMELIAD_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             CLEMATIS_PLANTS.put(color, REGISTRAR.register(color + "_clematis_plant", () -> new BlockFlowerVineCrop(FloweraryItems.CLEMATIS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             CLOVER_PLANTS.put(color, REGISTRAR.register(color + "_clover_plant", () -> new FlowerCropBlock(FloweraryItems.CLOVER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             DAISY_PLANTS.put(color, REGISTRAR.register(color + "_daisy_plant", () -> new FlowerCropBlock(FloweraryItems.DAISY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
@@ -123,20 +125,20 @@ public final class FloweraryBlocks {
             DIANTHUS_PLANTS.put(color, REGISTRAR.register(color + "_dianthus_plant", () -> new FlowerCropBlock(FloweraryItems.DIANTHUS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             FAIRY_ROSE_PLANTS.put(color, REGISTRAR.register(color + "_fairy_rose_plant", () -> new FlowerCropBlock(FloweraryItems.FAIRY_ROSE_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             FOXGLOVE_PLANTS.put(color, REGISTRAR.register(color + "_foxglove_plant", () -> new FlowerCropBlock(FloweraryItems.FOXGLOVE_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            HIBISCUS_PLANTS.put(color, REGISTRAR.register(color + "_hibiscus_plant", () -> new FlowerCropBlock(FloweraryItems.HIBISCUS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             HYACINTH_PLANTS.put(color, REGISTRAR.register(color + "_hyacinth_plant", () -> new FlowerCropBlock(FloweraryItems.HYACINTH_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            IMPALA_LILY_PLANTS.put(color, REGISTRAR.register(color + "_impala_lily_plant", () -> new FlowerCropBlock(FloweraryItems.IMPALA_LILY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             JASMINE_PLANTS.put(color, REGISTRAR.register(color + "_jasmine_plant", () -> new BlockFlowerVineCrop(FloweraryItems.JASMINE_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            LANTANAS_PLANTS.put(color, REGISTRAR.register(color + "_lantanas_plant", () -> new FlowerCropBlock(FloweraryItems.LANTANAS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             POPPY_PLANTS.put(color, REGISTRAR.register(color + "_poppy_plant", () -> new FlowerCropBlock(FloweraryItems.POPPY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             ROSE_BUSHLET_PLANTS.put(color, REGISTRAR.register(color + "_rose_bushlet_plant", () -> new FlowerCropBlock(FloweraryItems.ROSE_BUSHLET_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             SUNFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_sunflower_plant", () -> new FlowerCropBlock(FloweraryItems.SUNFLOWER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            BLAZING_STAR_PLANTS.put(color, REGISTRAR.register(color + "_blazing_star_plant", () -> new FlowerCropBlock(FloweraryItems.BLAZING_STAR_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            BROMELIAD_PLANTS.put(color, REGISTRAR.register(color + "_bromeliad_plant", () -> new FlowerCropBlock(FloweraryItems.BROMELIAD_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            HIBISCUS_PLANTS.put(color, REGISTRAR.register(color + "_hibiscus_plant", () -> new FlowerCropBlock(FloweraryItems.HIBISCUS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            IMPALA_LILY_PLANTS.put(color, REGISTRAR.register(color + "_impala_lily_plant", () -> new FlowerCropBlock(FloweraryItems.IMPALA_LILY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            LANTANAS_PLANTS.put(color, REGISTRAR.register(color + "_lantanas_plant", () -> new FlowerCropBlock(FloweraryItems.LANTANAS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             WILDFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_wildflower_plant", () -> new FlowerCropBlock(FloweraryItems.WILDFLOWER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
 
             ALLIUM.put(color, registerWithItem(color + "_allium", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 14.0D, 10.0D))));
+            BLAZING_STAR.put(color, registerWithItem(color + "_blazing_star", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D))));
             BOUGAINVILLEA.put(color, registerWithItem(color + "_bougainvillea", () -> new BlockVineFlower(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            BROMELIAD.put(color, registerWithItem(color + "_bromeliad", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D))));
             CLEMATIS.put(color, registerWithItem(color + "_clematis", () -> new BlockVineFlower(AbstractBlock.Properties.copy(Blocks.POPPY))));
             CLOVER.put(color, registerWithItem(color + "_clover", () -> new BlockFlowerCarpet(AbstractBlock.Properties.copy(Blocks.POPPY))));
             DAISY.put(color, registerWithItem(color + "_daisy", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 9.0D, 10.0D))));
@@ -144,17 +146,15 @@ public final class FloweraryBlocks {
             DIANTHUS.put(color, registerWithItem(color + "_dianthus", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 5.0D, 13.0D))));
             FAIRY_ROSE.put(color, registerWithItem(color + "_fairy_rose", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 13.0D, 10.0D))));
             FOXGLOVE.put(color, registerWithItem(color + "_foxglove", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D))));
+            HIBISCUS.put(color, registerWithItem(color + "_hibiscus", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
             HYACINTH.put(color, registerWithItem(color + "_hyacinth", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D))));
+            IMPALA_LILY.put(color, registerWithItem(color + "_impala_lily", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D))));
             JASMINE.put(color, registerWithItem(color + "_jasmine", () -> new BlockVineFlower(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            LANTANAS.put(color, registerWithItem(color + "_lantanas", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
             POPPY.put(color, registerWithItem(color + "_poppy", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
             ROSE_BUSHLET.put(color, registerWithItem(color + "_rose_bushlet", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
             SUNFLOWER.put(color, registerWithItem(color + "_sunflower", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 16.0D, 10.0D))));
-            BLAZING_STAR.put(color, registerWithItem(color + "_blazing_star", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D))));
-            BROMELIAD.put(color, registerWithItem(color + "_bromeliad", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D))));
-            HIBISCUS.put(color, registerWithItem(color + "_hibiscus", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D))));
-            IMPALA_LILY.put(color, registerWithItem(color + "_impala_lily", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D))));
-            LANTANAS.put(color, registerWithItem(color + "_lantanas", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D))));
-            WILDFLOWER.put(color, registerWithItem(color + "_wildflower", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D))));
+            WILDFLOWER.put(color, registerWithItem(color + "_wildflower", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
 
             POTTED_ALLIUM.put(color, REGISTRAR.register("potted_" + color + "_allium", () -> new FlowerPotBlock(FloweraryBlocks.ALLIUM.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
             POTTED_DAISY.put(color, REGISTRAR.register("potted_" + color + "_daisy", () -> new FlowerPotBlock(FloweraryBlocks.DAISY.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "white_dye",
+  "ingredients": [
+    {
+      "item": "flowerary:white_cornflower"
+    }
+  ],
+  "result": {
+    "item": "minecraft:white_dye"
+  }
+}

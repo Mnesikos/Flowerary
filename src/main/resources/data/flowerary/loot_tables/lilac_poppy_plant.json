@@ -12,17 +12,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "flowerary:lilac_poppies_plant",
+                  "block": "flowerary:lilac_poppy_plant",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "flowerary:lilac_poppies"
+              "name": "flowerary:lilac_poppy"
             },
             {
               "type": "minecraft:item",
-              "name": "flowerary:lilac_poppies_seeds"
+              "name": "flowerary:lilac_poppy_seeds"
             }
           ]
         }
@@ -44,13 +44,13 @@
               }
             }
           ],
-          "name": "flowerary:lilac_poppies_seeds"
+          "name": "flowerary:lilac_poppy_seeds"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "flowerary:lilac_poppies_plant",
+          "block": "flowerary:lilac_poppy_plant",
           "properties": {
             "age": "7"
           }

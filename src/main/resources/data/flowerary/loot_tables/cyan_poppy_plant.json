@@ -12,17 +12,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "flowerary:cyan_poppies_plant",
+                  "block": "flowerary:cyan_poppy_plant",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "flowerary:cyan_poppies"
+              "name": "flowerary:cyan_poppy"
             },
             {
               "type": "minecraft:item",
-              "name": "flowerary:cyan_poppies_seeds"
+              "name": "flowerary:cyan_poppy_seeds"
             }
           ]
         }
@@ -44,13 +44,13 @@
               }
             }
           ],
-          "name": "flowerary:cyan_poppies_seeds"
+          "name": "flowerary:cyan_poppy_seeds"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "flowerary:cyan_poppies_plant",
+          "block": "flowerary:cyan_poppy_plant",
           "properties": {
             "age": "7"
           }

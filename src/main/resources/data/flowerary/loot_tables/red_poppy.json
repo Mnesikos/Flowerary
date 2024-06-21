@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "flowerary:red_poppies"
+          "name": "flowerary:red_poppy"
         }
       ],
       "conditions": [

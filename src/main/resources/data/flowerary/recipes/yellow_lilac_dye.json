@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "yellow_dye",
+  "ingredients": [
+    {
+      "item": "flowerary:yellow_lilac"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_dye"
+  }
+}

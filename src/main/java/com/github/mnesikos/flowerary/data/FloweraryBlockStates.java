@@ -1,8 +1,10 @@
 package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
+import com.github.mnesikos.flowerary.blocks.DoubleFlowerCropBlock;
 import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.data.DataGenerator;
@@ -121,26 +123,32 @@ public class FloweraryBlockStates extends BlockStateProvider {
     }
 
     public void doubleCrop(Block block, String color, String plant) {
-        ModelFile stage0 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage0"));
-        ModelFile stage1 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage1"));
-        ModelFile stage2 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage2"));
-        ModelFile stage3 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage3"));
-        ModelFile stage7 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_" + plant + "_bottom"));
+        ModelFile stage0Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage0_bottom"));
+        ModelFile stage1Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage1_bottom"));
+        ModelFile stage2Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage2_bottom"));
+        ModelFile stage3Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage3_bottom"));
+        ModelFile stage7Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_" + plant + "_bottom"));
+        ModelFile stage0Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage0_top"));
+        ModelFile stage1Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage1_top"));
+        ModelFile stage2Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage2_top"));
+        ModelFile stage3Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage3_top"));
+        ModelFile stage7Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_" + plant + "_top"));
         getVariantBuilder(block).forAllStates(state -> {
+            DoubleBlockHalf segment = state.getValue(DoubleFlowerCropBlock.SEGMENT);
             switch (state.getValue(CropsBlock.AGE)) {
                 case 0:
-                    return ConfiguredModel.builder().modelFile(stage0).build();
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage0Lower : stage0Upper).build();
                 case 1:
                 case 2:
-                    return ConfiguredModel.builder().modelFile(stage1).build();
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage1Lower : stage1Upper).build();
                 case 3:
                 case 4:
-                    return ConfiguredModel.builder().modelFile(stage2).build();
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage2Lower : stage2Upper).build();
                 case 5:
                 case 6:
-                    return ConfiguredModel.builder().modelFile(stage3).build();
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage3Lower : stage3Upper).build();
                 case 7:
-                    return ConfiguredModel.builder().modelFile(stage7).build();
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage7Lower : stage7Upper).build();
                 default:
                     throw new IllegalStateException("Unexpected value: " + state.getValue(CropsBlock.AGE));
             }

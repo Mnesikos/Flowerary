@@ -1,27 +1,51 @@
 {
   "variants": {
-    "age=0": {
-      "model": "flowerary:block/foxglove_stage0"
+    "age=0,half=upper": {
+      "model": "flowerary:block/foxglove_stage0_top"
     },
-    "age=1": {
-      "model": "flowerary:block/foxglove_stage1"
+    "age=1,half=upper": {
+      "model": "flowerary:block/foxglove_stage1_top"
     },
-    "age=2": {
-      "model": "flowerary:block/foxglove_stage1"
+    "age=2,half=upper": {
+      "model": "flowerary:block/foxglove_stage1_top"
     },
-    "age=3": {
-      "model": "flowerary:block/foxglove_stage2"
+    "age=3,half=upper": {
+      "model": "flowerary:block/foxglove_stage2_top"
     },
-    "age=4": {
-      "model": "flowerary:block/foxglove_stage2"
+    "age=4,half=upper": {
+      "model": "flowerary:block/foxglove_stage2_top"
     },
-    "age=5": {
-      "model": "flowerary:block/foxglove_stage3"
+    "age=5,half=upper": {
+      "model": "flowerary:block/foxglove_stage3_top"
     },
-    "age=6": {
-      "model": "flowerary:block/foxglove_stage3"
+    "age=6,half=upper": {
+      "model": "flowerary:block/foxglove_stage3_top"
     },
-    "age=7": {
+    "age=7,half=upper": {
+      "model": "flowerary:block/cyan_foxglove_top"
+    },
+    "age=0,half=lower": {
+      "model": "flowerary:block/foxglove_stage0_bottom"
+    },
+    "age=1,half=lower": {
+      "model": "flowerary:block/foxglove_stage1_bottom"
+    },
+    "age=2,half=lower": {
+      "model": "flowerary:block/foxglove_stage1_bottom"
+    },
+    "age=3,half=lower": {
+      "model": "flowerary:block/foxglove_stage2_bottom"
+    },
+    "age=4,half=lower": {
+      "model": "flowerary:block/foxglove_stage2_bottom"
+    },
+    "age=5,half=lower": {
+      "model": "flowerary:block/foxglove_stage3_bottom"
+    },
+    "age=6,half=lower": {
+      "model": "flowerary:block/foxglove_stage3_bottom"
+    },
+    "age=7,half=lower": {
       "model": "flowerary:block/cyan_foxglove_bottom"
     }
   }

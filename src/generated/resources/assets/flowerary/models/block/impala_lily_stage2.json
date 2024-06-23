@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "flowerary:block/impala_lily_stage2"
-  }
-}

@@ -45,27 +45,27 @@ public class FloweraryBlockModels extends BlockModelProvider {
 
         plant("allium");
         plant("azure_bluet");
-        plant("blazing_star");
+        doublePlant("blazing_star");
         plant("bromeliad");
         plant("cornflower");
         plant("daisy");
         plant("dandelion");
         plant("dianthus");
         plant("fairy_rose");
-        plant("foxglove");
+        doublePlant("foxglove");
         plant("hibiscus");
         plant("hyacinth");
-        plant("impala_lily");
+        doublePlant("impala_lily");
         plant("lantanas");
-        plant("lilac");
+        doublePlant("lilac");
         plant("lily");
         plant("orchid");
-        plant("peony");
+        doublePlant("peony");
         plant("poppy");
         plant("poppies");
-        plant("rose_bush");
+        doublePlant("rose_bush");
         plant("rose_bushlet");
-        plant("sunflower");
+        sunflowerPlant("sunflower");
         plant("tulip");
         plant("wildflower");
         plant("wither_rose");
@@ -81,8 +81,8 @@ public class FloweraryBlockModels extends BlockModelProvider {
     }
 
     public void sunflower(String name, ResourceLocation sunflower) {
-        singleTexture(name + "_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"), "cross", sunflower);
         singleTexture(name + "_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "cross", mcLoc("block/sunflower_bottom"));
+        singleTexture(name + "_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"), "front", sunflower);
     }
 
     public void plant(String crop) {
@@ -90,5 +90,39 @@ public class FloweraryBlockModels extends BlockModelProvider {
         cross(crop + "_stage1", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage1"));
         cross(crop + "_stage2", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage2"));
         cross(crop + "_stage3", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage3"));
+    }
+
+    public void doublePlant(String crop) {
+        cross(crop + "_stage0_bottom", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage0_bottom"));
+        cross(crop + "_stage1_bottom", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage1_bottom"));
+        cross(crop + "_stage2_bottom", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage2_bottom"));
+        cross(crop + "_stage3_bottom", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage3_bottom"));
+        cross(crop + "_stage0_top", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage0_top"));
+        cross(crop + "_stage1_top", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage1_top"));
+        cross(crop + "_stage2_top", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage2_top"));
+        cross(crop + "_stage3_top", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage3_top"));
+    }
+
+    public void sunflowerPlant(String crop) {
+        singleTexture(crop + "_stage0_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "cross", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage0_bottom"));
+        singleTexture(crop + "_stage1_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "cross", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage1_bottom"));
+        singleTexture(crop + "_stage2_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "cross", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage2_bottom"));
+        singleTexture(crop + "_stage3_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "cross", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage3_bottom"));
+        withExistingParent(crop + "_stage0_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"))
+                .texture("cross", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage0_top"))
+                .texture("back", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage0_top"))
+                .texture("front", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage0_top"));
+        withExistingParent(crop + "_stage1_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"))
+                .texture("cross", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage1_top"))
+                .texture("back", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage1_top"))
+                .texture("front", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage1_top"));
+        withExistingParent(crop + "_stage2_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"))
+                .texture("cross", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage2_top"))
+                .texture("back", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage2_top"))
+                .texture("front", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage2_top"));
+        withExistingParent(crop + "_stage3_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"))
+                .texture("cross", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage3_top"))
+                .texture("back", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage3_top"))
+                .texture("front", new ResourceLocation(Flowerary.MOD_ID, BLOCK_FOLDER + "/" + crop + "_stage3_top"));
     }
 }

@@ -34,6 +34,7 @@ public final class FloweraryItems {
     public static final RegistryObject<Item> PEONY_POLLEN_JAR = REGISTRAR.register("peony_pollen_jar", () -> new PollenJarItem("pink", new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
 
     public static final Map<String, RegistryObject<Item>> ALLIUM_SEEDS = new HashMap<>();
+    public static final Map<String, RegistryObject<Item>> ALYSSUM_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> AZURE_BLUET_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> BLAZING_STAR_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> BOUGAINVILLEA_SEEDS = new HashMap<>();
@@ -69,6 +70,7 @@ public final class FloweraryItems {
     static {
         for (String color : Flowerary.COLORS_LIST) {
             ALLIUM_SEEDS.put(color, REGISTRAR.register(color + "_allium_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.ALLIUM_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            ALYSSUM_SEEDS.put(color, REGISTRAR.register(color + "_alyssum_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.ALYSSUM_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             AZURE_BLUET_SEEDS.put(color, REGISTRAR.register(color + "_azure_bluet_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.AZURE_BLUET_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             BLAZING_STAR_SEEDS.put(color, REGISTRAR.register(color + "_blazing_star_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.BLAZING_STAR_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             BOUGAINVILLEA_SEEDS.put(color, REGISTRAR.register(color + "_bougainvillea_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.BOUGAINVILLEA_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));

@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "flowerary:block/cyan_clover"
-  }
+  "parent": "flowerary:block/cyan_clover"
 }

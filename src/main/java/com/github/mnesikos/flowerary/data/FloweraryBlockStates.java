@@ -25,6 +25,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
     protected void registerStatesAndModels() {
         for (String color : Flowerary.COLORS_LIST) {
             block(FloweraryBlocks.ALLIUM.get(color).get());
+            block(FloweraryBlocks.ALYSSUM.get(color).get());
             block(FloweraryBlocks.AZURE_BLUET.get(color).get());
             doubleBlock(FloweraryBlocks.BLAZING_STAR.get(color).get());
             block(FloweraryBlocks.BROMELIAD.get(color).get());
@@ -68,6 +69,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             block(FloweraryBlocks.POTTED_WITHER_ROSES.get(color).get());
 
             crop(FloweraryBlocks.ALLIUM_PLANTS.get(color).get(), color, "allium");
+            crop(FloweraryBlocks.ALYSSUM_PLANTS.get(color).get(), color, "alyssum");
             crop(FloweraryBlocks.AZURE_BLUET_PLANTS.get(color).get(), color, "azure_bluet");
             doubleCrop(FloweraryBlocks.BLAZING_STAR_PLANTS.get(color).get(), color, "blazing_star");
             crop(FloweraryBlocks.BROMELIAD_PLANTS.get(color).get(), color, "bromeliad");
@@ -104,19 +106,19 @@ public class FloweraryBlockStates extends BlockStateProvider {
     }
 
     public void doubleBlock(DoublePlantBlock block) {
-        ModelFile crossLower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + Objects.requireNonNull(block.getRegistryName()).getPath() + "_bottom"));
-        ModelFile crossUpper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + block.getRegistryName().getPath() + "_top"));
+        ModelFile crossLower = models().getExistingFile(modLoc("block/" + Objects.requireNonNull(block.getRegistryName()).getPath() + "_bottom"));
+        ModelFile crossUpper = models().getExistingFile(modLoc("block/" + block.getRegistryName().getPath() + "_top"));
         getVariantBuilder(block).forAllStatesExcept(state -> ConfiguredModel.builder()
                 .modelFile(state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.LOWER ? crossLower : crossUpper)
                 .build());
     }
 
     public void crop(Block block, String color, String plant) {
-        ModelFile stage0 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage0"));
-        ModelFile stage1 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage1"));
-        ModelFile stage2 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage2"));
-        ModelFile stage3 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage3"));
-        ModelFile stage7 = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_" + plant));
+        ModelFile stage0 = models().getExistingFile(modLoc("block/" + plant + "_stage0"));
+        ModelFile stage1 = models().getExistingFile(modLoc("block/" + plant + "_stage1"));
+        ModelFile stage2 = models().getExistingFile(modLoc("block/" + plant + "_stage2"));
+        ModelFile stage3 = models().getExistingFile(modLoc("block/" + plant + "_stage3"));
+        ModelFile stage7 = models().getExistingFile(modLoc("block/" + color + "_" + plant));
         getVariantBuilder(block).forAllStates(state -> {
             switch (state.getValue(CropsBlock.AGE)) {
                 case 0:
@@ -139,16 +141,16 @@ public class FloweraryBlockStates extends BlockStateProvider {
     }
 
     public void doubleCrop(Block block, String color, String plant) {
-        ModelFile stage0Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage0_bottom"));
-        ModelFile stage1Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage1_bottom"));
-        ModelFile stage2Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage2_bottom"));
-        ModelFile stage3Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage3_bottom"));
-        ModelFile stage7Lower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_" + plant + "_bottom"));
-        ModelFile stage0Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage0_top"));
-        ModelFile stage1Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage1_top"));
-        ModelFile stage2Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage2_top"));
-        ModelFile stage3Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + plant + "_stage3_top"));
-        ModelFile stage7Upper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_" + plant + "_top"));
+        ModelFile stage0Lower = models().getExistingFile(modLoc("block/" + plant + "_stage0_bottom"));
+        ModelFile stage1Lower = models().getExistingFile(modLoc("block/" + plant + "_stage1_bottom"));
+        ModelFile stage2Lower = models().getExistingFile(modLoc("block/" + plant + "_stage2_bottom"));
+        ModelFile stage3Lower = models().getExistingFile(modLoc("block/" + plant + "_stage3_bottom"));
+        ModelFile stage7Lower = models().getExistingFile(modLoc("block/" + color + "_" + plant + "_bottom"));
+        ModelFile stage0Upper = models().getExistingFile(modLoc("block/" + plant + "_stage0_top"));
+        ModelFile stage1Upper = models().getExistingFile(modLoc("block/" + plant + "_stage1_top"));
+        ModelFile stage2Upper = models().getExistingFile(modLoc("block/" + plant + "_stage2_top"));
+        ModelFile stage3Upper = models().getExistingFile(modLoc("block/" + plant + "_stage3_top"));
+        ModelFile stage7Upper = models().getExistingFile(modLoc("block/" + color + "_" + plant + "_top"));
         getVariantBuilder(block).forAllStates(state -> {
             DoubleBlockHalf segment = state.getValue(DoubleFlowerCropBlock.SEGMENT);
             switch (state.getValue(CropsBlock.AGE)) {

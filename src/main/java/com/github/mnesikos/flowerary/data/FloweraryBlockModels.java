@@ -15,6 +15,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
     protected void registerModels() {
         for (String color : Flowerary.COLORS_LIST) {
             cross(color + "_allium", modLoc(BLOCK_FOLDER + "/" + color + "_allium"));
+            alyssum(color + "_alyssum", modLoc(BLOCK_FOLDER + "/" + color + "_alyssum"));
             cross(color + "_azure_bluet", modLoc(BLOCK_FOLDER + "/" + color + "_azure_bluet"));
             doubleCross(color + "_blazing_star", modLoc(BLOCK_FOLDER + "/" + color + "_blazing_star"));
             cross(color + "_bromeliad", modLoc(BLOCK_FOLDER + "/" + color + "_bromeliad"));
@@ -59,6 +60,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
         }
 
         plant("allium");
+        alyssumPlant("alyssum");
         plant("azure_bluet");
         doublePlant("blazing_star");
         plant("bromeliad");
@@ -97,6 +99,10 @@ public class FloweraryBlockModels extends BlockModelProvider {
         singleTexture(name, modLoc(BLOCK_FOLDER + "/flower_carpet"), "1", clover);
     }
 
+    public void alyssum(String name, ResourceLocation alyssum) {
+        singleTexture(name, modLoc(BLOCK_FOLDER + "/alyssum"), "1", alyssum);
+    }
+
     public void sunflower(String name, ResourceLocation sunflower) {
         singleTexture(name + "_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "block", mcLoc("block/sunflower_bottom"));
         singleTexture(name + "_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"), "front", sunflower);
@@ -122,6 +128,13 @@ public class FloweraryBlockModels extends BlockModelProvider {
         cross(crop + "_stage1_top", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1_top"));
         cross(crop + "_stage2_top", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2_top"));
         cross(crop + "_stage3_top", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3_top"));
+    }
+
+    public void alyssumPlant(String crop) {
+        singleTexture(crop + "_stage0", modLoc(BLOCK_FOLDER + "/alyssum"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0"));
+        singleTexture(crop + "_stage1", modLoc(BLOCK_FOLDER + "/alyssum"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1"));
+        singleTexture(crop + "_stage2", modLoc(BLOCK_FOLDER + "/alyssum"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2"));
+        singleTexture(crop + "_stage3", modLoc(BLOCK_FOLDER + "/alyssum"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3"));
     }
 
     public void sunflowerPlant(String crop) {

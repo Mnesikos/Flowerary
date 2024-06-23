@@ -4,7 +4,6 @@ import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.blocks.DoubleFlowerCropBlock;
 import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.data.DataGenerator;
@@ -24,34 +23,47 @@ public class FloweraryBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        for (String color : Flowerary.COLORS_LIST) { // todo: potteds
-            cross(FloweraryBlocks.ALLIUM.get(color).get());
-            cross(FloweraryBlocks.AZURE_BLUET.get(color).get());
-            doubleCross(FloweraryBlocks.BLAZING_STAR.get(color).get());
-            cross(FloweraryBlocks.BROMELIAD.get(color).get());
-            cross(FloweraryBlocks.CLOVER.get(color).get());
-            cross(FloweraryBlocks.CORNFLOWER.get(color).get());
-            cross(FloweraryBlocks.DAISY.get(color).get());
-            cross(FloweraryBlocks.DANDELION.get(color).get());
-            cross(FloweraryBlocks.DIANTHUS.get(color).get());
-            cross(FloweraryBlocks.FAIRY_ROSE.get(color).get());
-            doubleCross(FloweraryBlocks.FOXGLOVE.get(color).get());
-            cross(FloweraryBlocks.HIBISCUS.get(color).get());
-            cross(FloweraryBlocks.HYACINTH.get(color).get());
-            doubleCross(FloweraryBlocks.IMPALA_LILY.get(color).get());
-            cross(FloweraryBlocks.LANTANAS.get(color).get());
-            doubleCross(FloweraryBlocks.LILAC.get(color).get());
-            cross(FloweraryBlocks.LILY.get(color).get());
-            cross(FloweraryBlocks.ORCHID.get(color).get());
-            doubleCross(FloweraryBlocks.PEONY.get(color).get());
-            cross(FloweraryBlocks.POPPY.get(color).get());
-            cross(FloweraryBlocks.POPPIES.get(color).get());
-            doubleCross(FloweraryBlocks.ROSE_BUSH.get(color).get());
-            cross(FloweraryBlocks.ROSE_BUSHLET.get(color).get());
-            doubleCross(FloweraryBlocks.SUNFLOWER.get(color).get());
-            cross(FloweraryBlocks.TULIP.get(color).get());
-            cross(FloweraryBlocks.WILDFLOWER.get(color).get());
-            cross(FloweraryBlocks.WITHER_ROSE.get(color).get());
+        for (String color : Flowerary.COLORS_LIST) {
+            block(FloweraryBlocks.ALLIUM.get(color).get());
+            block(FloweraryBlocks.AZURE_BLUET.get(color).get());
+            doubleBlock(FloweraryBlocks.BLAZING_STAR.get(color).get());
+            block(FloweraryBlocks.BROMELIAD.get(color).get());
+            block(FloweraryBlocks.CLOVER.get(color).get());
+            block(FloweraryBlocks.CORNFLOWER.get(color).get());
+            block(FloweraryBlocks.DAISY.get(color).get());
+            block(FloweraryBlocks.DANDELION.get(color).get());
+            block(FloweraryBlocks.DIANTHUS.get(color).get());
+            block(FloweraryBlocks.FAIRY_ROSE.get(color).get());
+            doubleBlock(FloweraryBlocks.FOXGLOVE.get(color).get());
+            block(FloweraryBlocks.HIBISCUS.get(color).get());
+            block(FloweraryBlocks.HYACINTH.get(color).get());
+            doubleBlock(FloweraryBlocks.IMPALA_LILY.get(color).get());
+            block(FloweraryBlocks.LANTANAS.get(color).get());
+            doubleBlock(FloweraryBlocks.LILAC.get(color).get());
+            block(FloweraryBlocks.LILY.get(color).get());
+            block(FloweraryBlocks.ORCHID.get(color).get());
+            doubleBlock(FloweraryBlocks.PEONY.get(color).get());
+            block(FloweraryBlocks.POPPY.get(color).get());
+            block(FloweraryBlocks.POPPIES.get(color).get());
+            doubleBlock(FloweraryBlocks.ROSE_BUSH.get(color).get());
+            block(FloweraryBlocks.ROSE_BUSHLET.get(color).get());
+            doubleBlock(FloweraryBlocks.SUNFLOWER.get(color).get());
+            block(FloweraryBlocks.TULIP.get(color).get());
+            block(FloweraryBlocks.WILDFLOWER.get(color).get());
+            block(FloweraryBlocks.WITHER_ROSE.get(color).get());
+
+            block(FloweraryBlocks.POTTED_ALLIUMS.get(color).get());
+            block(FloweraryBlocks.POTTED_AZURE_BLUETS.get(color).get());
+            block(FloweraryBlocks.POTTED_CORNFLOWERS.get(color).get());
+            block(FloweraryBlocks.POTTED_DAISYS.get(color).get());
+            block(FloweraryBlocks.POTTED_DANDELIONS.get(color).get());
+            block(FloweraryBlocks.POTTED_FAIRY_ROSES.get(color).get());
+            block(FloweraryBlocks.POTTED_HYACINTHS.get(color).get());
+            block(FloweraryBlocks.POTTED_LILYS.get(color).get());
+            block(FloweraryBlocks.POTTED_ORCHIDS.get(color).get());
+            block(FloweraryBlocks.POTTED_POPPYS.get(color).get());
+            block(FloweraryBlocks.POTTED_TULIPS.get(color).get());
+            block(FloweraryBlocks.POTTED_WITHER_ROSES.get(color).get());
 
             crop(FloweraryBlocks.ALLIUM_PLANTS.get(color).get(), color, "allium");
             crop(FloweraryBlocks.AZURE_BLUET_PLANTS.get(color).get(), color, "azure_bluet");
@@ -82,12 +94,12 @@ public class FloweraryBlockStates extends BlockStateProvider {
         }
     }
 
-    public void cross(Block block) {
-        ModelFile cross = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + Objects.requireNonNull(block.getRegistryName()).getPath()));
-        getVariantBuilder(block).forAllStatesExcept(state -> ConfiguredModel.builder().modelFile(cross).build());
+    public void block(Block block) {
+        ModelFile model = models().getExistingFile(block.getRegistryName());
+        getVariantBuilder(block).partialState().addModels(new ConfiguredModel(model));
     }
 
-    public void doubleCross(DoublePlantBlock block) {
+    public void doubleBlock(DoublePlantBlock block) {
         ModelFile crossLower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + Objects.requireNonNull(block.getRegistryName()).getPath() + "_bottom"));
         ModelFile crossUpper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + block.getRegistryName().getPath() + "_top"));
         getVariantBuilder(block).forAllStatesExcept(state -> ConfiguredModel.builder()

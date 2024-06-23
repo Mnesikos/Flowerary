@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/sunflower_top",
   "textures": {
-    "cross": "flowerary:block/sunflower_stage1_top",
+    "block": "flowerary:block/sunflower_stage1_top",
     "back": "flowerary:block/sunflower_stage1_top",
     "front": "flowerary:block/sunflower_stage1_top"
   }

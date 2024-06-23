@@ -57,11 +57,13 @@ public class EmptyPollenJarItem extends Item {
             PlayerEntity player = context.getPlayer();
             world.playSound(player, pos, SoundEvents.BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-            ItemStack jar = context.getItemInHand();
-            ItemStack pollen = crop.getDefaultInstance();
-            player.awardStat(Stats.ITEM_USED.get(this));
-            if (!player.abilities.instabuild) jar.shrink(1);
-            if (!player.inventory.add(pollen)) player.drop(pollen, false);
+            if (!world.isClientSide) {
+                ItemStack jar = context.getItemInHand();
+                ItemStack pollen = crop.getDefaultInstance();
+                player.awardStat(Stats.ITEM_USED.get(this));
+                if (!player.abilities.instabuild) jar.shrink(1);
+                if (!player.inventory.add(pollen)) player.drop(pollen, false);
+            }
 
             double d0 = 1.03125D;
             for (int i = 0; i < 10; i++) {

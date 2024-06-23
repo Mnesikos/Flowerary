@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "flowerary:item/sunflower_seeds"
+    "layer0": "flowerary:item/sunflower_seeds",
+    "layer1": "flowerary:item/yellow_baggie"
   }
 }

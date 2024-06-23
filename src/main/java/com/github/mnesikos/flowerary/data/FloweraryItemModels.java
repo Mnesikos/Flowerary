@@ -12,24 +12,24 @@ public class FloweraryItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        singleTexture("empty_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/empty_pollen_jar"));
-        singleTexture("dandelion_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("poppy_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("orchid_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("allium_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("azure_bluet_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("red_tulip_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("orange_tulip_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("white_tulip_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("pink_tulip_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("daisy_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("cornflower_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("lily_of_the_valley_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("wither_rose_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("sunflower_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("lilac_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("rose_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
-        singleTexture("peony_pollen_jar", mcLoc("item/generated"), "layer0", modLoc("item/pollen_jar"));
+        itemGenerated("empty_pollen_jar");
+        itemGenerated("dandelion_pollen_jar", "pollen_jar");
+        itemGenerated("poppy_pollen_jar", "pollen_jar");
+        itemGenerated("orchid_pollen_jar", "pollen_jar");
+        itemGenerated("allium_pollen_jar", "pollen_jar");
+        itemGenerated("azure_bluet_pollen_jar", "pollen_jar");
+        itemGenerated("red_tulip_pollen_jar", "pollen_jar");
+        itemGenerated("orange_tulip_pollen_jar", "pollen_jar");
+        itemGenerated("white_tulip_pollen_jar", "pollen_jar");
+        itemGenerated("pink_tulip_pollen_jar", "pollen_jar");
+        itemGenerated("daisy_pollen_jar", "pollen_jar");
+        itemGenerated("cornflower_pollen_jar", "pollen_jar");
+        itemGenerated("lily_of_the_valley_pollen_jar", "pollen_jar");
+        itemGenerated("wither_rose_pollen_jar", "pollen_jar");
+        itemGenerated("sunflower_pollen_jar", "pollen_jar");
+        itemGenerated("lilac_pollen_jar", "pollen_jar");
+        itemGenerated("rose_pollen_jar", "pollen_jar");
+        itemGenerated("peony_pollen_jar", "pollen_jar");
 
         withExistingParent("black_candle", modLoc("block/candles/black_candle_one"));
         withExistingParent("blue_candle", modLoc("block/candles/blue_candle_one"));
@@ -41,73 +41,95 @@ public class FloweraryItemModels extends ItemModelProvider {
         withExistingParent("white_candle", modLoc("block/candles/white_candle_one"));
 
         for (String color : Flowerary.COLORS_LIST) {
-            singleTexture(color + "_allium", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_allium"));
+            blockGenerated(color + "_allium");
             withExistingParent(color + "_alyssum", modLoc("block/" + color + "_alyssum"));
-            singleTexture(color + "_azure_bluet", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_azure_bluet"));
-            singleTexture(color + "_blazing_star", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_blazing_star_top"));
-            singleTexture(color + "_bougainvillea", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_bougainvillea"));
-            singleTexture(color + "_bromeliad", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_bromeliad"));
-            singleTexture(color + "_chicory", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_chicory"));
-            singleTexture(color + "_clematis", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_clematis"));
+            blockGenerated(color + "_azure_bluet");
+            blockGenerated(color + "_blazing_star", color + "_blazing_star_top");
+            blockGenerated(color + "_bougainvillea");
+            blockGenerated(color + "_bromeliad");
+            blockGenerated(color + "_chicory");
+            blockGenerated(color + "_clematis");
             withExistingParent(color + "_clover", modLoc("block/" + color + "_clover"));
-            singleTexture(color + "_cornflower", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_cornflower"));
-            singleTexture(color + "_daisy", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_daisy"));
-            singleTexture(color + "_dandelion", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_dandelion"));
-            singleTexture(color + "_dianthus", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_dianthus"));
-            singleTexture(color + "_fairy_rose", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_fairy_rose"));
-            singleTexture(color + "_foxglove", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_foxglove_top"));
-            singleTexture(color + "_hibiscus", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_hibiscus"));
-            singleTexture(color + "_hyacinth", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_hyacinth"));
-            singleTexture(color + "_impala_lily", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_impala_lily_top"));
-            singleTexture(color + "_jasmine", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_jasmine"));
-            singleTexture(color + "_lantanas", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_lantanas"));
-            singleTexture(color + "_lavender", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_lavender_top"));
-            singleTexture(color + "_lilac", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_lilac_top"));
-            singleTexture(color + "_lily", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_lily"));
-            singleTexture(color + "_orchid", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_orchid"));
-            singleTexture(color + "_peony", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_peony_top"));
-            singleTexture(color + "_poppy", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_poppy"));
-            singleTexture(color + "_poppies", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_poppies"));
-            singleTexture(color + "_rose_bush", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_rose_bush_top"));
-            singleTexture(color + "_rose_bushlet", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_rose_bushlet"));
-            singleTexture(color + "_sunflower", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_sunflower"));
-            singleTexture(color + "_tulip", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_tulip"));
-            singleTexture(color + "_wildflower", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_wildflower"));
-            singleTexture(color + "_wither_rose", mcLoc("item/generated"), "layer0", modLoc("block/" + color + "_wither_rose"));
+            blockGenerated(color + "_cornflower");
+            blockGenerated(color + "_daisy");
+            blockGenerated(color + "_dandelion");
+            blockGenerated(color + "_dianthus");
+            blockGenerated(color + "_fairy_rose");
+            blockGenerated(color + "_foxglove", color + "_foxglove_top");
+            blockGenerated(color + "_hibiscus");
+            blockGenerated(color + "_hyacinth");
+            blockGenerated(color + "_impala_lily", color + "_impala_lily_top");
+            blockGenerated(color + "_jasmine");
+            blockGenerated(color + "_lantanas");
+            blockGenerated(color + "_lavender", color + "_lavender_top");
+            blockGenerated(color + "_lilac", color + "_lilac_top");
+            blockGenerated(color + "_lily");
+            blockGenerated(color + "_orchid");
+            blockGenerated(color + "_peony", color + "_peony_top");
+            blockGenerated(color + "_poppy");
+            blockGenerated(color + "_poppies");
+            blockGenerated(color + "_rose_bush", color + "_rose_bush_top");
+            blockGenerated(color + "_rose_bushlet");
+            blockGenerated(color + "_sunflower");
+            blockGenerated(color + "_tulip");
+            blockGenerated(color + "_wildflower");
+            blockGenerated(color + "_wither_rose");
 
-            singleTexture(color + "_allium_seeds", mcLoc("item/generated"), "layer0", modLoc("item/allium_seeds"));
-            singleTexture(color + "_alyssum_seeds", mcLoc("item/generated"), "layer0", modLoc("item/alyssum_seeds"));
-            singleTexture(color + "_azure_bluet_seeds", mcLoc("item/generated"), "layer0", modLoc("item/azure_bluet_seeds"));
-            singleTexture(color + "_blazing_star_seeds", mcLoc("item/generated"), "layer0", modLoc("item/blazing_star_seeds"));
-            singleTexture(color + "_bougainvillea_seeds", mcLoc("item/generated"), "layer0", modLoc("item/bougainvillea_seeds"));
-            singleTexture(color + "_bromeliad_seeds", mcLoc("item/generated"), "layer0", modLoc("item/bromeliad_seeds"));
-            singleTexture(color + "_chicory_seeds", mcLoc("item/generated"), "layer0", modLoc("item/chicory_seeds"));
-            singleTexture(color + "_clematis_seeds", mcLoc("item/generated"), "layer0", modLoc("item/clematis_seeds"));
-            singleTexture(color + "_clover_seeds", mcLoc("item/generated"), "layer0", modLoc("item/clover_seeds"));
-            singleTexture(color + "_cornflower_seeds", mcLoc("item/generated"), "layer0", modLoc("item/cornflower_seeds"));
-            singleTexture(color + "_daisy_seeds", mcLoc("item/generated"), "layer0", modLoc("item/daisy_seeds"));
-            singleTexture(color + "_dandelion_seeds", mcLoc("item/generated"), "layer0", modLoc("item/dandelion_seeds"));
-            singleTexture(color + "_dianthus_seeds", mcLoc("item/generated"), "layer0", modLoc("item/dianthus_seeds"));
-            singleTexture(color + "_fairy_rose_seeds", mcLoc("item/generated"), "layer0", modLoc("item/fairy_rose_seeds"));
-            singleTexture(color + "_foxglove_seeds", mcLoc("item/generated"), "layer0", modLoc("item/foxglove_seeds"));
-            singleTexture(color + "_hibiscus_seeds", mcLoc("item/generated"), "layer0", modLoc("item/hibiscus_seeds"));
-            singleTexture(color + "_hyacinth_seeds", mcLoc("item/generated"), "layer0", modLoc("item/hyacinth_seeds"));
-            singleTexture(color + "_impala_lily_seeds", mcLoc("item/generated"), "layer0", modLoc("item/impala_lily_seeds"));
-            singleTexture(color + "_jasmine_seeds", mcLoc("item/generated"), "layer0", modLoc("item/jasmine_seeds"));
-            singleTexture(color + "_lantanas_seeds", mcLoc("item/generated"), "layer0", modLoc("item/lantanas_seeds"));
-            singleTexture(color + "_lavender_seeds", mcLoc("item/generated"), "layer0", modLoc("item/lavender_seeds"));
-            singleTexture(color + "_lilac_seeds", mcLoc("item/generated"), "layer0", modLoc("item/lilac_seeds"));
-            singleTexture(color + "_lily_seeds", mcLoc("item/generated"), "layer0", modLoc("item/lily_seeds"));
-            singleTexture(color + "_orchid_seeds", mcLoc("item/generated"), "layer0", modLoc("item/orchid_seeds"));
-            singleTexture(color + "_peony_seeds", mcLoc("item/generated"), "layer0", modLoc("item/peony_seeds"));
-            singleTexture(color + "_poppy_seeds", mcLoc("item/generated"), "layer0", modLoc("item/poppy_seeds"));
-            singleTexture(color + "_poppies_seeds", mcLoc("item/generated"), "layer0", modLoc("item/poppies_seeds"));
-            singleTexture(color + "_rose_bush_seeds", mcLoc("item/generated"), "layer0", modLoc("item/rose_bush_seeds"));
-            singleTexture(color + "_rose_bushlet_seeds", mcLoc("item/generated"), "layer0", modLoc("item/rose_bushlet_seeds"));
-            singleTexture(color + "_sunflower_seeds", mcLoc("item/generated"), "layer0", modLoc("item/sunflower_seeds"));
-            singleTexture(color + "_tulip_seeds", mcLoc("item/generated"), "layer0", modLoc("item/tulip_seeds"));
-            singleTexture(color + "_wildflower_seeds", mcLoc("item/generated"), "layer0", modLoc("item/wildflower_seeds"));
-            singleTexture(color + "_wither_rose_seeds", mcLoc("item/generated"), "layer0", modLoc("item/wither_rose_seeds"));
+            seedsLayered(color, "allium_seeds");
+            seedsLayered(color, "alyssum_seeds");
+            seedsLayered(color, "azure_bluet_seeds");
+            seedsLayered(color, "blazing_star_seeds");
+            seedsLayered(color, "bougainvillea_seeds");
+            seedsLayered(color, "bromeliad_seeds");
+            seedsLayered(color, "chicory_seeds");
+            seedsLayered(color, "clematis_seeds");
+            seedsLayered(color, "clover_seeds");
+            seedsLayered(color, "cornflower_seeds");
+            seedsLayered(color, "daisy_seeds");
+            seedsLayered(color, "dandelion_seeds");
+            seedsLayered(color, "dianthus_seeds");
+            seedsLayered(color, "fairy_rose_seeds");
+            seedsLayered(color, "foxglove_seeds");
+            seedsLayered(color, "hibiscus_seeds");
+            seedsLayered(color, "hyacinth_seeds");
+            seedsLayered(color, "impala_lily_seeds");
+            seedsLayered(color, "jasmine_seeds");
+            seedsLayered(color, "lantanas_seeds");
+            seedsLayered(color, "lavender_seeds");
+            seedsLayered(color, "lilac_seeds");
+            seedsLayered(color, "lily_seeds");
+            seedsLayered(color, "orchid_seeds");
+            seedsLayered(color, "peony_seeds");
+            seedsLayered(color, "poppy_seeds");
+            seedsLayered(color, "poppies_seeds");
+            seedsLayered(color, "rose_bush_seeds");
+            seedsLayered(color, "rose_bushlet_seeds");
+            seedsLayered(color, "sunflower_seeds");
+            seedsLayered(color, "tulip_seeds");
+            seedsLayered(color, "wildflower_seeds");
+            seedsLayered(color, "wither_rose_seeds");
         }
+    }
+
+    public void seedsLayered(String color, String name) {
+        withExistingParent(color + "_" + name, mcLoc("item/generated"))
+                .texture("layer0", modLoc("item/" + name))
+                .texture("layer1", modLoc("item/" + color + "_baggie"));
+    }
+
+    public void blockGenerated(String name) {
+        singleTexture(name, mcLoc("item/generated"), "layer0", modLoc("block/" + name));
+    }
+
+    public void blockGenerated(String name, String textureName) {
+        singleTexture(name, mcLoc("item/generated"), "layer0", modLoc("block/" + textureName));
+    }
+
+    public void itemGenerated(String name) {
+        singleTexture(name, mcLoc("item/generated"), "layer0", modLoc("item/" + name));
+    }
+
+    public void itemGenerated(String name, String textureName) {
+        singleTexture(name, mcLoc("item/generated"), "layer0", modLoc("item/" + textureName));
     }
 }

@@ -29,6 +29,7 @@ public class FlowerComposting {
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.WILDFLOWER_SEEDS.get(color).get(), 0.3F);
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.AZURE_BLUET_SEEDS.get(color).get(), 0.3F);
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.CORNFLOWER_SEEDS.get(color).get(), 0.3F);
+            ComposterBlock.COMPOSTABLES.put(FloweraryItems.LAVENDER_SEEDS.get(color).get(), 0.3F);
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.LILAC_SEEDS.get(color).get(), 0.3F);
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.LILY_SEEDS.get(color).get(), 0.3F);
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.ORCHID_SEEDS.get(color).get(), 0.3F);
@@ -60,6 +61,7 @@ public class FlowerComposting {
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.WILDFLOWER.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.AZURE_BLUET.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.CORNFLOWER.get(color).get(), 0.65F);
+            ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.LAVENDER.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.LILAC.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.LILY.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.ORCHID.get(color).get(), 0.65F);

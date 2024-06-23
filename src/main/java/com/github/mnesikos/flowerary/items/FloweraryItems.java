@@ -51,6 +51,7 @@ public final class FloweraryItems {
     public static final Map<String, RegistryObject<Item>> IMPALA_LILY_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> JASMINE_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> LANTANAS_SEEDS = new HashMap<>();
+    public static final Map<String, RegistryObject<Item>> LAVENDER_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> LILAC_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> LILY_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> ORCHID_SEEDS = new HashMap<>();
@@ -84,6 +85,7 @@ public final class FloweraryItems {
             IMPALA_LILY_SEEDS.put(color, REGISTRAR.register(color + "_impala_lily_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.IMPALA_LILY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             JASMINE_SEEDS.put(color, REGISTRAR.register(color + "_jasmine_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.JASMINE_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             LANTANAS_SEEDS.put(color, REGISTRAR.register(color + "_lantanas_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.LANTANAS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            LAVENDER_SEEDS.put(color, REGISTRAR.register(color + "_lavender_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.LAVENDER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             LILAC_SEEDS.put(color, REGISTRAR.register(color + "_lilac_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.LILAC_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             LILY_SEEDS.put(color, REGISTRAR.register(color + "_lily_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.LILY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             ORCHID_SEEDS.put(color, REGISTRAR.register(color + "_orchid_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.ORCHID_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));

@@ -39,6 +39,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             block(FloweraryBlocks.HYACINTH.get(color).get());
             doubleBlock(FloweraryBlocks.IMPALA_LILY.get(color).get());
             block(FloweraryBlocks.LANTANAS.get(color).get());
+            doubleBlock(FloweraryBlocks.LAVENDER.get(color).get());
             doubleBlock(FloweraryBlocks.LILAC.get(color).get());
             block(FloweraryBlocks.LILY.get(color).get());
             block(FloweraryBlocks.ORCHID.get(color).get());
@@ -79,6 +80,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             crop(FloweraryBlocks.HYACINTH_PLANTS.get(color).get(), color, "hyacinth");
             doubleCrop(FloweraryBlocks.IMPALA_LILY_PLANTS.get(color).get(), color, "impala_lily");
             crop(FloweraryBlocks.LANTANAS_PLANTS.get(color).get(), color, "lantanas");
+            doubleCrop(FloweraryBlocks.LAVENDER_PLANTS.get(color).get(), color, "lavender");
             doubleCrop(FloweraryBlocks.LILAC_PLANTS.get(color).get(), color, "lilac");
             crop(FloweraryBlocks.LILY_PLANTS.get(color).get(), color, "lily");
             crop(FloweraryBlocks.ORCHID_PLANTS.get(color).get(), color, "orchid");

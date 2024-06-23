@@ -60,6 +60,7 @@ public class FloweraryItemModels extends ItemModelProvider {
             singleTexture(color + "_impala_lily", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_impala_lily_top"));
             singleTexture(color + "_jasmine", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_jasmine"));
             singleTexture(color + "_lantanas", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_lantanas"));
+            singleTexture(color + "_lavender", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_lavender_top"));
             singleTexture(color + "_lilac", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_lilac_top"));
             singleTexture(color + "_lily", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_lily"));
             singleTexture(color + "_orchid", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "block/" + color + "_orchid"));
@@ -91,6 +92,7 @@ public class FloweraryItemModels extends ItemModelProvider {
             singleTexture(color + "_impala_lily_seeds", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "item/impala_lily_seeds"));
             singleTexture(color + "_jasmine_seeds", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "item/jasmine_seeds"));
             singleTexture(color + "_lantanas_seeds", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "item/lantanas_seeds"));
+            singleTexture(color + "_lavender_seeds", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "item/lavender_seeds"));
             singleTexture(color + "_lilac_seeds", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "item/lilac_seeds"));
             singleTexture(color + "_lily_seeds", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "item/lily_seeds"));
             singleTexture(color + "_orchid_seeds", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(Flowerary.MOD_ID, "item/orchid_seeds"));

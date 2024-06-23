@@ -1,7 +1,0 @@
-{
-  "parent": "flowerary:block/tall_flower",
-  "textures": {
-    "cross": "flowerary:block/flower/magenta_impala_lily"
-  }
-}
-

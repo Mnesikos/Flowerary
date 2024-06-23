@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "flowerary:block/wither_rose_stage1"
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "parent": "flowerary:block/tall_flower",
-  "textures": {
-    "cross": "flowerary:block/flower/blue_rose_bush"
-  }
-}
-
-

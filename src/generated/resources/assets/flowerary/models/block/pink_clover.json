@@ -1,0 +1,6 @@
+{
+  "parent": "flowerary:block/flower_carpet",
+  "textures": {
+    "1": "flowerary:block/pink_clover"
+  }
+}

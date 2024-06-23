@@ -1,6 +1,6 @@
 {
   "parent": "flowerary:block/vine_2",
   "textures": {
-    "vine": "flowerary:block/flower/blue_clematis"
+    "vine": "flowerary:block//blue_clematis"
   }
 }

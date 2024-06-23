@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "flowerary:block/yellow_lilac_top"
+    },
+    "half=lower": {
+      "model": "flowerary:block/yellow_lilac_bottom"
+    }
+  }
+}

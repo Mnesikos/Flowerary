@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "flowerary:block/white_rose_bush_top"
+    },
+    "half=lower": {
+      "model": "flowerary:block/white_rose_bush_bottom"
+    }
+  }
+}

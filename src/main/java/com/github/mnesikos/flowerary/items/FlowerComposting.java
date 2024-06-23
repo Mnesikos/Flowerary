@@ -69,36 +69,5 @@ public class FlowerComposting {
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.TULIP.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.WITHER_ROSE.get(color).get(), 0.65F);
         }
-
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_BLACK_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_BLUE_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_CYAN_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_RED_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_MAGENTA_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_ORANGE_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_PINK_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_WHITE_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_YELLOW_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_LILAC_JASMINE.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_BLACK_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_BLUE_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_CYAN_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_RED_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_MAGENTA_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_ORANGE_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_PINK_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_WHITE_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_YELLOW_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_LILAC_BOUGAINVILLEA.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_BLACK_CLEMATIS.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_BLUE_CLEMATIS.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_CYAN_CLEMATIS.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_RED_CLEMATIS.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_MAGENTA_CLEMATIS.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_ORANGE_CLEMATIS.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_PINK_CLEMATIS.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_WHITE_CLEMATIS.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_YELLOW_CLEMATIS.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.STUNTED_LILAC_CLEMATIS.get(), 0.65F);
     }
 }

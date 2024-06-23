@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "flowerary:block/orange_impala_lily_top"
+    },
+    "half=lower": {
+      "model": "flowerary:block/orange_impala_lily_bottom"
+    }
+  }
+}

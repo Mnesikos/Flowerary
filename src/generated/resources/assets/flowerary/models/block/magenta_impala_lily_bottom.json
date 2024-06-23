@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "flowerary:block/magenta_impala_lily_top"
+  }
+}

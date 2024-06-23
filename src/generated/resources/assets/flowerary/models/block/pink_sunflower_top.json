@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/sunflower_top",
+  "textures": {
+    "cross": "flowerary:block/pink_sunflower"
+  }
+}

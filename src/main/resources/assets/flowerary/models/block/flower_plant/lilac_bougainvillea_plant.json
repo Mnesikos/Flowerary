@@ -1,7 +1,7 @@
 {
   "parent": "flowerary:block/vine_plant",
   "textures": {
-    "vine": "flowerary:block/flower/lilac_bougainvillea"
+    "vine": "flowerary:block//lilac_bougainvillea"
   }
 }
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "flowerary:block/cornflower_stage2"
+  }
+}

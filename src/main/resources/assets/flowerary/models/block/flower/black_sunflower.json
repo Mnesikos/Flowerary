@@ -1,6 +1,0 @@
-{
-  "parent": "flowerary:block/sunflower",
-  "textures": {
-    "front": "flowerary:block/flower/black_sunflower"
-  }
-}

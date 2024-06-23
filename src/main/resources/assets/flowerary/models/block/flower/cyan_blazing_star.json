@@ -1,7 +1,0 @@
-{
-  "parent": "flowerary:block/tall_flower",
-  "textures": {
-    "cross": "flowerary:block/flower/cyan_blazing_star"
-  }
-}
-

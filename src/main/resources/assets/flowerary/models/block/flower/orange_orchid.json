@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "flowerary:block/flower/orange_orchid",
-    "cross": "flowerary:block/flower/orange_orchid"
-  }
-}

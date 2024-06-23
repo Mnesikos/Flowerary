@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "flowerary:block/flower_plant/blazing_star_stage3",
-    "cross": "flowerary:block/flower_plant/blazing_star_stage3"
-  }
-}

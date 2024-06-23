@@ -92,54 +92,60 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> WILDFLOWER_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> WITHER_ROSE_PLANTS = new HashMap<>();
 
-    public static final RegistryObject<Block> BLACK_CANDLE = registerWithItem("black_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> BLUE_CANDLE = registerWithItem("blue_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> CYAN_CANDLE = registerWithItem("cyan_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> GREEN_CANDLE = registerWithItem("green_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> ORANGE_CANDLE = registerWithItem("orange_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> PINK_CANDLE = registerWithItem("pink_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> RED_CANDLE = registerWithItem("red_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
-    public static final RegistryObject<Block> WHITE_CANDLE = registerWithItem("white_candle", () -> new BlockCandle(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
-
-    public static final RegistryObject<Block> STUNTED_BLACK_BOUGAINVILLEA = registerWithItem("stunted_black_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_BLUE_BOUGAINVILLEA = registerWithItem("stunted_blue_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_CYAN_BOUGAINVILLEA = registerWithItem("stunted_cyan_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_RED_BOUGAINVILLEA = registerWithItem("stunted_red_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_MAGENTA_BOUGAINVILLEA = registerWithItem("stunted_magenta_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_ORANGE_BOUGAINVILLEA = registerWithItem("stunted_orange_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_PINK_BOUGAINVILLEA = registerWithItem("stunted_pink_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_WHITE_BOUGAINVILLEA = registerWithItem("stunted_white_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_YELLOW_BOUGAINVILLEA = registerWithItem("stunted_yellow_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_LILAC_BOUGAINVILLEA = registerWithItem("stunted_lilac_bougainvillea", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_BLACK_JASMINE = registerWithItem("stunted_black_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_BLUE_JASMINE = registerWithItem("stunted_blue_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_CYAN_JASMINE = registerWithItem("stunted_cyan_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_RED_JASMINE = registerWithItem("stunted_red_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_MAGENTA_JASMINE = registerWithItem("stunted_magenta_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_ORANGE_JASMINE = registerWithItem("stunted_orange_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_PINK_JASMINE = registerWithItem("stunted_pink_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_WHITE_JASMINE = registerWithItem("stunted_white_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_YELLOW_JASMINE = registerWithItem("stunted_yellow_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_LILAC_JASMINE = registerWithItem("stunted_lilac_jasmine", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_BLACK_CLEMATIS = registerWithItem("stunted_black_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_BLUE_CLEMATIS = registerWithItem("stunted_blue_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_CYAN_CLEMATIS = registerWithItem("stunted_cyan_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_RED_CLEMATIS = registerWithItem("stunted_red_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_MAGENTA_CLEMATIS = registerWithItem("stunted_magenta_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_ORANGE_CLEMATIS = registerWithItem("stunted_orange_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_PINK_CLEMATIS = registerWithItem("stunted_pink_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_WHITE_CLEMATIS = registerWithItem("stunted_white_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_YELLOW_CLEMATIS = registerWithItem("stunted_yellow_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> STUNTED_LILAC_CLEMATIS = registerWithItem("stunted_lilac_clematis", () -> new BlockVineFlower(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> BLACK_CANDLE = registerWithItem("black_candle", () -> new CandleBlock(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> BLUE_CANDLE = registerWithItem("blue_candle", () -> new CandleBlock(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> CYAN_CANDLE = registerWithItem("cyan_candle", () -> new CandleBlock(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> GREEN_CANDLE = registerWithItem("green_candle", () -> new CandleBlock(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> ORANGE_CANDLE = registerWithItem("orange_candle", () -> new CandleBlock(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> PINK_CANDLE = registerWithItem("pink_candle", () -> new CandleBlock(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> RED_CANDLE = registerWithItem("red_candle", () -> new CandleBlock(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> WHITE_CANDLE = registerWithItem("white_candle", () -> new CandleBlock(Block.Properties.of(Material.PLANT).noCollission().lightLevel(state -> 4).sound(SoundType.WOOD)));
 
     static {
         for (String color : Flowerary.COLORS_LIST) {
+            ALLIUM.put(color, registerWithItem(color + "_allium", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            AZURE_BLUET.put(color, registerWithItem(color + "_azure_bluet", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            BLAZING_STAR.put(color, registerWithItem(color + "_blazing_star", () -> new TallFlowerBlock(AbstractBlock.Properties.copy(Blocks.ROSE_BUSH))));
+            BOUGAINVILLEA.put(color, registerWithItem(color + "_bougainvillea", () -> new VineBlock(AbstractBlock.Properties.copy(Blocks.VINE))));
+            BROMELIAD.put(color, registerWithItem(color + "_bromeliad", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            CLEMATIS.put(color, registerWithItem(color + "_clematis", () -> new VineBlock(AbstractBlock.Properties.copy(Blocks.VINE))));
+            CLOVER.put(color, registerWithItem(color + "_clover", () -> new FlowerCarpetBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            CORNFLOWER.put(color, registerWithItem(color + "_cornflower", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            DAISY.put(color, registerWithItem(color + "_daisy", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            DANDELION.put(color, registerWithItem(color + "_dandelion", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            DIANTHUS.put(color, registerWithItem(color + "_dianthus", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            FAIRY_ROSE.put(color, registerWithItem(color + "_fairy_rose", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            FOXGLOVE.put(color, registerWithItem(color + "_foxglove", () -> new TallFlowerBlock(AbstractBlock.Properties.copy(Blocks.ROSE_BUSH))));
+            HIBISCUS.put(color, registerWithItem(color + "_hibiscus", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            HYACINTH.put(color, registerWithItem(color + "_hyacinth", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            IMPALA_LILY.put(color, registerWithItem(color + "_impala_lily", () -> new TallFlowerBlock(AbstractBlock.Properties.copy(Blocks.ROSE_BUSH))));
+            JASMINE.put(color, registerWithItem(color + "_jasmine", () -> new VineBlock(AbstractBlock.Properties.copy(Blocks.VINE))));
+            LANTANAS.put(color, registerWithItem(color + "_lantanas", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            LILAC.put(color, registerWithItem(color + "_lilac", () -> new TallFlowerBlock(AbstractBlock.Properties.copy(Blocks.ROSE_BUSH))));
+            LILY.put(color, registerWithItem(color + "_lily", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            ORCHID.put(color, registerWithItem(color + "_orchid", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            PEONY.put(color, registerWithItem(color + "_peony", () -> new TallFlowerBlock(AbstractBlock.Properties.copy(Blocks.ROSE_BUSH))));
+            POPPY.put(color, registerWithItem(color + "_poppy", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            POPPIES.put(color, registerWithItem(color + "_poppies", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            ROSE_BUSH.put(color, registerWithItem(color + "_rose_bush", () -> new TallFlowerBlock(AbstractBlock.Properties.copy(Blocks.ROSE_BUSH))));
+            ROSE_BUSHLET.put(color, registerWithItem(color + "_rose_bushlet", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            SUNFLOWER.put(color, registerWithItem(color + "_sunflower", () -> new TallFlowerBlock(AbstractBlock.Properties.copy(Blocks.ROSE_BUSH))));
+            TULIP.put(color, registerWithItem(color + "_tulip", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            WILDFLOWER.put(color, registerWithItem(color + "_wildflower", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            WITHER_ROSE.put(color, registerWithItem(color + "_wither_rose", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+
+            POTTED_ALLIUM.put(color, REGISTRAR.register("potted_" + color + "_allium", () -> new FlowerPotBlock(FloweraryBlocks.ALLIUM.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
+            POTTED_DAISY.put(color, REGISTRAR.register("potted_" + color + "_daisy", () -> new FlowerPotBlock(FloweraryBlocks.DAISY.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
+            POTTED_DANDELION.put(color, REGISTRAR.register("potted_" + color + "_dandelion", () -> new FlowerPotBlock(FloweraryBlocks.DANDELION.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
+            POTTED_FAIRY_ROSE.put(color, REGISTRAR.register("potted_" + color + "_fairy_rose", () -> new FlowerPotBlock(FloweraryBlocks.FAIRY_ROSE.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
+            POTTED_HYACINTH.put(color, REGISTRAR.register("potted_" + color + "_hyacinth", () -> new FlowerPotBlock(FloweraryBlocks.HYACINTH.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
+
             ALLIUM_PLANTS.put(color, REGISTRAR.register(color + "_allium_plant", () -> new FlowerCropBlock(FloweraryItems.ALLIUM_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             AZURE_BLUET_PLANTS.put(color, REGISTRAR.register(color + "_azure_bluet_plant", () -> new FlowerCropBlock(FloweraryItems.AZURE_BLUET_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             BLAZING_STAR_PLANTS.put(color, REGISTRAR.register(color + "_blazing_star_plant", () -> new FlowerCropBlock(FloweraryItems.BLAZING_STAR_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            BOUGAINVILLEA_PLANTS.put(color, REGISTRAR.register(color + "_bougainvillea_plant", () -> new BlockFlowerVineCrop(FloweraryItems.BOUGAINVILLEA_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            BOUGAINVILLEA_PLANTS.put(color, REGISTRAR.register(color + "_bougainvillea_plant", () -> new FlowerVineCropBlock(FloweraryItems.BOUGAINVILLEA_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             BROMELIAD_PLANTS.put(color, REGISTRAR.register(color + "_bromeliad_plant", () -> new FlowerCropBlock(FloweraryItems.BROMELIAD_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            CLEMATIS_PLANTS.put(color, REGISTRAR.register(color + "_clematis_plant", () -> new BlockFlowerVineCrop(FloweraryItems.CLEMATIS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            CLEMATIS_PLANTS.put(color, REGISTRAR.register(color + "_clematis_plant", () -> new FlowerVineCropBlock(FloweraryItems.CLEMATIS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             CLOVER_PLANTS.put(color, REGISTRAR.register(color + "_clover_plant", () -> new FlowerCropBlock(FloweraryItems.CLOVER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             CORNFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_cornflower_plant", () -> new FlowerCropBlock(FloweraryItems.CORNFLOWER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             DAISY_PLANTS.put(color, REGISTRAR.register(color + "_daisy_plant", () -> new FlowerCropBlock(FloweraryItems.DAISY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
@@ -150,7 +156,7 @@ public final class FloweraryBlocks {
             HIBISCUS_PLANTS.put(color, REGISTRAR.register(color + "_hibiscus_plant", () -> new FlowerCropBlock(FloweraryItems.HIBISCUS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             HYACINTH_PLANTS.put(color, REGISTRAR.register(color + "_hyacinth_plant", () -> new FlowerCropBlock(FloweraryItems.HYACINTH_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             IMPALA_LILY_PLANTS.put(color, REGISTRAR.register(color + "_impala_lily_plant", () -> new FlowerCropBlock(FloweraryItems.IMPALA_LILY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            JASMINE_PLANTS.put(color, REGISTRAR.register(color + "_jasmine_plant", () -> new BlockFlowerVineCrop(FloweraryItems.JASMINE_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            JASMINE_PLANTS.put(color, REGISTRAR.register(color + "_jasmine_plant", () -> new FlowerVineCropBlock(FloweraryItems.JASMINE_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             LANTANAS_PLANTS.put(color, REGISTRAR.register(color + "_lantanas_plant", () -> new FlowerCropBlock(FloweraryItems.LANTANAS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             LILAC_PLANTS.put(color, REGISTRAR.register(color + "_lilac_plant", () -> new FlowerCropBlock(FloweraryItems.LILAC_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             LILY_PLANTS.put(color, REGISTRAR.register(color + "_lily_plant", () -> new FlowerCropBlock(FloweraryItems.LILY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
@@ -164,43 +170,6 @@ public final class FloweraryBlocks {
             TULIP_PLANTS.put(color, REGISTRAR.register(color + "_tulip_plant", () -> new FlowerCropBlock(FloweraryItems.TULIP_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             WILDFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_wildflower_plant", () -> new FlowerCropBlock(FloweraryItems.WILDFLOWER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             WITHER_ROSE_PLANTS.put(color, REGISTRAR.register(color + "_wither_rose_plant", () -> new FlowerCropBlock(FloweraryItems.WITHER_ROSE_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-
-            ALLIUM.put(color, registerWithItem(color + "_allium", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 14.0D, 10.0D))));
-            AZURE_BLUET.put(color, registerWithItem(color + "_azure_bluet", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 14.0D, 10.0D))));
-            BLAZING_STAR.put(color, registerWithItem(color + "_blazing_star", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D))));
-            BOUGAINVILLEA.put(color, registerWithItem(color + "_bougainvillea", () -> new BlockVineFlower(AbstractBlock.Properties.copy(Blocks.POPPY))));
-            BROMELIAD.put(color, registerWithItem(color + "_bromeliad", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D))));
-            CLEMATIS.put(color, registerWithItem(color + "_clematis", () -> new BlockVineFlower(AbstractBlock.Properties.copy(Blocks.POPPY))));
-            CLOVER.put(color, registerWithItem(color + "_clover", () -> new BlockFlowerCarpet(AbstractBlock.Properties.copy(Blocks.POPPY))));
-            CORNFLOWER.put(color, registerWithItem(color + "_cornflower", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 14.0D, 10.0D))));
-            DAISY.put(color, registerWithItem(color + "_daisy", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 9.0D, 10.0D))));
-            DANDELION.put(color, registerWithItem(color + "_dandelion", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 9.0D, 10.0D))));
-            DIANTHUS.put(color, registerWithItem(color + "_dianthus", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 5.0D, 13.0D))));
-            FAIRY_ROSE.put(color, registerWithItem(color + "_fairy_rose", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 13.0D, 10.0D))));
-            FOXGLOVE.put(color, registerWithItem(color + "_foxglove", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D))));
-            HIBISCUS.put(color, registerWithItem(color + "_hibiscus", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
-            HYACINTH.put(color, registerWithItem(color + "_hyacinth", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D))));
-            IMPALA_LILY.put(color, registerWithItem(color + "_impala_lily", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D))));
-            JASMINE.put(color, registerWithItem(color + "_jasmine", () -> new BlockVineFlower(AbstractBlock.Properties.copy(Blocks.POPPY))));
-            LANTANAS.put(color, registerWithItem(color + "_lantanas", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
-            LILAC.put(color, registerWithItem(color + "_lilac", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D))));
-            LILY.put(color, registerWithItem(color + "_lily", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 14.0D, 10.0D))));
-            ORCHID.put(color, registerWithItem(color + "_orchid", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 14.0D, 10.0D))));
-            PEONY.put(color, registerWithItem(color + "_peony", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D))));
-            POPPY.put(color, registerWithItem(color + "_poppy", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 14.0D, 10.0D))));
-            POPPIES.put(color, registerWithItem(color + "_poppies", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
-            ROSE_BUSH.put(color, registerWithItem(color + "_rose_bush", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D))));
-            ROSE_BUSHLET.put(color, registerWithItem(color + "_rose_bushlet", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
-            SUNFLOWER.put(color, registerWithItem(color + "_sunflower", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 16.0D, 10.0D))));
-            TULIP.put(color, registerWithItem(color + "_tulip", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 14.0D, 10.0D))));
-            WILDFLOWER.put(color, registerWithItem(color + "_wildflower", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D))));
-            WITHER_ROSE.put(color, registerWithItem(color + "_wither_rose", () -> new BlockFlower(AbstractBlock.Properties.copy(Blocks.POPPY), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 14.0D, 10.0D))));
-
-            POTTED_ALLIUM.put(color, REGISTRAR.register("potted_" + color + "_allium", () -> new FlowerPotBlock(FloweraryBlocks.ALLIUM.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
-            POTTED_DAISY.put(color, REGISTRAR.register("potted_" + color + "_daisy", () -> new FlowerPotBlock(FloweraryBlocks.DAISY.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
-            POTTED_DANDELION.put(color, REGISTRAR.register("potted_" + color + "_dandelion", () -> new FlowerPotBlock(FloweraryBlocks.DANDELION.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
-            POTTED_FAIRY_ROSE.put(color, REGISTRAR.register("potted_" + color + "_fairy_rose", () -> new FlowerPotBlock(FloweraryBlocks.FAIRY_ROSE.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
-            POTTED_HYACINTH.put(color, REGISTRAR.register("potted_" + color + "_hyacinth", () -> new FlowerPotBlock(FloweraryBlocks.HYACINTH.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
         }
     }
 

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "flowerary:block/flower_plant/dianthus_stage3",
-    "cross": "flowerary:block/flower_plant/dianthus_stage3"
-  }
-}
-

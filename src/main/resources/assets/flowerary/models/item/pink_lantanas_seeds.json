@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "flowerary:item/pink_lantanas_seeds"
-  }
-}

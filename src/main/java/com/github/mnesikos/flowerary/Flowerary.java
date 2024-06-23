@@ -1,14 +1,17 @@
 package com.github.mnesikos.flowerary;
 
 import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
+import com.github.mnesikos.flowerary.data.*;
 import com.github.mnesikos.flowerary.items.FlowerComposting;
 import com.github.mnesikos.flowerary.items.FloweraryItems;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Flowerary.MOD_ID)
@@ -32,11 +35,28 @@ public class Flowerary {
         FloweraryItems.REGISTRAR.register(bus);
 
         bus.addListener(this::setup);
+        bus.addListener(this::gatherData);
         bus.addListener(this::setupClient);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(FlowerComposting::registerCompostables);
+    }
+
+    private void gatherData(final GatherDataEvent event) {
+        DataGenerator dataGenerator = event.getGenerator();
+        if (event.includeClient()) {
+            dataGenerator.addProvider(new FloweraryBlockModels(dataGenerator, event.getExistingFileHelper()));
+            dataGenerator.addProvider(new FloweraryItemModels(dataGenerator, event.getExistingFileHelper()));
+            dataGenerator.addProvider(new FloweraryBlockStates(dataGenerator, event.getExistingFileHelper()));
+        }
+
+//        if (event.includeServer()) {
+//            dataGenerator.addProvider(new FloweraryTags.FloweraryBlockTags(dataGenerator, event.getExistingFileHelper()));
+//            dataGenerator.addProvider(new FloweraryTags.FloweraryItemTags(dataGenerator, event.getExistingFileHelper()));
+//            dataGenerator.addProvider(new FloweraryLootTables(dataGenerator));
+//            dataGenerator.addProvider(new FloweraryRecipes(dataGenerator));
+//        }
     }
 
     private void setupClient(final FMLClientSetupEvent event) {

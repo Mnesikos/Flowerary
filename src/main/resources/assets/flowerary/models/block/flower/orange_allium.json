@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "particle": "flowerary:block/flower/orange_allium",
-    "cross": "flowerary:block/flower/orange_allium"
-  }
-}
-

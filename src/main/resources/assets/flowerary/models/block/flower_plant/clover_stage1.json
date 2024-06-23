@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "flowerary:block/flower/black_clover",
-		"particle": "flowerary:block/flower/black_clover"
+		"0": "flowerary:block/black_clover",
+		"particle": "flowerary:block/black_clover"
 	},
 	"elements": [
 		{

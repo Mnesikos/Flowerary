@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "flowerary:block/pink_foxglove_top"
+    },
+    "half=lower": {
+      "model": "flowerary:block/pink_foxglove_bottom"
+    }
+  }
+}

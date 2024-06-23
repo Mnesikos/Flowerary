@@ -38,6 +38,7 @@ public final class FloweraryItems {
     public static final Map<String, RegistryObject<Item>> BLAZING_STAR_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> BOUGAINVILLEA_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> BROMELIAD_SEEDS = new HashMap<>();
+    public static final Map<String, RegistryObject<Item>> CHICORY_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> CLEMATIS_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> CLOVER_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> CORNFLOWER_SEEDS = new HashMap<>();
@@ -72,6 +73,7 @@ public final class FloweraryItems {
             BLAZING_STAR_SEEDS.put(color, REGISTRAR.register(color + "_blazing_star_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.BLAZING_STAR_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             BOUGAINVILLEA_SEEDS.put(color, REGISTRAR.register(color + "_bougainvillea_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.BOUGAINVILLEA_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             BROMELIAD_SEEDS.put(color, REGISTRAR.register(color + "_bromeliad_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.BROMELIAD_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            CHICORY_SEEDS.put(color, REGISTRAR.register(color + "_chicory_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.CHICORY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             CLEMATIS_SEEDS.put(color, REGISTRAR.register(color + "_clematis_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.CLEMATIS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             CLOVER_SEEDS.put(color, REGISTRAR.register(color + "_clover_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.CLOVER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             CORNFLOWER_SEEDS.put(color, REGISTRAR.register(color + "_cornflower_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.CORNFLOWER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));

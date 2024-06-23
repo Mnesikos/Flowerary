@@ -28,6 +28,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             block(FloweraryBlocks.AZURE_BLUET.get(color).get());
             doubleBlock(FloweraryBlocks.BLAZING_STAR.get(color).get());
             block(FloweraryBlocks.BROMELIAD.get(color).get());
+            block(FloweraryBlocks.CHICORY.get(color).get());
             block(FloweraryBlocks.CLOVER.get(color).get());
             block(FloweraryBlocks.CORNFLOWER.get(color).get());
             block(FloweraryBlocks.DAISY.get(color).get());
@@ -70,6 +71,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             crop(FloweraryBlocks.AZURE_BLUET_PLANTS.get(color).get(), color, "azure_bluet");
             doubleCrop(FloweraryBlocks.BLAZING_STAR_PLANTS.get(color).get(), color, "blazing_star");
             crop(FloweraryBlocks.BROMELIAD_PLANTS.get(color).get(), color, "bromeliad");
+            crop(FloweraryBlocks.CHICORY_PLANTS.get(color).get(), color, "chicory");
             crop(FloweraryBlocks.CORNFLOWER_PLANTS.get(color).get(), color, "cornflower");
             crop(FloweraryBlocks.DAISY_PLANTS.get(color).get(), color, "daisy");
             crop(FloweraryBlocks.DANDELION_PLANTS.get(color).get(), color, "dandelion");

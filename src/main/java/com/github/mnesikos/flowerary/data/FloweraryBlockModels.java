@@ -18,6 +18,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
             cross(color + "_azure_bluet", modLoc(BLOCK_FOLDER + "/" + color + "_azure_bluet"));
             doubleCross(color + "_blazing_star", modLoc(BLOCK_FOLDER + "/" + color + "_blazing_star"));
             cross(color + "_bromeliad", modLoc(BLOCK_FOLDER + "/" + color + "_bromeliad"));
+            cross(color + "_chicory", modLoc(BLOCK_FOLDER + "/" + color + "_chicory"));
             clover(color + "_clover", modLoc(BLOCK_FOLDER + "/" + color + "_clover"));
             cross(color + "_cornflower", modLoc(BLOCK_FOLDER + "/" + color + "_cornflower"));
             cross(color + "_daisy", modLoc(BLOCK_FOLDER + "/" + color + "_daisy"));
@@ -61,6 +62,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
         plant("azure_bluet");
         doublePlant("blazing_star");
         plant("bromeliad");
+        plant("chicory");
         plant("cornflower");
         plant("daisy");
         plant("dandelion");

@@ -27,6 +27,7 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<DoublePlantBlock>> BLAZING_STAR = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> BOUGAINVILLEA = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> BROMELIAD = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> CHICORY = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CLEMATIS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CLOVER = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CORNFLOWER = new HashMap<>();
@@ -74,6 +75,7 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> BLAZING_STAR_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> BOUGAINVILLEA_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> BROMELIAD_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> CHICORY_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CLEMATIS_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CLOVER_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CORNFLOWER_PLANTS = new HashMap<>();
@@ -117,6 +119,7 @@ public final class FloweraryBlocks {
             BLAZING_STAR.put(color, registerWithItem(color + "_blazing_star", () -> new TallFlowerBlock(AbstractBlock.Properties.copy(Blocks.ROSE_BUSH))));
             BOUGAINVILLEA.put(color, registerWithItem(color + "_bougainvillea", () -> new VineBlock(AbstractBlock.Properties.copy(Blocks.VINE))));
             BROMELIAD.put(color, registerWithItem(color + "_bromeliad", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
+            CHICORY.put(color, registerWithItem(color + "_chicory", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
             CLEMATIS.put(color, registerWithItem(color + "_clematis", () -> new VineBlock(AbstractBlock.Properties.copy(Blocks.VINE))));
             CLOVER.put(color, registerWithItem(color + "_clover", () -> new FlowerCarpetBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
             CORNFLOWER.put(color, registerWithItem(color + "_cornflower", () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
@@ -162,6 +165,7 @@ public final class FloweraryBlocks {
             BLAZING_STAR_PLANTS.put(color, REGISTRAR.register(color + "_blazing_star_plant", () -> new DoubleFlowerCropBlock(FloweraryItems.BLAZING_STAR_SEEDS.get(color), 4, AbstractBlock.Properties.copy(Blocks.WHEAT))));
             BOUGAINVILLEA_PLANTS.put(color, REGISTRAR.register(color + "_bougainvillea_plant", () -> new FlowerVineCropBlock(FloweraryItems.BOUGAINVILLEA_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             BROMELIAD_PLANTS.put(color, REGISTRAR.register(color + "_bromeliad_plant", () -> new FlowerCropBlock(FloweraryItems.BROMELIAD_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            CHICORY_PLANTS.put(color, REGISTRAR.register(color + "_chicory_plant", () -> new FlowerCropBlock(FloweraryItems.CHICORY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             CLEMATIS_PLANTS.put(color, REGISTRAR.register(color + "_clematis_plant", () -> new FlowerVineCropBlock(FloweraryItems.CLEMATIS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             CLOVER_PLANTS.put(color, REGISTRAR.register(color + "_clover_plant", () -> new FlowerCropBlock(FloweraryItems.CLOVER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             CORNFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_cornflower_plant", () -> new FlowerCropBlock(FloweraryItems.CORNFLOWER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));

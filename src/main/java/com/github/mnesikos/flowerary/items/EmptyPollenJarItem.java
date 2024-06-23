@@ -9,7 +9,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -33,12 +35,10 @@ public class EmptyPollenJarItem extends Item {
         Block block = state.getBlock();
         Item crop = null;
 
-        if (block.equals(ROSE_BUSH)) crop = FloweraryItems.ROSE_POLLEN_JAR.get();
-        else if (block.equals(WITHER_ROSE)) crop = FloweraryItems.WITHER_ROSE_POLLEN_JAR.get();
+        if (block.equals(DANDELION)) crop = FloweraryItems.DANDELION_POLLEN_JAR.get();
+        else if (block.equals(POPPY)) crop = FloweraryItems.POPPY_POLLEN_JAR.get();
         else if (block.equals(BLUE_ORCHID)) crop = FloweraryItems.ORCHID_POLLEN_JAR.get();
         else if (block.equals(ALLIUM)) crop = FloweraryItems.ALLIUM_POLLEN_JAR.get();
-        else if (block.equals(DANDELION)) crop = FloweraryItems.DANDELION_POLLEN_JAR.get();
-        else if (block.equals(POPPY)) crop = FloweraryItems.POPPY_POLLEN_JAR.get();
         else if (block.equals(AZURE_BLUET)) crop = FloweraryItems.AZURE_BLUET_POLLEN_JAR.get();
         else if (block.equals(RED_TULIP)) crop = FloweraryItems.RED_TULIP_POLLEN_JAR.get();
         else if (block.equals(ORANGE_TULIP)) crop = FloweraryItems.ORANGE_TULIP_POLLEN_JAR.get();
@@ -47,8 +47,10 @@ public class EmptyPollenJarItem extends Item {
         else if (block.equals(OXEYE_DAISY)) crop = FloweraryItems.DAISY_POLLEN_JAR.get();
         else if (block.equals(CORNFLOWER)) crop = FloweraryItems.CORNFLOWER_POLLEN_JAR.get();
         else if (block.equals(LILY_OF_THE_VALLEY)) crop = FloweraryItems.LILY_OF_THE_VALLEY_POLLEN_JAR.get();
+        else if (block.equals(WITHER_ROSE)) crop = FloweraryItems.WITHER_ROSE_POLLEN_JAR.get();
         else if (block.equals(SUNFLOWER)) crop = FloweraryItems.SUNFLOWER_POLLEN_JAR.get();
         else if (block.equals(LILAC)) crop = FloweraryItems.LILAC_POLLEN_JAR.get();
+        else if (block.equals(ROSE_BUSH)) crop = FloweraryItems.ROSE_POLLEN_JAR.get();
         else if (block.equals(PEONY)) crop = FloweraryItems.PEONY_POLLEN_JAR.get();
 
         if (crop != null && context.getPlayer() != null) {

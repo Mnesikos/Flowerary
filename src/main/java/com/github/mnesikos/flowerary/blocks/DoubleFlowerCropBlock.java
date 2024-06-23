@@ -15,6 +15,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -28,11 +32,21 @@ import java.util.function.Supplier;
 public class DoubleFlowerCropBlock extends FlowerCropBlock {
     public static final EnumProperty<DoubleBlockHalf> SEGMENT = BlockStateProperties.DOUBLE_BLOCK_HALF;
     protected final int upperSegmentAge;
+    private final VoxelShape[] bottomShape;
+    private final VoxelShape[] topShape;
 
-    public DoubleFlowerCropBlock(Supplier<? extends Item> seedItem, int upperSegmentAge, Properties properties) {
+    public DoubleFlowerCropBlock(Supplier<? extends Item> seedItem, Properties properties, int upperSegmentAge, VoxelShape[] bottomShape, VoxelShape[] topShape) {
         super(seedItem, properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), 0).setValue(SEGMENT, DoubleBlockHalf.LOWER));
         this.upperSegmentAge = upperSegmentAge;
+        this.bottomShape = bottomShape;
+        this.topShape = topShape;
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, IBlockReader level, BlockPos pos, ISelectionContext pContext) {
+        if (state.getValue(SEGMENT) == DoubleBlockHalf.LOWER) return bottomShape[state.getValue(AGE)];
+        else return topShape[state.getValue(AGE)];
     }
 
     @Override
@@ -135,6 +149,198 @@ public class DoubleFlowerCropBlock extends FlowerCropBlock {
 
                 level.setBlock(pos1, defaultBlockState().setValue(getAgeProperty(), age).setValue(SEGMENT, segment1), 2);
             }
+        }
+    }
+
+    public static class BlazingStarCropBlock extends DoubleFlowerCropBlock {
+        public BlazingStarCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
+            super(seedItem, properties, 3,
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block()},
+                    new VoxelShape[]{
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            VoxelShapes.block()});
+        }
+    }
+
+    public static class FoxgloveCropBlock extends DoubleFlowerCropBlock {
+        public FoxgloveCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
+            super(seedItem, properties, 3,
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 13.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 13.0D, 16.0D),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block()},
+                    new VoxelShape[]{
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            VoxelShapes.block()});
+        }
+    }
+
+    public static class ImpalaLilyCropBlock extends DoubleFlowerCropBlock {
+        public ImpalaLilyCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
+            super(seedItem, properties, 5,
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block()},
+                    new VoxelShape[]{
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            VoxelShapes.block()});
+        }
+    }
+
+    public static class LavenderCropBlock extends DoubleFlowerCropBlock {
+        public LavenderCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
+            super(seedItem, properties, 5,
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block()},
+                    new VoxelShape[]{
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D),
+                            VoxelShapes.block()});
+        }
+    }
+
+    public static class LilacCropBlock extends DoubleFlowerCropBlock {
+        public LilacCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
+            super(seedItem, properties, 3,
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+                            VoxelShapes.block()},
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+                            VoxelShapes.block()});
+        }
+    }
+
+    public static class PeonyCropBlock extends DoubleFlowerCropBlock {
+        public PeonyCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
+            super(seedItem, properties, 3,
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+                            VoxelShapes.block()},
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+                            VoxelShapes.block()});
+        }
+    }
+
+    public static class RoseBushCropBlock extends DoubleFlowerCropBlock {
+        public RoseBushCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
+            super(seedItem, properties, 3,
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+                            VoxelShapes.block()},
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+                            VoxelShapes.block()});
+        }
+    }
+
+    public static class SunflowerCropBlock extends DoubleFlowerCropBlock {
+        public SunflowerCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
+            super(seedItem, properties, 3,
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 11.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 11.0D, 16.0D),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block()},
+                    new VoxelShape[]{
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            VoxelShapes.empty(),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            VoxelShapes.block(),
+                            VoxelShapes.block(),
+                            VoxelShapes.block()});
         }
     }
 }

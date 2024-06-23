@@ -66,36 +66,36 @@ public final class FloweraryItems {
 
     static {
         for (String color : Flowerary.COLORS_LIST) {
-            ALLIUM_SEEDS.put(color, REGISTRAR.register(color + "_allium_seeds", () -> new BlockNamedItem(FloweraryBlocks.ALLIUM_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            AZURE_BLUET_SEEDS.put(color, REGISTRAR.register(color + "_azure_bluet_seeds", () -> new BlockNamedItem(FloweraryBlocks.AZURE_BLUET_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            BLAZING_STAR_SEEDS.put(color, REGISTRAR.register(color + "_blazing_star_seeds", () -> new BlockNamedItem(FloweraryBlocks.BLAZING_STAR_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            BOUGAINVILLEA_SEEDS.put(color, REGISTRAR.register(color + "_bougainvillea_seeds", () -> new BlockNamedItem(FloweraryBlocks.BOUGAINVILLEA_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            BROMELIAD_SEEDS.put(color, REGISTRAR.register(color + "_bromeliad_seeds", () -> new BlockNamedItem(FloweraryBlocks.BROMELIAD_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            CLEMATIS_SEEDS.put(color, REGISTRAR.register(color + "_clematis_seeds", () -> new BlockNamedItem(FloweraryBlocks.CLEMATIS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            CLOVER_SEEDS.put(color, REGISTRAR.register(color + "_clover_seeds", () -> new BlockNamedItem(FloweraryBlocks.CLOVER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            CORNFLOWER_SEEDS.put(color, REGISTRAR.register(color + "_cornflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.CORNFLOWER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            DAISY_SEEDS.put(color, REGISTRAR.register(color + "_daisy_seeds", () -> new BlockNamedItem(FloweraryBlocks.DAISY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            DANDELION_SEEDS.put(color, REGISTRAR.register(color + "_dandelion_seeds", () -> new BlockNamedItem(FloweraryBlocks.DANDELION_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            DIANTHUS_SEEDS.put(color, REGISTRAR.register(color + "_dianthus_seeds", () -> new BlockNamedItem(FloweraryBlocks.DIANTHUS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            FAIRY_ROSE_SEEDS.put(color, REGISTRAR.register(color + "_fairy_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.FAIRY_ROSE_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            FOXGLOVE_SEEDS.put(color, REGISTRAR.register(color + "_foxglove_seeds", () -> new BlockNamedItem(FloweraryBlocks.FOXGLOVE_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            HIBISCUS_SEEDS.put(color, REGISTRAR.register(color + "_hibiscus_seeds", () -> new BlockNamedItem(FloweraryBlocks.HIBISCUS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            HYACINTH_SEEDS.put(color, REGISTRAR.register(color + "_hyacinth_seeds", () -> new BlockNamedItem(FloweraryBlocks.HYACINTH_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            IMPALA_LILY_SEEDS.put(color, REGISTRAR.register(color + "_impala_lily_seeds", () -> new BlockNamedItem(FloweraryBlocks.IMPALA_LILY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            JASMINE_SEEDS.put(color, REGISTRAR.register(color + "_jasmine_seeds", () -> new BlockNamedItem(FloweraryBlocks.JASMINE_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            LANTANAS_SEEDS.put(color, REGISTRAR.register(color + "_lantanas_seeds", () -> new BlockNamedItem(FloweraryBlocks.LANTANAS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            LILAC_SEEDS.put(color, REGISTRAR.register(color + "_lilac_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILAC_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            LILY_SEEDS.put(color, REGISTRAR.register(color + "_lily_seeds", () -> new BlockNamedItem(FloweraryBlocks.LILY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            ORCHID_SEEDS.put(color, REGISTRAR.register(color + "_orchid_seeds", () -> new BlockNamedItem(FloweraryBlocks.ORCHID_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            PEONY_SEEDS.put(color, REGISTRAR.register(color + "_peony_seeds", () -> new BlockNamedItem(FloweraryBlocks.PEONY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            POPPY_SEEDS.put(color, REGISTRAR.register(color + "_poppy_seeds", () -> new BlockNamedItem(FloweraryBlocks.POPPY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            POPPIES_SEEDS.put(color, REGISTRAR.register(color + "_poppies_seeds", () -> new BlockNamedItem(FloweraryBlocks.POPPIES_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            ROSE_BUSH_SEEDS.put(color, REGISTRAR.register(color + "_rose_bush_seeds", () -> new BlockNamedItem(FloweraryBlocks.ROSE_BUSH_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            ROSE_BUSHLET_SEEDS.put(color, REGISTRAR.register(color + "_rose_bushlet_seeds", () -> new BlockNamedItem(FloweraryBlocks.ROSE_BUSHLET_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            SUNFLOWER_SEEDS.put(color, REGISTRAR.register(color + "_sunflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.SUNFLOWER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            TULIP_SEEDS.put(color, REGISTRAR.register(color + "_tulip_seeds", () -> new BlockNamedItem(FloweraryBlocks.TULIP_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            WILDFLOWER_SEEDS.put(color, REGISTRAR.register(color + "_wildflower_seeds", () -> new BlockNamedItem(FloweraryBlocks.WILDFLOWER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
-            WITHER_ROSE_SEEDS.put(color, REGISTRAR.register(color + "_wither_rose_seeds", () -> new BlockNamedItem(FloweraryBlocks.WITHER_ROSE_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            ALLIUM_SEEDS.put(color, REGISTRAR.register(color + "_allium_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.ALLIUM_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            AZURE_BLUET_SEEDS.put(color, REGISTRAR.register(color + "_azure_bluet_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.AZURE_BLUET_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            BLAZING_STAR_SEEDS.put(color, REGISTRAR.register(color + "_blazing_star_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.BLAZING_STAR_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            BOUGAINVILLEA_SEEDS.put(color, REGISTRAR.register(color + "_bougainvillea_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.BOUGAINVILLEA_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            BROMELIAD_SEEDS.put(color, REGISTRAR.register(color + "_bromeliad_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.BROMELIAD_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            CLEMATIS_SEEDS.put(color, REGISTRAR.register(color + "_clematis_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.CLEMATIS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            CLOVER_SEEDS.put(color, REGISTRAR.register(color + "_clover_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.CLOVER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            CORNFLOWER_SEEDS.put(color, REGISTRAR.register(color + "_cornflower_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.CORNFLOWER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            DAISY_SEEDS.put(color, REGISTRAR.register(color + "_daisy_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.DAISY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            DANDELION_SEEDS.put(color, REGISTRAR.register(color + "_dandelion_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.DANDELION_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            DIANTHUS_SEEDS.put(color, REGISTRAR.register(color + "_dianthus_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.DIANTHUS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            FAIRY_ROSE_SEEDS.put(color, REGISTRAR.register(color + "_fairy_rose_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.FAIRY_ROSE_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            FOXGLOVE_SEEDS.put(color, REGISTRAR.register(color + "_foxglove_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.FOXGLOVE_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            HIBISCUS_SEEDS.put(color, REGISTRAR.register(color + "_hibiscus_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.HIBISCUS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            HYACINTH_SEEDS.put(color, REGISTRAR.register(color + "_hyacinth_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.HYACINTH_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            IMPALA_LILY_SEEDS.put(color, REGISTRAR.register(color + "_impala_lily_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.IMPALA_LILY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            JASMINE_SEEDS.put(color, REGISTRAR.register(color + "_jasmine_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.JASMINE_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            LANTANAS_SEEDS.put(color, REGISTRAR.register(color + "_lantanas_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.LANTANAS_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            LILAC_SEEDS.put(color, REGISTRAR.register(color + "_lilac_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.LILAC_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            LILY_SEEDS.put(color, REGISTRAR.register(color + "_lily_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.LILY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            ORCHID_SEEDS.put(color, REGISTRAR.register(color + "_orchid_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.ORCHID_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            PEONY_SEEDS.put(color, REGISTRAR.register(color + "_peony_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.PEONY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            POPPY_SEEDS.put(color, REGISTRAR.register(color + "_poppy_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.POPPY_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            POPPIES_SEEDS.put(color, REGISTRAR.register(color + "_poppies_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.POPPIES_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            ROSE_BUSH_SEEDS.put(color, REGISTRAR.register(color + "_rose_bush_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.ROSE_BUSH_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            ROSE_BUSHLET_SEEDS.put(color, REGISTRAR.register(color + "_rose_bushlet_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.ROSE_BUSHLET_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            SUNFLOWER_SEEDS.put(color, REGISTRAR.register(color + "_sunflower_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.SUNFLOWER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            TULIP_SEEDS.put(color, REGISTRAR.register(color + "_tulip_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.TULIP_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            WILDFLOWER_SEEDS.put(color, REGISTRAR.register(color + "_wildflower_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.WILDFLOWER_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
+            WITHER_ROSE_SEEDS.put(color, REGISTRAR.register(color + "_wither_rose_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.WITHER_ROSE_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/sunflower_bottom",
   "textures": {
-    "block": "flowerary:block/sunflower_stage3_bottom"
+    "cross": "flowerary:block/sunflower_stage3_bottom"
   }
 }

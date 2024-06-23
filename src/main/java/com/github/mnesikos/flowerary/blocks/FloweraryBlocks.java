@@ -183,7 +183,7 @@ public final class FloweraryBlocks {
             IMPALA_LILY_PLANTS.put(color, REGISTRAR.register(color + "_impala_lily_plant", () -> new DoubleFlowerCropBlock(FloweraryItems.IMPALA_LILY_SEEDS.get(color), 4, AbstractBlock.Properties.copy(Blocks.WHEAT))));
             JASMINE_PLANTS.put(color, REGISTRAR.register(color + "_jasmine_plant", () -> new FlowerVineCropBlock(FloweraryItems.JASMINE_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             LANTANAS_PLANTS.put(color, REGISTRAR.register(color + "_lantanas_plant", () -> new FlowerCropBlock(FloweraryItems.LANTANAS_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            LAVENDER_PLANTS.put(color, REGISTRAR.register(color + "_lavender_plant", () -> new DoubleFlowerCropBlock(FloweraryItems.LAVENDER_SEEDS.get(color), 4, AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            LAVENDER_PLANTS.put(color, REGISTRAR.register(color + "_lavender_plant", () -> new DoubleFlowerCropBlock(FloweraryItems.LAVENDER_SEEDS.get(color), 5, AbstractBlock.Properties.copy(Blocks.WHEAT))));
             LILAC_PLANTS.put(color, REGISTRAR.register(color + "_lilac_plant", () -> new DoubleFlowerCropBlock(FloweraryItems.LILAC_SEEDS.get(color), 4, AbstractBlock.Properties.copy(Blocks.WHEAT))));
             LILY_PLANTS.put(color, REGISTRAR.register(color + "_lily_plant", () -> new FlowerCropBlock(FloweraryItems.LILY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             ORCHID_PLANTS.put(color, REGISTRAR.register(color + "_orchid_plant", () -> new FlowerCropBlock(FloweraryItems.ORCHID_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
@@ -192,7 +192,7 @@ public final class FloweraryBlocks {
             POPPIES_PLANTS.put(color, REGISTRAR.register(color + "_poppies_plant", () -> new FlowerCropBlock(FloweraryItems.POPPIES_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             ROSE_BUSH_PLANTS.put(color, REGISTRAR.register(color + "_rose_bush_plant", () -> new DoubleFlowerCropBlock(FloweraryItems.ROSE_BUSH_SEEDS.get(color), 4, AbstractBlock.Properties.copy(Blocks.WHEAT))));
             ROSE_BUSHLET_PLANTS.put(color, REGISTRAR.register(color + "_rose_bushlet_plant", () -> new FlowerCropBlock(FloweraryItems.ROSE_BUSHLET_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-            SUNFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_sunflower_plant", () -> new DoubleFlowerCropBlock(FloweraryItems.SUNFLOWER_SEEDS.get(color), 4, AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            SUNFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_sunflower_plant", () -> new DoubleFlowerCropBlock(FloweraryItems.SUNFLOWER_SEEDS.get(color), 3, AbstractBlock.Properties.copy(Blocks.WHEAT))));
             TULIP_PLANTS.put(color, REGISTRAR.register(color + "_tulip_plant", () -> new FlowerCropBlock(FloweraryItems.TULIP_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             WILDFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_wildflower_plant", () -> new FlowerCropBlock(FloweraryItems.WILDFLOWER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
             WITHER_ROSE_PLANTS.put(color, REGISTRAR.register(color + "_wither_rose_plant", () -> new FlowerCropBlock(FloweraryItems.WITHER_ROSE_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));

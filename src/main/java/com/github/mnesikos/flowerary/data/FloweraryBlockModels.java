@@ -138,25 +138,25 @@ public class FloweraryBlockModels extends BlockModelProvider {
     }
 
     public void sunflowerPlant(String crop) {
-        singleTexture(crop + "_stage0_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "block", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0_bottom"));
-        singleTexture(crop + "_stage1_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "block", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1_bottom"));
-        singleTexture(crop + "_stage2_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "block", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2_bottom"));
-        singleTexture(crop + "_stage3_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "block", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3_bottom"));
+        singleTexture(crop + "_stage0_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "cross", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0_bottom"));
+        singleTexture(crop + "_stage1_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "cross", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1_bottom"));
+        singleTexture(crop + "_stage2_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "cross", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2_bottom"));
+        singleTexture(crop + "_stage3_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "cross", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3_bottom"));
         withExistingParent(crop + "_stage0_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"))
-                .texture("block", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0_top"))
-                .texture("back", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0_top"))
-                .texture("front", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0_top"));
+                .texture("cross", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0_top"))
+                .texture("back", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0_back"))
+                .texture("front", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0_front"));
         withExistingParent(crop + "_stage1_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"))
-                .texture("block", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1_top"))
-                .texture("back", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1_top"))
-                .texture("front", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1_top"));
+                .texture("cross", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1_top"))
+                .texture("back", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1_back"))
+                .texture("front", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1_front"));
         withExistingParent(crop + "_stage2_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"))
-                .texture("block", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2_top"))
-                .texture("back", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2_top"))
-                .texture("front", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2_top"));
+                .texture("cross", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2_top"))
+                .texture("back", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2_back"))
+                .texture("front", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2_front"));
         withExistingParent(crop + "_stage3_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"))
-                .texture("block", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3_top"))
-                .texture("back", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3_top"))
-                .texture("front", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3_top"));
+                .texture("cross", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3_top"))
+                .texture("back", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3_back"))
+                .texture("front", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3_front"));
     }
 }

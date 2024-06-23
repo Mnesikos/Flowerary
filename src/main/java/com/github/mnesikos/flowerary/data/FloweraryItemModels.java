@@ -15,20 +15,20 @@ public class FloweraryItemModels extends ItemModelProvider {
         itemGenerated("empty_pollen_jar");
         itemGenerated("dandelion_pollen_jar", "pollen_jar");
         itemGenerated("poppy_pollen_jar", "pollen_jar");
-        itemGenerated("orchid_pollen_jar", "pollen_jar");
+        itemGenerated("blue_orchid_pollen_jar", "pollen_jar");
         itemGenerated("allium_pollen_jar", "pollen_jar");
         itemGenerated("azure_bluet_pollen_jar", "pollen_jar");
         itemGenerated("red_tulip_pollen_jar", "pollen_jar");
         itemGenerated("orange_tulip_pollen_jar", "pollen_jar");
         itemGenerated("white_tulip_pollen_jar", "pollen_jar");
         itemGenerated("pink_tulip_pollen_jar", "pollen_jar");
-        itemGenerated("daisy_pollen_jar", "pollen_jar");
+        itemGenerated("oxeye_daisy_pollen_jar", "pollen_jar");
         itemGenerated("cornflower_pollen_jar", "pollen_jar");
         itemGenerated("lily_of_the_valley_pollen_jar", "pollen_jar");
         itemGenerated("wither_rose_pollen_jar", "pollen_jar");
         itemGenerated("sunflower_pollen_jar", "pollen_jar");
         itemGenerated("lilac_pollen_jar", "pollen_jar");
-        itemGenerated("rose_pollen_jar", "pollen_jar");
+        itemGenerated("rose_bush_pollen_jar", "pollen_jar");
         itemGenerated("peony_pollen_jar", "pollen_jar");
 
         withExistingParent("black_candle", modLoc("block/candles/black_candle_one"));

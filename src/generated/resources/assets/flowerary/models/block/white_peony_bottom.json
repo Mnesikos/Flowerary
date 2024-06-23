@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "flowerary:block/white_peony_top"
+    "cross": "flowerary:block/white_peony_bottom"
   }
 }

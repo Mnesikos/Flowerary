@@ -73,7 +73,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
 
     public void doubleCross(String name, ResourceLocation cross) {
         cross(name + "_top", new ResourceLocation(cross.getNamespace(), cross.getPath() + "_top"));
-        cross(name + "_bottom", new ResourceLocation(cross.getNamespace(), cross.getPath() + "_top"));
+        cross(name + "_bottom", new ResourceLocation(cross.getNamespace(), cross.getPath() + "_bottom"));
     }
 
     public void clover(String name, ResourceLocation clover) {

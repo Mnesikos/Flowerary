@@ -24,7 +24,7 @@ public final class FloweraryBlocks {
     // FLOWERS
     public static final Map<String, RegistryObject<Block>> ALLIUM = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> AZURE_BLUET = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> BLAZING_STAR = new HashMap<>();
+    public static final Map<String, RegistryObject<DoublePlantBlock>> BLAZING_STAR = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> BOUGAINVILLEA = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> BROMELIAD = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CLEMATIS = new HashMap<>();
@@ -34,21 +34,21 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> DANDELION = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> DIANTHUS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> FAIRY_ROSE = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> FOXGLOVE = new HashMap<>();
+    public static final Map<String, RegistryObject<DoublePlantBlock>> FOXGLOVE = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> HIBISCUS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> HYACINTH = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> IMPALA_LILY = new HashMap<>();
+    public static final Map<String, RegistryObject<DoublePlantBlock>> IMPALA_LILY = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> JASMINE = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> LANTANAS = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> LILAC = new HashMap<>();
+    public static final Map<String, RegistryObject<DoublePlantBlock>> LILAC = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> LILY = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> ORCHID = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> PEONY = new HashMap<>();
+    public static final Map<String, RegistryObject<DoublePlantBlock>> PEONY = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POPPY = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POPPIES = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> ROSE_BUSH = new HashMap<>();
+    public static final Map<String, RegistryObject<DoublePlantBlock>> ROSE_BUSH = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> ROSE_BUSHLET = new HashMap<>();
-    public static final Map<String, RegistryObject<Block>> SUNFLOWER = new HashMap<>();
+    public static final Map<String, RegistryObject<DoublePlantBlock>> SUNFLOWER = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> TULIP = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> WILDFLOWER = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> WITHER_ROSE = new HashMap<>();

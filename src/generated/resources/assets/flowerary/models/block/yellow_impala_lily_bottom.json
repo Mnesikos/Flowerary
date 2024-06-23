@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "flowerary:block/yellow_impala_lily_top"
+    "cross": "flowerary:block/yellow_impala_lily_bottom"
   }
 }

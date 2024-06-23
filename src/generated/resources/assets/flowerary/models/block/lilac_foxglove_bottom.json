@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "flowerary:block/lilac_foxglove_top"
+    "cross": "flowerary:block/lilac_foxglove_bottom"
   }
 }

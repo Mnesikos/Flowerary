@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "flowerary:block/pink_blazing_star_top"
+    "cross": "flowerary:block/pink_blazing_star_bottom"
   }
 }

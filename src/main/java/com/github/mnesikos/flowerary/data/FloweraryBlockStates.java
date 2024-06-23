@@ -85,7 +85,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
         getVariantBuilder(block).forAllStatesExcept(state -> ConfiguredModel.builder().modelFile(cross).build());
     }
 
-    public void doubleCross(/*DoublePlantBlock*/Block block) {
+    public void doubleCross(DoublePlantBlock block) {
         ModelFile crossLower = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + Objects.requireNonNull(block.getRegistryName()).getPath() + "_bottom"));
         ModelFile crossUpper = models().getExistingFile(new ResourceLocation(Flowerary.MOD_ID, "block/" + block.getRegistryName().getPath() + "_top"));
         getVariantBuilder(block).forAllStatesExcept(state -> ConfiguredModel.builder()

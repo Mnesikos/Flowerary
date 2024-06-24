@@ -1,14 +1,13 @@
 package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
-import com.github.mnesikos.flowerary.blocks.DoubleFlowerCropBlock;
+import com.github.mnesikos.flowerary.blocks.TallFlowerCropBlock;
 import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.state.properties.DoubleBlockHalf;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -152,7 +151,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
         ModelFile stage3Upper = models().getExistingFile(modLoc("block/" + plant + "_stage3_top"));
         ModelFile stage7Upper = models().getExistingFile(modLoc("block/" + color + "_" + plant + "_top"));
         getVariantBuilder(block).forAllStates(state -> {
-            DoubleBlockHalf segment = state.getValue(DoubleFlowerCropBlock.SEGMENT);
+            DoubleBlockHalf segment = state.getValue(TallFlowerCropBlock.SEGMENT);
             switch (state.getValue(CropsBlock.AGE)) {
                 case 0:
                     return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage0Lower : stage0Upper).build();

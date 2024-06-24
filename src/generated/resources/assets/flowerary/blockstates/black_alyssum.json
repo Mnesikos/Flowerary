@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
-      "model": "flowerary:block/black_alyssum"
-    }
+    "": [
+      {
+        "model": "flowerary:block/black_alyssum"
+      },
+      {
+        "model": "flowerary:block/black_alyssum",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/black_alyssum",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/black_alyssum",
+        "y": 270
+      }
+    ]
   }
 }

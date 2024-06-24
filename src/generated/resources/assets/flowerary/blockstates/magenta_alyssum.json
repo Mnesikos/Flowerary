@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
-      "model": "flowerary:block/magenta_alyssum"
-    }
+    "": [
+      {
+        "model": "flowerary:block/magenta_alyssum"
+      },
+      {
+        "model": "flowerary:block/magenta_alyssum",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/magenta_alyssum",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/magenta_alyssum",
+        "y": 270
+      }
+    ]
   }
 }

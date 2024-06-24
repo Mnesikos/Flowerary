@@ -6,8 +6,10 @@ import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.block.DoublePlantBlock;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.state.properties.DoubleBlockHalf;
+import net.minecraft.util.Direction;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -24,12 +26,12 @@ public class FloweraryBlockStates extends BlockStateProvider {
     protected void registerStatesAndModels() {
         for (String color : Flowerary.COLORS_LIST) {
             block(FloweraryBlocks.ALLIUM.get(color).get());
-            block(FloweraryBlocks.ALYSSUM.get(color).get());
+            rotateYBlock(FloweraryBlocks.ALYSSUM.get(color).get());
             block(FloweraryBlocks.AZURE_BLUET.get(color).get());
             doubleBlock(FloweraryBlocks.BLAZING_STAR.get(color).get());
             block(FloweraryBlocks.BROMELIAD.get(color).get());
             block(FloweraryBlocks.CHICORY.get(color).get());
-            block(FloweraryBlocks.CLOVER.get(color).get());
+            rotateYBlock(FloweraryBlocks.CLOVER.get(color).get());
             block(FloweraryBlocks.CORNFLOWER.get(color).get());
             block(FloweraryBlocks.DAISY.get(color).get());
             block(FloweraryBlocks.DANDELION.get(color).get());
@@ -97,6 +99,15 @@ public class FloweraryBlockStates extends BlockStateProvider {
             crop(FloweraryBlocks.WILDFLOWER_PLANTS.get(color).get(), color, "wildflower");
             crop(FloweraryBlocks.WITHER_ROSE_PLANTS.get(color).get(), color, "wither_rose");
         }
+    }
+
+    public void rotateYBlock(Block block) {
+        ModelFile model = models().getExistingFile(block.getRegistryName());
+        getVariantBuilder(block).partialState()
+                .addModels(new ConfiguredModel(model, 0, 0, false))
+                .addModels(new ConfiguredModel(model, 0, 90, false))
+                .addModels(new ConfiguredModel(model, 0, 180, false))
+                .addModels(new ConfiguredModel(model, 0, 270, false));
     }
 
     public void block(Block block) {

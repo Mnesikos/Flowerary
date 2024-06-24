@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
-      "model": "flowerary:block/red_alyssum"
-    }
+    "": [
+      {
+        "model": "flowerary:block/red_alyssum"
+      },
+      {
+        "model": "flowerary:block/red_alyssum",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/red_alyssum",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/red_alyssum",
+        "y": 270
+      }
+    ]
   }
 }

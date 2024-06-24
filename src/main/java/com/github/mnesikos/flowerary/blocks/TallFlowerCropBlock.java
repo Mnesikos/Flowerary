@@ -12,8 +12,11 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -24,6 +27,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -57,9 +61,13 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
     @Override
     public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, IWorld level, BlockPos pos, BlockPos facingPos) {
         DoubleBlockHalf stateSegment = state.getValue(SEGMENT);
-        if (facing.getAxis() != Direction.Axis.Y || stateSegment == DoubleBlockHalf.LOWER != (facing == Direction.UP) || facingState.is(this) && facingState.getValue(SEGMENT) != stateSegment)
+        if (facing.getAxis() != Direction.Axis.Y || (stateSegment == DoubleBlockHalf.LOWER != (facing == Direction.UP) || !isDouble(state)) || (facingState.is(this) && facingState.getValue(SEGMENT) != stateSegment))
             return stateSegment == DoubleBlockHalf.LOWER && facing == Direction.DOWN && !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, level, pos, facingPos);
         else return Blocks.AIR.defaultBlockState();
+    }
+
+    public boolean isDouble(BlockState state) {
+        return getAge(state) >= upperSegmentAge;
     }
 
     @Nullable
@@ -73,23 +81,24 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
     public boolean canSurvive(BlockState state, IWorldReader level, BlockPos pos) {
         if (state.getValue(SEGMENT) == DoubleBlockHalf.LOWER) return super.canSurvive(state, level, pos);
         else {
+            if (!isDouble(state)) return false;
             BlockState lowerState = level.getBlockState(pos.below());
             if (state.getBlock() != this) return super.canSurvive(state, level, pos);
-            return lowerState.is(this) && lowerState.getValue(SEGMENT) == DoubleBlockHalf.LOWER;
+            return lowerState.is(this) && lowerState.getValue(SEGMENT) == DoubleBlockHalf.LOWER && getAge(state) == getAge(lowerState);
         }
     }
 
     @Override
     public void randomTick(BlockState state, ServerWorld level, BlockPos pos, Random random) {
-        int age = state.getValue(getAgeProperty());
-        if (age < getMaxAge() && state.getValue(SEGMENT) == DoubleBlockHalf.LOWER && level.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(5) == 0)) {
+        if (!level.isAreaLoaded(pos, 1)) return;
+        if (state.getValue(SEGMENT) == DoubleBlockHalf.UPPER) return;
+        int age = getAge(state);
+        if (isValidBonemealTarget(level, pos, state, level.isClientSide) && state.getValue(SEGMENT) == DoubleBlockHalf.LOWER && level.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(5) == 0)) {
             int growthAge = age + 1;
+            if (growthAge >= upperSegmentAge)
+                level.setBlockAndUpdate(pos.above(), defaultBlockState().setValue(getAgeProperty(), growthAge).setValue(SEGMENT, DoubleBlockHalf.UPPER));
             level.setBlock(pos, state.setValue(getAgeProperty(), growthAge), 2);
             ForgeHooks.onCropsGrowPost(level, pos, state);
-            if (growthAge >= upperSegmentAge) {
-                level.setBlockAndUpdate(pos.above(), defaultBlockState().setValue(getAgeProperty(), growthAge).setValue(SEGMENT, DoubleBlockHalf.UPPER));
-                ForgeHooks.onCropsGrowPost(level, pos.above(), state);
-            }
         }
     }
 
@@ -130,26 +139,43 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
         return MathHelper.getSeed(pos.getX(), pos.below(state.getValue(SEGMENT) == DoubleBlockHalf.LOWER ? 0 : 1).getY(), pos.getZ());
     }
 
+    public boolean canGrowUp(IBlockReader level, BlockPos pos) {
+        BlockState aboveState = level.getBlockState(pos.above());
+        return aboveState.getBlock() instanceof TallFlowerCropBlock || aboveState.getMaterial().isReplaceable();
+    }
+
     @Override
-    public void performBonemeal(ServerWorld level, Random random, BlockPos pos, BlockState state) {
-        int age = Math.min(getMaxAge(), state.getValue(getAgeProperty()) + MathHelper.nextInt(level.random, 1, 3));
-        if (state.canSurvive(level, pos) && state.getValue(getAgeProperty()) < getMaxAge()) {
-            level.setBlock(pos, state.setValue(getAgeProperty(), age), 2);
-            if (age >= upperSegmentAge) {
-                BlockPos pos1;
-                DoubleBlockHalf segment1;
-                if (state.getValue(SEGMENT) == DoubleBlockHalf.LOWER) {
-                    pos1 = pos.above();
-                    segment1 = DoubleBlockHalf.UPPER;
+    public boolean isValidBonemealTarget(IBlockReader level, BlockPos pos, BlockState state, boolean isClient) {
+        return !isMaxAge(state) && (canGrowUp(level, pos) || getAge(state) < upperSegmentAge - 1);
+    }
 
-                } else {
-                    pos1 = pos.below();
-                    segment1 = DoubleBlockHalf.LOWER;
-                }
+    @Override
+    public void growCrops(World level, BlockPos pos, BlockState state) {
+        if (state.getValue(SEGMENT) == DoubleBlockHalf.UPPER) pos = pos.below();
+        int growthAge = getAge(state) + getBonemealAgeIncrease(level);
+        growthAge = Math.min(growthAge, getMaxAge());
 
-                level.setBlock(pos1, defaultBlockState().setValue(getAgeProperty(), age).setValue(SEGMENT, segment1), 2);
-            }
+        if (growthAge >= upperSegmentAge) {
+            if (!canGrowUp(level, pos)) return;
+            level.setBlock(pos.above(), getStateForAge(growthAge).setValue(SEGMENT, DoubleBlockHalf.UPPER), 2);
         }
+        level.setBlock(pos, getStateForAge(growthAge), 2);
+    }
+
+    @Override
+    public boolean isMaxAge(BlockState state) {
+//        if (state.getValue(SEGMENT) == DoubleBlockHalf.UPPER) return false;
+        return super.isMaxAge(state);
+    }
+
+    @Override
+    public ActionResultType use(BlockState state, World level, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult rayTraceResult) {
+        ActionResultType old = super.use(state, level, pos, player, hand, rayTraceResult);
+        if (!old.consumesAction() && isDouble(state) && state.getValue(SEGMENT) == DoubleBlockHalf.UPPER) {
+            PlayerInteractEvent.RightClickBlock event = ForgeHooks.onRightClickBlock(player, hand, pos.below(), rayTraceResult);
+            if (event.isCancelable()) return event.getCancellationResult();
+        }
+        return old;
     }
 
     public static class BlazingStarCropBlock extends TallFlowerCropBlock {

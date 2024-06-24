@@ -70,9 +70,13 @@ public class PollenJarItem extends Item {
 
             if (!world.isClientSide) {
                 ItemStack jar = context.getItemInHand();
+                ItemStack emptyJar = new ItemStack(FloweraryItems.EMPTY_POLLEN_JAR.get());
                 ItemStack seeds = crop.asItem().getDefaultInstance();
                 player.awardStat(Stats.ITEM_USED.get(this));
-                if (!player.abilities.instabuild) jar.shrink(1);
+                if (!player.abilities.instabuild) {
+                    jar.shrink(1);
+                    if (!player.inventory.add(emptyJar)) player.drop(emptyJar, false);
+                }
                 if (!player.inventory.add(seeds)) player.drop(seeds, false);
             }
 

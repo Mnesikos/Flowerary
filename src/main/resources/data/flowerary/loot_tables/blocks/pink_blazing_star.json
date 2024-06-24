@@ -6,6 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "flowerary:pink_blazing_star",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "flowerary:pink_blazing_star"
         }
       ],
@@ -17,3 +26,4 @@
     }
   ]
 }
+

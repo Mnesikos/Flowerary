@@ -6,6 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "flowerary:blue_sunflower",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "flowerary:blue_sunflower"
         }
       ],
@@ -17,3 +26,4 @@
     }
   ]
 }
+

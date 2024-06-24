@@ -6,6 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "flowerary:black_peony",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "flowerary:black_peony"
         }
       ],
@@ -17,3 +26,4 @@
     }
   ]
 }
+

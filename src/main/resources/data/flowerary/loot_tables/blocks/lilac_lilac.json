@@ -6,6 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "flowerary:lilac_lilac",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "flowerary:lilac_lilac"
         }
       ],
@@ -17,3 +26,4 @@
     }
   ]
 }
+

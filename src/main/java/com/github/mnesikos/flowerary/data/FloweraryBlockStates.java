@@ -75,6 +75,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             doubleCrop(FloweraryBlocks.BLAZING_STAR_PLANTS.get(color).get(), color, "blazing_star");
             crop(FloweraryBlocks.BROMELIAD_PLANTS.get(color).get(), color, "bromeliad");
             crop(FloweraryBlocks.CHICORY_PLANTS.get(color).get(), color, "chicory");
+            crop(FloweraryBlocks.CLOVER_PLANTS.get(color).get(), color, "clover");
             crop(FloweraryBlocks.CORNFLOWER_PLANTS.get(color).get(), color, "cornflower");
             crop(FloweraryBlocks.DAISY_PLANTS.get(color).get(), color, "daisy");
             crop(FloweraryBlocks.DANDELION_PLANTS.get(color).get(), color, "dandelion");

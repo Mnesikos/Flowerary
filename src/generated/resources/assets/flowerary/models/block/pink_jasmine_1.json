@@ -1,0 +1,6 @@
+{
+  "parent": "flowerary:block/vine_1",
+  "textures": {
+    "vine": "flowerary:block/pink_jasmine"
+  }
+}

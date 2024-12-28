@@ -1,13 +1,13 @@
 {
     "variants": {
-        "age=0": { "model": "flowerary:block/flower_plant/bougainvillea_stage0" },
-        "age=1": { "model": "flowerary:block/flower_plant/bougainvillea_stage1" },
-        "age=2": { "model": "flowerary:block/flower_plant/bougainvillea_stage1" },
-        "age=3": { "model": "flowerary:block/flower_plant/bougainvillea_stage2" },
-        "age=4": { "model": "flowerary:block/flower_plant/bougainvillea_stage2" },
-        "age=5": { "model": "flowerary:block/flower_plant/bougainvillea_stage3" },
-        "age=6": { "model": "flowerary:block/flower_plant/bougainvillea_stage3" },
-        "age=7": { "model": "flowerary:block/flower_plant/pink_bougainvillea_plant"}
+        "age=0": { "model": "flowerary:block/bougainvillea_stage0" },
+        "age=1": { "model": "flowerary:block/bougainvillea_stage1" },
+        "age=2": { "model": "flowerary:block/bougainvillea_stage1" },
+        "age=3": { "model": "flowerary:block/bougainvillea_stage2" },
+        "age=4": { "model": "flowerary:block/bougainvillea_stage2" },
+        "age=5": { "model": "flowerary:block/bougainvillea_stage3" },
+        "age=6": { "model": "flowerary:block/bougainvillea_stage3" },
+        "age=7": { "model": "flowerary:block/pink_bougainvillea_plant"}
     }
 }
 

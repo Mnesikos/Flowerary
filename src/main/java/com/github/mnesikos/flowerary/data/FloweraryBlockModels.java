@@ -20,8 +20,10 @@ public class FloweraryBlockModels extends BlockModelProvider {
             alyssum(color + "_alyssum", modLoc(BLOCK_FOLDER + "/" + color + "_alyssum"));
             cross(color + "_azure_bluet", modLoc(BLOCK_FOLDER + "/" + color + "_azure_bluet"));
             doubleCross(color + "_blazing_star", modLoc(BLOCK_FOLDER + "/" + color + "_blazing_star"));
+            vine(color + "_bougainvillea", modLoc(BLOCK_FOLDER + "/" + color + "_bougainvillea"));
             cross(color + "_bromeliad", modLoc(BLOCK_FOLDER + "/" + color + "_bromeliad"));
             cross(color + "_chicory", modLoc(BLOCK_FOLDER + "/" + color + "_chicory"));
+            vine(color + "_clematis", modLoc(BLOCK_FOLDER + "/" + color + "_clematis"));
             clover(color + "_clover", modLoc(BLOCK_FOLDER + "/" + color + "_clover"));
             cross(color + "_cornflower", modLoc(BLOCK_FOLDER + "/" + color + "_cornflower"));
             cross(color + "_daisy", modLoc(BLOCK_FOLDER + "/" + color + "_daisy"));
@@ -32,6 +34,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
             cross(color + "_hibiscus", modLoc(BLOCK_FOLDER + "/" + color + "_hibiscus"));
             cross(color + "_hyacinth", modLoc(BLOCK_FOLDER + "/" + color + "_hyacinth"));
             doubleCross(color + "_impala_lily", modLoc(BLOCK_FOLDER + "/" + color + "_impala_lily"));
+            vine(color + "_jasmine", modLoc(BLOCK_FOLDER + "/" + color + "_jasmine"));
             cross(color + "_lantanas", modLoc(BLOCK_FOLDER + "/" + color + "_lantanas"));
             doubleCross(color + "_lavender", modLoc(BLOCK_FOLDER + "/" + color + "_lavender"));
             doubleCross(color + "_lilac", modLoc(BLOCK_FOLDER + "/" + color + "_lilac"));
@@ -65,8 +68,11 @@ public class FloweraryBlockModels extends BlockModelProvider {
         alyssumPlant("alyssum");
         plant("azure_bluet");
         doublePlant("blazing_star");
+        vinePlant("bougainvillea");
         plant("bromeliad");
         plant("chicory");
+        vinePlant("clematis");
+        //clover
         plant("cornflower");
         plant("daisy");
         plant("dandelion");
@@ -76,6 +82,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
         plant("hibiscus");
         plant("hyacinth");
         doublePlant("impala_lily");
+        vinePlant("jasmine");
         plant("lantanas");
         doublePlant("lavender");
         doublePlant("lilac");
@@ -105,6 +112,21 @@ public class FloweraryBlockModels extends BlockModelProvider {
         singleTexture(name, modLoc(BLOCK_FOLDER + "/alyssum"), "1", alyssum);
     }
 
+    public void vine(String name, ResourceLocation vine) {
+        singleTexture(name + "_1", modLoc(BLOCK_FOLDER + "/vine_1"), "vine", vine);
+        singleTexture(name + "_1u", modLoc(BLOCK_FOLDER + "/vine_1u"), "vine", vine);
+        singleTexture(name + "_2", modLoc(BLOCK_FOLDER + "/vine_2"), "vine", vine);
+        singleTexture(name + "_2_opposite", modLoc(BLOCK_FOLDER + "/vine_2_opposite"), "vine", vine);
+        singleTexture(name + "_2u", modLoc(BLOCK_FOLDER + "/vine_2u"), "vine", vine);
+        singleTexture(name + "_2u_opposite", modLoc(BLOCK_FOLDER + "/vine_2u_opposite"), "vine", vine);
+        singleTexture(name + "_3", modLoc(BLOCK_FOLDER + "/vine_3"), "vine", vine);
+        singleTexture(name + "_3u", modLoc(BLOCK_FOLDER + "/vine_3u"), "vine", vine);
+        singleTexture(name + "_4", modLoc(BLOCK_FOLDER + "/vine_4"), "vine", vine);
+        singleTexture(name + "_4u", modLoc(BLOCK_FOLDER + "/vine_4u"), "vine", vine);
+        singleTexture(name + "_u", modLoc(BLOCK_FOLDER + "/vine_u"), "vine", vine);
+        singleTexture(name, modLoc(BLOCK_FOLDER + "/vine_plant"), "vine", vine);
+    }
+
     public void sunflower(String name, ResourceLocation sunflower) {
         singleTexture(name + "_bottom", mcLoc(BLOCK_FOLDER + "/sunflower_bottom"), "block", mcLoc("block/sunflower_bottom"));
         singleTexture(name + "_top", mcLoc(BLOCK_FOLDER + "/sunflower_top"), "front", sunflower);
@@ -119,6 +141,13 @@ public class FloweraryBlockModels extends BlockModelProvider {
         cross(crop + "_stage1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1"));
         cross(crop + "_stage2", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2"));
         cross(crop + "_stage3", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3"));
+    }
+
+    public void vinePlant(String crop) {
+        singleTexture(crop + "_stage0", modLoc(BLOCK_FOLDER + "/" + "vine_plant_stage0"), "vine", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0"));
+        singleTexture(crop + "_stage1", modLoc(BLOCK_FOLDER + "/" + "vine_plant_stage1"), "vine", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1"));
+        singleTexture(crop + "_stage2", modLoc(BLOCK_FOLDER + "/" + "vine_plant_stage2"), "vine", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2"));
+        singleTexture(crop + "_stage3", modLoc(BLOCK_FOLDER + "/" + "vine_plant_stage3"), "vine", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3"));
     }
 
     public void doublePlant(String crop) {

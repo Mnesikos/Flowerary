@@ -1,0 +1,6 @@
+{
+  "parent": "flowerary:block/vine_plant_stage3",
+  "textures": {
+    "vine": "flowerary:block/jasmine_stage3"
+  }
+}

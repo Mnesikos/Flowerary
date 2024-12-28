@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "flowerary:block/wilted_sunflower_top"
+    },
+    "half=lower": {
+      "model": "flowerary:block/wilted_sunflower_bottom"
+    }
+  }
+}

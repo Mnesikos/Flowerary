@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/wilted_clover"
+      },
+      {
+        "model": "flowerary:block/wilted_clover",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/wilted_clover",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/wilted_clover",
+        "y": 270
+      }
+    ]
+  }
+}

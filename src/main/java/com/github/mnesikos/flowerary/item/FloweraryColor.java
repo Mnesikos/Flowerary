@@ -4,14 +4,14 @@ import net.minecraft.item.DyeColor;
 import net.minecraft.util.IStringSerializable;
 
 public enum FloweraryColor implements IStringSerializable {
-    BURNING("burning", DyeColor.RED),
+//    BURNING("burning", DyeColor.RED),
     RED("red", DyeColor.RED),
     ORANGE("orange", DyeColor.ORANGE),
     YELLOW("yellow", DyeColor.YELLOW),
     LIME("lime", DyeColor.LIME),
     MINT("mint", DyeColor.LIME),
     CYAN("cyan", DyeColor.CYAN),
-    FREEZING("freezing", DyeColor.LIGHT_BLUE),
+//    FREEZING("freezing", DyeColor.LIGHT_BLUE),
     LIGHT_BLUE("light_blue", DyeColor.LIGHT_BLUE),
     BLUE("blue", DyeColor.BLUE),
     LAVENDER("lavender", DyeColor.PURPLE),
@@ -22,7 +22,7 @@ public enum FloweraryColor implements IStringSerializable {
     PEACH("peach", DyeColor.PINK),
     MULTICOLOR("multicolor", DyeColor.WHITE),
     WHITE("white", DyeColor.WHITE),
-    PLATINUM("platinum", DyeColor.LIGHT_GRAY),
+//    PLATINUM("platinum", DyeColor.LIGHT_GRAY),
     BLACK("black", DyeColor.BLACK),
     WILTED("wilted", DyeColor.BROWN);
 

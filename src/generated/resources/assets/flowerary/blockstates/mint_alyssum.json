@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/mint_alyssum"
+      },
+      {
+        "model": "flowerary:block/mint_alyssum",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/mint_alyssum",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/mint_alyssum",
+        "y": 270
+      }
+    ]
+  }
+}

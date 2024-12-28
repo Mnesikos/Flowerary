@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "flowerary:item/lily_seeds",
+    "layer1": "flowerary:item/lime_baggie"
+  }
+}

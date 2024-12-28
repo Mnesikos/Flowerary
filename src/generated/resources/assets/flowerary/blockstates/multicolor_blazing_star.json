@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "flowerary:block/multicolor_blazing_star_top"
+    },
+    "half=lower": {
+      "model": "flowerary:block/multicolor_blazing_star_bottom"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/mint_clover"
+      },
+      {
+        "model": "flowerary:block/mint_clover",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/mint_clover",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/mint_clover",
+        "y": 270
+      }
+    ]
+  }
+}

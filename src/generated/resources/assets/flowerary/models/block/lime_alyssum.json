@@ -1,0 +1,6 @@
+{
+  "parent": "flowerary:block/alyssum",
+  "textures": {
+    "1": "flowerary:block/lime_alyssum"
+  }
+}

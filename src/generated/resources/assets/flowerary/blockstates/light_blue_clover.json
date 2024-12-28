@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/light_blue_clover"
+      },
+      {
+        "model": "flowerary:block/light_blue_clover",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/light_blue_clover",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/light_blue_clover",
+        "y": 270
+      }
+    ]
+  }
+}

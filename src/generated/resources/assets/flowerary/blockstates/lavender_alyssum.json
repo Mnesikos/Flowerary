@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/lavender_alyssum"
+      },
+      {
+        "model": "flowerary:block/lavender_alyssum",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/lavender_alyssum",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/lavender_alyssum",
+        "y": 270
+      }
+    ]
+  }
+}

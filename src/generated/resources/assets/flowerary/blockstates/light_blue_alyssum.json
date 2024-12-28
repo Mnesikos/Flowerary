@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/light_blue_alyssum"
+      },
+      {
+        "model": "flowerary:block/light_blue_alyssum",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/light_blue_alyssum",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/light_blue_alyssum",
+        "y": 270
+      }
+    ]
+  }
+}

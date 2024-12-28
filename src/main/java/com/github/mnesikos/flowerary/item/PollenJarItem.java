@@ -1,4 +1,4 @@
-package com.github.mnesikos.flowerary.items;
+package com.github.mnesikos.flowerary.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -24,7 +24,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import static com.github.mnesikos.flowerary.blocks.FloweraryBlocks.*;
+import static com.github.mnesikos.flowerary.block.FloweraryBlocks.*;
 
 public class PollenJarItem extends Item {
     private final String color;

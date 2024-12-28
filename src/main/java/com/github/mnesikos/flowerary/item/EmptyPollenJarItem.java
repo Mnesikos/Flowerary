@@ -1,4 +1,4 @@
-package com.github.mnesikos.flowerary.items;
+package com.github.mnesikos.flowerary.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

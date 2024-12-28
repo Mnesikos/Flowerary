@@ -1,7 +1,7 @@
-package com.github.mnesikos.flowerary.items;
+package com.github.mnesikos.flowerary.item;
 
 import com.github.mnesikos.flowerary.Flowerary;
-import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
+import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import net.minecraft.block.ComposterBlock;
 
 public class FlowerComposting {

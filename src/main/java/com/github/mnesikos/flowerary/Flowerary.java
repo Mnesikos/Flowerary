@@ -1,9 +1,11 @@
 package com.github.mnesikos.flowerary;
 
-import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
-import com.github.mnesikos.flowerary.data.*;
-import com.github.mnesikos.flowerary.items.FlowerComposting;
-import com.github.mnesikos.flowerary.items.FloweraryItems;
+import com.github.mnesikos.flowerary.block.FloweraryBlocks;
+import com.github.mnesikos.flowerary.data.FloweraryBlockModels;
+import com.github.mnesikos.flowerary.data.FloweraryBlockStates;
+import com.github.mnesikos.flowerary.data.FloweraryItemModels;
+import com.github.mnesikos.flowerary.item.FlowerComposting;
+import com.github.mnesikos.flowerary.item.FloweraryItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;

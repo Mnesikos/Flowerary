@@ -1,15 +1,13 @@
 package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
-import com.github.mnesikos.flowerary.blocks.TallFlowerCropBlock;
-import com.github.mnesikos.flowerary.blocks.FloweraryBlocks;
+import com.github.mnesikos.flowerary.block.TallFlowerCropBlock;
+import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.block.DoublePlantBlock;
-import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.state.properties.DoubleBlockHalf;
-import net.minecraft.util.Direction;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;

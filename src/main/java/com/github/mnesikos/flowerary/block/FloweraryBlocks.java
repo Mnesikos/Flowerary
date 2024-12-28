@@ -1,9 +1,8 @@
-package com.github.mnesikos.flowerary.blocks;
+package com.github.mnesikos.flowerary.block;
 
 import com.github.mnesikos.flowerary.Flowerary;
-import com.github.mnesikos.flowerary.items.FloweraryItems;
+import com.github.mnesikos.flowerary.item.FloweraryItems;
 import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
@@ -158,7 +157,8 @@ public final class FloweraryBlocks {
     private static void registerFlowerAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap, Map<String, RegistryObject<Block>> pottedsMap) {
         flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
         cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
-        if (pottedsMap != null) pottedsMap.put(color, REGISTRAR.register("potted_" + color + "_" + flower, () -> new FlowerPotBlock(null, flowersMap.get(color), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
+        if (pottedsMap != null)
+            pottedsMap.put(color, REGISTRAR.register("potted_" + color + "_" + flower, () -> new FlowerPotBlock(null, flowersMap.get(color), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
     }
 
     private static void registerFlowerCarpetAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap) {

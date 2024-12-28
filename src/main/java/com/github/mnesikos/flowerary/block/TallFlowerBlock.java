@@ -1,4 +1,4 @@
-package com.github.mnesikos.flowerary.blocks;
+package com.github.mnesikos.flowerary.block;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DoublePlantBlock;

@@ -73,8 +73,10 @@ public class FloweraryBlockStates extends BlockStateProvider {
             crop(FloweraryBlocks.ALYSSUM_PLANTS.get(color).get(), color, "alyssum");
             crop(FloweraryBlocks.AZURE_BLUET_PLANTS.get(color).get(), color, "azure_bluet");
             doubleCrop(FloweraryBlocks.BLAZING_STAR_PLANTS.get(color).get(), color, "blazing_star");
+            crop(FloweraryBlocks.BOUGAINVILLEA_PLANTS.get(color).get(), color, "bougainvillea");
             crop(FloweraryBlocks.BROMELIAD_PLANTS.get(color).get(), color, "bromeliad");
             crop(FloweraryBlocks.CHICORY_PLANTS.get(color).get(), color, "chicory");
+            crop(FloweraryBlocks.CLEMATIS_PLANTS.get(color).get(), color, "clematis");
             crop(FloweraryBlocks.CLOVER_PLANTS.get(color).get(), color, "clover");
             crop(FloweraryBlocks.CORNFLOWER_PLANTS.get(color).get(), color, "cornflower");
             crop(FloweraryBlocks.DAISY_PLANTS.get(color).get(), color, "daisy");
@@ -85,6 +87,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             crop(FloweraryBlocks.HIBISCUS_PLANTS.get(color).get(), color, "hibiscus");
             crop(FloweraryBlocks.HYACINTH_PLANTS.get(color).get(), color, "hyacinth");
             doubleCrop(FloweraryBlocks.IMPALA_LILY_PLANTS.get(color).get(), color, "impala_lily");
+            crop(FloweraryBlocks.JASMINE_PLANTS.get(color).get(), color, "jasmine");
             crop(FloweraryBlocks.LANTANAS_PLANTS.get(color).get(), color, "lantanas");
             doubleCrop(FloweraryBlocks.LAVENDER_PLANTS.get(color).get(), color, "lavender");
             doubleCrop(FloweraryBlocks.LILAC_PLANTS.get(color).get(), color, "lilac");

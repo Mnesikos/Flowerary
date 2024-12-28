@@ -124,7 +124,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
         singleTexture(name + "_4", modLoc(BLOCK_FOLDER + "/vine_4"), "vine", vine);
         singleTexture(name + "_4u", modLoc(BLOCK_FOLDER + "/vine_4u"), "vine", vine);
         singleTexture(name + "_u", modLoc(BLOCK_FOLDER + "/vine_u"), "vine", vine);
-        singleTexture(name + "_plant", modLoc(BLOCK_FOLDER + "/vine_plant"), "vine", vine);
+        singleTexture(name, modLoc(BLOCK_FOLDER + "/vine_plant"), "vine", vine);
     }
 
     public void sunflower(String name, ResourceLocation sunflower) {

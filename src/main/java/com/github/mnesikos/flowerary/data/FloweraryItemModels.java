@@ -31,15 +31,6 @@ public class FloweraryItemModels extends ItemModelProvider {
         itemGenerated("rose_bush_pollen_jar", "pollen_jar");
         itemGenerated("peony_pollen_jar", "pollen_jar");
 
-        withExistingParent("black_candle", modLoc("block/candles/black_candle_one"));
-        withExistingParent("blue_candle", modLoc("block/candles/blue_candle_one"));
-        withExistingParent("cyan_candle", modLoc("block/candles/cyan_candle_one"));
-        withExistingParent("green_candle", modLoc("block/candles/green_candle_one"));
-        withExistingParent("orange_candle", modLoc("block/candles/orange_candle_one"));
-        withExistingParent("pink_candle", modLoc("block/candles/pink_candle_one"));
-        withExistingParent("red_candle", modLoc("block/candles/red_candle_one"));
-        withExistingParent("white_candle", modLoc("block/candles/white_candle_one"));
-
         for (String color : Flowerary.COLORS_LIST) {
             blockGenerated(color + "_allium");
             withExistingParent(color + "_alyssum", modLoc("block/" + color + "_alyssum"));

@@ -19,9 +19,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(Flowerary.MOD_ID)
 public class Flowerary {
     public static final String MOD_ID = "flowerary";
-    public static final String[] COLORS_LIST = new String[]{
-            "black", "blue", "cyan", "red", "magenta", "orange", "pink", "white", "yellow", "lilac"
-    };
 
     public static final ItemGroup FLOWERARY_GROUP = new ItemGroup(MOD_ID + ".flowerary_group") {
         @Override

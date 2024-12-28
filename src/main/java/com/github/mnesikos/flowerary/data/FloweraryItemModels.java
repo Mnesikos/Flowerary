@@ -1,6 +1,7 @@
 package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
+import com.github.mnesikos.flowerary.item.FloweraryColor;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -31,7 +32,8 @@ public class FloweraryItemModels extends ItemModelProvider {
         itemGenerated("rose_bush_pollen_jar", "pollen_jar");
         itemGenerated("peony_pollen_jar", "pollen_jar");
 
-        for (String color : Flowerary.COLORS_LIST) {
+        for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+            String color = floweraryColor.getSerializedName();
             blockGenerated(color + "_allium");
             withExistingParent(color + "_alyssum", modLoc("block/" + color + "_alyssum"));
             blockGenerated(color + "_azure_bluet");

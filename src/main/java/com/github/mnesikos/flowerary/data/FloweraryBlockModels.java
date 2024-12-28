@@ -1,6 +1,7 @@
 package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
+import com.github.mnesikos.flowerary.item.FloweraryColor;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
@@ -13,7 +14,8 @@ public class FloweraryBlockModels extends BlockModelProvider {
 
     @Override
     protected void registerModels() {
-        for (String color : Flowerary.COLORS_LIST) {
+        for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+            String color = floweraryColor.getSerializedName();
             cross(color + "_allium", modLoc(BLOCK_FOLDER + "/" + color + "_allium"));
             alyssum(color + "_alyssum", modLoc(BLOCK_FOLDER + "/" + color + "_alyssum"));
             cross(color + "_azure_bluet", modLoc(BLOCK_FOLDER + "/" + color + "_azure_bluet"));

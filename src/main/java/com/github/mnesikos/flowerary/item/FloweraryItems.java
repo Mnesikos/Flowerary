@@ -67,7 +67,8 @@ public final class FloweraryItems {
     public static final Map<String, RegistryObject<Item>> WITHER_ROSE_SEEDS = new HashMap<>();
 
     static {
-        for (String color : Flowerary.COLORS_LIST) {
+        for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+            String color = floweraryColor.getSerializedName();
             ALLIUM_SEEDS.put(color, REGISTRAR.register(color + "_allium_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.ALLIUM_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             ALYSSUM_SEEDS.put(color, REGISTRAR.register(color + "_alyssum_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.ALYSSUM_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));
             AZURE_BLUET_SEEDS.put(color, REGISTRAR.register(color + "_azure_bluet_seeds", () -> new ColoredSeedsItem(FloweraryBlocks.AZURE_BLUET_PLANTS.get(color).get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP))));

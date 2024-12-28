@@ -1,6 +1,7 @@
 package com.github.mnesikos.flowerary.block;
 
 import com.github.mnesikos.flowerary.Flowerary;
+import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
 import net.minecraft.block.*;
 import net.minecraft.client.renderer.RenderType;
@@ -105,7 +106,8 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> WITHER_ROSE_PLANTS = new HashMap<>();
 
     static {
-        for (String color : Flowerary.COLORS_LIST) {
+        for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+            String color = floweraryColor.getSerializedName();
             registerFlowerAndCrop(color, "allium", ALLIUM, ALLIUM_PLANTS, FloweraryItems.ALLIUM_SEEDS, POTTED_ALLIUMS);
             registerFlowerCarpetAndCrop(color, "alyssum", ALYSSUM, ALYSSUM_PLANTS, FloweraryItems.ALYSSUM_SEEDS);
             registerFlowerAndCrop(color, "azure_bluet", AZURE_BLUET, AZURE_BLUET_PLANTS, FloweraryItems.AZURE_BLUET_SEEDS, POTTED_AZURE_BLUETS);

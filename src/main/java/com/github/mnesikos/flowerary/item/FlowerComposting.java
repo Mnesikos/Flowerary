@@ -1,12 +1,12 @@
 package com.github.mnesikos.flowerary.item;
 
-import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import net.minecraft.block.ComposterBlock;
 
 public class FlowerComposting {
     public static void registerCompostables() {
-        for (String color : Flowerary.COLORS_LIST) {
+        for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+            String color = floweraryColor.getSerializedName();
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.ROSE_BUSHLET_SEEDS.get(color).get(), 0.3F);
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.POPPIES_SEEDS.get(color).get(), 0.3F);
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.DANDELION_SEEDS.get(color).get(), 0.3F);

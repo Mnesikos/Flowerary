@@ -1,8 +1,9 @@
 package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
-import com.github.mnesikos.flowerary.block.TallFlowerCropBlock;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
+import com.github.mnesikos.flowerary.block.TallFlowerCropBlock;
+import com.github.mnesikos.flowerary.item.FloweraryColor;
 import net.minecraft.block.Block;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.block.DoublePlantBlock;
@@ -22,7 +23,8 @@ public class FloweraryBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        for (String color : Flowerary.COLORS_LIST) {
+        for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+            String color = floweraryColor.getSerializedName();
             block(FloweraryBlocks.ALLIUM.get(color).get());
             rotateYBlock(FloweraryBlocks.ALYSSUM.get(color).get());
             block(FloweraryBlocks.AZURE_BLUET.get(color).get());

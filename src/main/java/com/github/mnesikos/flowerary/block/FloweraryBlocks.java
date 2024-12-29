@@ -160,7 +160,7 @@ public final class FloweraryBlocks {
         flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
         cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
         if (pottedsMap != null)
-            pottedsMap.put(color, REGISTRAR.register("potted_" + color + "_" + flower, () -> new FlowerPotBlock(null, flowersMap.get(color), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
+            pottedsMap.put(color, REGISTRAR.register("potted_" + color + "_" + flower, () -> new FlowerPotBlock(flowersMap.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
     }
 
     private static void registerFlowerCarpetAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap) {

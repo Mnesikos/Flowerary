@@ -27,9 +27,9 @@ import java.util.Map;
 import static com.github.mnesikos.flowerary.block.FloweraryBlocks.*;
 
 public class PollenJarItem extends Item {
-    private final String color;
+    private final FloweraryColor color;
 
-    public PollenJarItem(String color, Properties properties) {
+    public PollenJarItem(FloweraryColor color, Properties properties) {
         super(properties);
         this.color = color;
     }
@@ -64,7 +64,7 @@ public class PollenJarItem extends Item {
         else if (block.equals(Blocks.PEONY)) plants = hybrid ? BLAZING_STAR_PLANTS : PEONY_PLANTS;
 
         if (!plants.isEmpty() && context.getPlayer() != null) {
-            Block crop = plants.get(color).get();
+            Block crop = plants.get(color.getSerializedName()).get();
             PlayerEntity player = context.getPlayer();
             world.playSound(player, pos, SoundEvents.COMPOSTER_READY, SoundCategory.BLOCKS, 1.0F, 1.0F);
 

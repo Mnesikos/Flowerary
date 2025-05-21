@@ -7,20 +7,20 @@ import com.github.mnesikos.flowerary.data.FloweraryItemModels;
 import com.github.mnesikos.flowerary.item.FlowerComposting;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 @Mod(Flowerary.MOD_ID)
 public class Flowerary {
     public static final String MOD_ID = "flowerary";
 
-    public static final ItemGroup FLOWERARY_GROUP = new ItemGroup(MOD_ID + ".flowerary_group") {
+    public static final CreativeModeTab FLOWERARY_GROUP = new CreativeModeTab(MOD_ID + ".flowerary_group") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(FloweraryBlocks.POPPIES.get("pink").get());

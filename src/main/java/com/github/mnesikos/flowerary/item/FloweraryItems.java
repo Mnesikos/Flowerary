@@ -2,10 +2,10 @@ package com.github.mnesikos.flowerary.item;
 
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.HashMap;
 import java.util.Map;

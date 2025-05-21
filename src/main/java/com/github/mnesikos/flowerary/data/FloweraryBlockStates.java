@@ -4,11 +4,11 @@ import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.block.TallFlowerCropBlock;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
-import net.minecraft.block.Block;
-import net.minecraft.block.CropsBlock;
-import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -134,7 +134,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
         ModelFile stage3 = models().getExistingFile(modLoc("block/" + plant + "_stage3"));
         ModelFile stage7 = models().getExistingFile(modLoc("block/" + color + "_" + plant));
         getVariantBuilder(block).forAllStates(state -> {
-            switch (state.getValue(CropsBlock.AGE)) {
+            switch (state.getValue(CropBlock.AGE)) {
                 case 0:
                     return ConfiguredModel.builder().modelFile(stage0).build();
                 case 1:
@@ -149,7 +149,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
                 case 7:
                     return ConfiguredModel.builder().modelFile(stage7).build();
                 default:
-                    throw new IllegalStateException("Unexpected value: " + state.getValue(CropsBlock.AGE));
+                    throw new IllegalStateException("Unexpected value: " + state.getValue(CropBlock.AGE));
             }
         });
     }
@@ -167,7 +167,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
         ModelFile stage7Upper = models().getExistingFile(modLoc("block/" + color + "_" + plant + "_top"));
         getVariantBuilder(block).forAllStates(state -> {
             DoubleBlockHalf segment = state.getValue(TallFlowerCropBlock.SEGMENT);
-            switch (state.getValue(CropsBlock.AGE)) {
+            switch (state.getValue(CropBlock.AGE)) {
                 case 0:
                     return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage0Lower : stage0Upper).build();
                 case 1:
@@ -182,7 +182,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
                 case 7:
                     return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage7Lower : stage7Upper).build();
                 default:
-                    throw new IllegalStateException("Unexpected value: " + state.getValue(CropsBlock.AGE));
+                    throw new IllegalStateException("Unexpected value: " + state.getValue(CropBlock.AGE));
             }
         });
     }

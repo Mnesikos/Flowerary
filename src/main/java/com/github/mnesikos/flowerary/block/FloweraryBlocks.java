@@ -3,16 +3,20 @@ package com.github.mnesikos.flowerary.block;
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
-import net.minecraft.block.*;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.VineBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -112,7 +116,7 @@ public final class FloweraryBlocks {
             registerFlowerCarpetAndCrop(color, "alyssum", ALYSSUM, ALYSSUM_PLANTS, FloweraryItems.ALYSSUM_SEEDS);
             registerFlowerAndCrop(color, "azure_bluet", AZURE_BLUET, AZURE_BLUET_PLANTS, FloweraryItems.AZURE_BLUET_SEEDS, POTTED_AZURE_BLUETS);
             registerTallFlower(color, "blazing_star", BLAZING_STAR);
-            BLAZING_STAR_PLANTS.put(color, REGISTRAR.register(color + "_blazing_star_plant", () -> new TallFlowerCropBlock.BlazingStarCropBlock(FloweraryItems.BLAZING_STAR_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            BLAZING_STAR_PLANTS.put(color, REGISTRAR.register(color + "_blazing_star_plant", () -> new TallFlowerCropBlock.BlazingStarCropBlock(FloweraryItems.BLAZING_STAR_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerVineAndCrop(color, "bougainvillea", BOUGAINVILLEA, BOUGAINVILLEA_PLANTS, FloweraryItems.BOUGAINVILLEA_SEEDS);
             registerFlowerBushAndCrop(color, "bromeliad", BROMELIAD, BROMELIAD_PLANTS, FloweraryItems.BROMELIAD_SEEDS);
             registerFlowerBushAndCrop(color, "chicory", CHICORY, CHICORY_PLANTS, FloweraryItems.CHICORY_SEEDS);
@@ -124,28 +128,28 @@ public final class FloweraryBlocks {
             registerFlowerAndCrop(color, "dianthus", DIANTHUS, DIANTHUS_PLANTS, FloweraryItems.DIANTHUS_SEEDS, null);
             registerFlowerAndCrop(color, "fairy_rose", FAIRY_ROSE, FAIRY_ROSE_PLANTS, FloweraryItems.FAIRY_ROSE_SEEDS, POTTED_FAIRY_ROSES);
             registerTallFlower(color, "foxglove", FOXGLOVE);
-            FOXGLOVE_PLANTS.put(color, REGISTRAR.register(color + "_foxglove_plant", () -> new TallFlowerCropBlock.FoxgloveCropBlock(FloweraryItems.FOXGLOVE_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            FOXGLOVE_PLANTS.put(color, REGISTRAR.register(color + "_foxglove_plant", () -> new TallFlowerCropBlock.FoxgloveCropBlock(FloweraryItems.FOXGLOVE_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerBushAndCrop(color, "hibiscus", HIBISCUS, HIBISCUS_PLANTS, FloweraryItems.HIBISCUS_SEEDS);
             registerFlowerAndCrop(color, "hyacinth", HYACINTH, HYACINTH_PLANTS, FloweraryItems.HYACINTH_SEEDS, POTTED_HYACINTHS);
             registerTallFlower(color, "impala_lily", IMPALA_LILY);
-            IMPALA_LILY_PLANTS.put(color, REGISTRAR.register(color + "_impala_lily_plant", () -> new TallFlowerCropBlock.ImpalaLilyCropBlock(FloweraryItems.IMPALA_LILY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            IMPALA_LILY_PLANTS.put(color, REGISTRAR.register(color + "_impala_lily_plant", () -> new TallFlowerCropBlock.ImpalaLilyCropBlock(FloweraryItems.IMPALA_LILY_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerVineAndCrop(color, "jasmine", JASMINE, JASMINE_PLANTS, FloweraryItems.JASMINE_SEEDS);
             registerFlowerBushAndCrop(color, "lantanas", LANTANAS, LANTANAS_PLANTS, FloweraryItems.LANTANAS_SEEDS);
             registerTallFlower(color, "lavender", LAVENDER);
-            LAVENDER_PLANTS.put(color, REGISTRAR.register(color + "_lavender_plant", () -> new TallFlowerCropBlock.LavenderCropBlock(FloweraryItems.LAVENDER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            LAVENDER_PLANTS.put(color, REGISTRAR.register(color + "_lavender_plant", () -> new TallFlowerCropBlock.LavenderCropBlock(FloweraryItems.LAVENDER_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerTallFlower(color, "lilac", LILAC);
-            LILAC_PLANTS.put(color, REGISTRAR.register(color + "_lilac_plant", () -> new TallFlowerCropBlock.LilacCropBlock(FloweraryItems.LILAC_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            LILAC_PLANTS.put(color, REGISTRAR.register(color + "_lilac_plant", () -> new TallFlowerCropBlock.LilacCropBlock(FloweraryItems.LILAC_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerAndCrop(color, "lily", LILY, LILY_PLANTS, FloweraryItems.LILY_SEEDS, POTTED_LILYS);
             registerFlowerAndCrop(color, "orchid", ORCHID, ORCHID_PLANTS, FloweraryItems.ORCHID_SEEDS, POTTED_ORCHIDS);
             registerTallFlower(color, "peony", PEONY);
-            PEONY_PLANTS.put(color, REGISTRAR.register(color + "_peony_plant", () -> new TallFlowerCropBlock.PeonyCropBlock(FloweraryItems.PEONY_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            PEONY_PLANTS.put(color, REGISTRAR.register(color + "_peony_plant", () -> new TallFlowerCropBlock.PeonyCropBlock(FloweraryItems.PEONY_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerAndCrop(color, "poppy", POPPY, POPPY_PLANTS, FloweraryItems.POPPY_SEEDS, POTTED_POPPYS);
             registerFlowerBushAndCrop(color, "poppies", POPPIES, POPPIES_PLANTS, FloweraryItems.POPPIES_SEEDS);
             registerTallFlower(color, "rose_bush", ROSE_BUSH);
-            ROSE_BUSH_PLANTS.put(color, REGISTRAR.register(color + "_rose_bush_plant", () -> new TallFlowerCropBlock.RoseBushCropBlock(FloweraryItems.ROSE_BUSH_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            ROSE_BUSH_PLANTS.put(color, REGISTRAR.register(color + "_rose_bush_plant", () -> new TallFlowerCropBlock.RoseBushCropBlock(FloweraryItems.ROSE_BUSH_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerBushAndCrop(color, "rose_bushlet", ROSE_BUSHLET, ROSE_BUSHLET_PLANTS, FloweraryItems.ROSE_BUSHLET_SEEDS);
             registerTallFlower(color, "sunflower", SUNFLOWER);
-            SUNFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_sunflower_plant", () -> new TallFlowerCropBlock.SunflowerCropBlock(FloweraryItems.SUNFLOWER_SEEDS.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+            SUNFLOWER_PLANTS.put(color, REGISTRAR.register(color + "_sunflower_plant", () -> new TallFlowerCropBlock.SunflowerCropBlock(FloweraryItems.SUNFLOWER_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerAndCrop(color, "tulip", TULIP, TULIP_PLANTS, FloweraryItems.TULIP_SEEDS, POTTED_TULIPS);
             registerFlowerBushAndCrop(color, "wildflower", WILDFLOWER, WILDFLOWER_PLANTS, FloweraryItems.WILDFLOWER_SEEDS);
             registerFlowerAndCrop(color, "wither_rose", WITHER_ROSE, WITHER_ROSE_PLANTS, FloweraryItems.WITHER_ROSE_SEEDS, POTTED_WITHER_ROSES);
@@ -153,29 +157,29 @@ public final class FloweraryBlocks {
     }
 
     private static void registerTallFlower(String color, String flower, Map<String, RegistryObject<Block>> flowersMap) {
-        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new TallFlowerBlock(AbstractBlock.Properties.copy(Blocks.ROSE_BUSH))));
+        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new TallFlowerBlock(BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH))));
     }
 
     private static void registerFlowerAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap, Map<String, RegistryObject<Block>> pottedsMap) {
-        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
-        cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBlock(BlockBehaviour.Properties.copy(Blocks.POPPY))));
+        cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
         if (pottedsMap != null)
-            pottedsMap.put(color, REGISTRAR.register("potted_" + color + "_" + flower, () -> new FlowerPotBlock(flowersMap.get(color).get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY))));
+            pottedsMap.put(color, REGISTRAR.register("potted_" + color + "_" + flower, () -> new FlowerPotBlock(flowersMap.get(color).get(), BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY))));
     }
 
     private static void registerFlowerCarpetAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap) {
-        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerCarpetBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
-        cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerCarpetBlock(BlockBehaviour.Properties.copy(Blocks.POPPY))));
+        cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
     }
 
     private static void registerFlowerVineAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap) {
-        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new VineBlock(AbstractBlock.Properties.copy(Blocks.VINE))));
-        cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new VineBlock(BlockBehaviour.Properties.copy(Blocks.VINE))));
+        cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
     }
 
     private static void registerFlowerBushAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap) {
-        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBushBlock(AbstractBlock.Properties.copy(Blocks.POPPY))));
-        cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), AbstractBlock.Properties.copy(Blocks.WHEAT))));
+        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBushBlock(BlockBehaviour.Properties.copy(Blocks.POPPY))));
+        cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
     }
 
     private static <T extends Block> RegistryObject<T> registerWithItem(String name, Supplier<T> block) {
@@ -187,6 +191,6 @@ public final class FloweraryBlocks {
     @OnlyIn(Dist.CLIENT)
     public static void setRenderLayers() {
         RenderType cutout = RenderType.cutout();
-        REGISTRAR.getEntries().stream().map(RegistryObject::get).forEach(block -> RenderTypeLookup.setRenderLayer(block, cutout));
+        REGISTRAR.getEntries().stream().map(RegistryObject::get).forEach(block -> ItemBlockRenderTypes.setRenderLayer(block, cutout));
     }
 }

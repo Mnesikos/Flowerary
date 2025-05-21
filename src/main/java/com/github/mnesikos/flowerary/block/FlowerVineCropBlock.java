@@ -1,18 +1,18 @@
 package com.github.mnesikos.flowerary.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CropsBlock;
-import net.minecraft.item.Item;
-import net.minecraft.util.IItemProvider;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.function.Supplier;
 
-public class FlowerVineCropBlock extends CropsBlock {
+public class FlowerVineCropBlock extends CropBlock {
     protected static final VoxelShape SHAPE = Block.box(15.0D, 0.0D, 5.0D, 0.0D, 16.0D, 10.0D);
     private final Supplier<? extends Item> seedItem;
 
@@ -22,12 +22,12 @@ public class FlowerVineCropBlock extends CropsBlock {
     }
 
     @Override
-    protected IItemProvider getBaseSeedId() {
+    protected ItemLike getBaseSeedId() {
         return seedItem.get();
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 }

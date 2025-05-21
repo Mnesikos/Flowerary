@@ -1,8 +1,8 @@
 package com.github.mnesikos.flowerary.block;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.DoublePlantBlock;
-import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class TallFlowerBlock extends DoublePlantBlock {
     public TallFlowerBlock(Properties properties) {
@@ -10,7 +10,7 @@ public class TallFlowerBlock extends DoublePlantBlock {
     }
 
     @Override
-    public boolean canBeReplaced(BlockState state, BlockItemUseContext context) {
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
         return false;
     }
 }

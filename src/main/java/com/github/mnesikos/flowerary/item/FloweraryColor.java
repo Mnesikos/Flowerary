@@ -1,9 +1,9 @@
 package com.github.mnesikos.flowerary.item;
 
-import net.minecraft.item.DyeColor;
-import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.item.DyeColor;
 
-public enum FloweraryColor implements IStringSerializable {
+public enum FloweraryColor implements StringRepresentable {
 //    BURNING("burning", DyeColor.RED),
     RED("red", DyeColor.RED),
     ORANGE("orange", DyeColor.ORANGE),

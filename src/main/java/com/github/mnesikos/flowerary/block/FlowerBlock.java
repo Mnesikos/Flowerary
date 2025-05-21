@@ -21,9 +21,4 @@ public class FlowerBlock extends BushBlock {
         Vec3 offset = state.getOffset(world, pos);
         return SHAPE.move(offset.x, offset.y, offset.z);
     }
-
-    @Override
-    public OffsetType getOffsetType() {
-        return OffsetType.XZ;
-    }
 }

@@ -18,9 +18,4 @@ public class FlowerCarpetBlock extends FlowerBlock {
     public VoxelShape getShape(BlockState state, BlockGetter blockReader, BlockPos pos, CollisionContext selectionContext) {
         return SHAPE;
     }
-
-    @Override
-    public OffsetType getOffsetType() {
-        return OffsetType.NONE;
-    }
 }

@@ -3,7 +3,6 @@ package com.github.mnesikos.flowerary.item;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -96,6 +95,6 @@ public class PollenJarItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(new TranslatableComponent("item.full_pollen_jar.desc"));
+        tooltip.add(Component.translatable("item.full_pollen_jar.desc"));
     }
 }

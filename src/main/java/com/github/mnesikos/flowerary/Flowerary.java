@@ -9,12 +9,12 @@ import com.github.mnesikos.flowerary.item.FloweraryItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 @Mod(Flowerary.MOD_ID)
 public class Flowerary {
@@ -44,18 +44,14 @@ public class Flowerary {
 
     private void gatherData(final GatherDataEvent event) {
         DataGenerator dataGenerator = event.getGenerator();
-        if (event.includeClient()) {
-            dataGenerator.addProvider(new FloweraryBlockModels(dataGenerator, event.getExistingFileHelper()));
-            dataGenerator.addProvider(new FloweraryItemModels(dataGenerator, event.getExistingFileHelper()));
-            dataGenerator.addProvider(new FloweraryBlockStates(dataGenerator, event.getExistingFileHelper()));
-        }
+        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockModels(dataGenerator, event.getExistingFileHelper()));
+        dataGenerator.addProvider(event.includeClient(), new FloweraryItemModels(dataGenerator, event.getExistingFileHelper()));
+        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockStates(dataGenerator, event.getExistingFileHelper()));
 
-//        if (event.includeServer()) {
-//            dataGenerator.addProvider(new FloweraryTags.FloweraryBlockTags(dataGenerator, event.getExistingFileHelper()));
-//            dataGenerator.addProvider(new FloweraryTags.FloweraryItemTags(dataGenerator, event.getExistingFileHelper()));
-//            dataGenerator.addProvider(new FloweraryLootTables(dataGenerator));
-//            dataGenerator.addProvider(new FloweraryRecipes(dataGenerator));
-//        }
+//        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryBlockTags(dataGenerator, event.getExistingFileHelper()));
+//        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryItemTags(dataGenerator, event.getExistingFileHelper()));
+//        dataGenerator.addProvider(event.includeServer(), new FloweraryLootTables(dataGenerator));
+//        dataGenerator.addProvider(event.includeServer(), new FloweraryRecipes(dataGenerator));
     }
 
     private void setupClient(final FMLClientSetupEvent event) {

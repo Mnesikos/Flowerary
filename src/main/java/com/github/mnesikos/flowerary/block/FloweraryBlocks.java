@@ -161,14 +161,14 @@ public final class FloweraryBlocks {
     }
 
     private static void registerFlowerAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap, Map<String, RegistryObject<Block>> pottedsMap) {
-        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBlock(BlockBehaviour.Properties.copy(Blocks.POPPY))));
+        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).offsetType(BlockBehaviour.OffsetType.XZ))));
         cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
         if (pottedsMap != null)
             pottedsMap.put(color, REGISTRAR.register("potted_" + color + "_" + flower, () -> new FlowerPotBlock(flowersMap.get(color).get(), BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY))));
     }
 
     private static void registerFlowerCarpetAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap) {
-        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerCarpetBlock(BlockBehaviour.Properties.copy(Blocks.POPPY))));
+        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerCarpetBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).offsetType(BlockBehaviour.OffsetType.NONE))));
         cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
     }
 
@@ -178,7 +178,7 @@ public final class FloweraryBlocks {
     }
 
     private static void registerFlowerBushAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap) {
-        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBushBlock(BlockBehaviour.Properties.copy(Blocks.POPPY))));
+        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerBushBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).offsetType(BlockBehaviour.OffsetType.XZ))));
         cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
     }
 

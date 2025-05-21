@@ -1,9 +1,17 @@
 package com.github.mnesikos.flowerary.data;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
 
-public class FloweraryRecipes extends net.minecraft.data.recipes.RecipeProvider {
-    public FloweraryRecipes(DataGenerator generator) {
-        super(generator);
+import java.util.function.Consumer;
+
+public class FloweraryRecipes extends RecipeProvider {
+    public FloweraryRecipes(PackOutput packOutput) {
+        super(packOutput);
+    }
+
+    @Override
+    protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
     }
 }

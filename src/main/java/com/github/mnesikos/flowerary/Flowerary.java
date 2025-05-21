@@ -4,7 +4,6 @@ import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.data.FloweraryBlockModels;
 import com.github.mnesikos.flowerary.data.FloweraryBlockStates;
 import com.github.mnesikos.flowerary.data.FloweraryItemModels;
-import com.github.mnesikos.flowerary.data.FloweraryTags;
 import com.github.mnesikos.flowerary.item.FlowerComposting;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
@@ -59,8 +58,9 @@ public class Flowerary {
 //        FloweraryTags.FloweraryBlockTags blockTagsProvider = new FloweraryTags.FloweraryBlockTags(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
 //        dataGenerator.addProvider(event.includeServer(), blockTagsProvider);
 //        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryItemTags(packOutput, event.getLookupProvider(), blockTagsProvider, event.getExistingFileHelper()));
-//        dataGenerator.addProvider(event.includeServer(), new FloweraryLootTables(dataGenerator));
-//        dataGenerator.addProvider(event.includeServer(), new FloweraryRecipes(dataGenerator));
+//        dataGenerator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
+//                List.of(new LootTableProvider.SubProviderEntry(FloweraryLootTables::new, LootContextParamSets.BLOCK))));
+//        dataGenerator.addProvider(event.includeServer(), new FloweraryRecipes(packOutput));
     }
 
     private void setupClient(final FMLClientSetupEvent event) {

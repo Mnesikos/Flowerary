@@ -38,6 +38,7 @@ public class Flowerary {
         FloweraryBlocks.REGISTRAR.register(bus);
         FloweraryItems.REGISTRAR.register(bus);
         FloweraryItems.TABLESS_REGISTRAR.register(bus);
+        CREATIVE_MODE_TABS.register(bus);
 
         bus.addListener(this::setup);
         bus.addListener(this::gatherData);

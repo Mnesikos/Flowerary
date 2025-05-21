@@ -2,13 +2,13 @@ package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class FloweraryItemModels extends ItemModelProvider {
-    public FloweraryItemModels(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Flowerary.MOD_ID, existingFileHelper);
+    public FloweraryItemModels(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
+        super(packOutput, Flowerary.MOD_ID, existingFileHelper);
     }
 
     @Override

@@ -4,7 +4,7 @@ import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.block.TallFlowerCropBlock;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
@@ -13,12 +13,13 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Objects;
 
 public class FloweraryBlockStates extends BlockStateProvider {
-    public FloweraryBlockStates(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Flowerary.MOD_ID, existingFileHelper);
+    public FloweraryBlockStates(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
+        super(packOutput, Flowerary.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -106,7 +107,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
     }
 
     public void rotateYBlock(Block block) {
-        ModelFile model = models().getExistingFile(block.getRegistryName());
+        ModelFile model = models().getExistingFile(ForgeRegistries.BLOCKS.getKey(block));
         getVariantBuilder(block).partialState()
                 .addModels(new ConfiguredModel(model, 0, 0, false))
                 .addModels(new ConfiguredModel(model, 0, 90, false))
@@ -115,13 +116,13 @@ public class FloweraryBlockStates extends BlockStateProvider {
     }
 
     public void block(Block block) {
-        ModelFile model = models().getExistingFile(block.getRegistryName());
+        ModelFile model = models().getExistingFile(ForgeRegistries.BLOCKS.getKey(block));
         getVariantBuilder(block).partialState().addModels(new ConfiguredModel(model));
     }
 
     public void doubleBlock(Block block) {
-        ModelFile crossLower = models().getExistingFile(modLoc("block/" + Objects.requireNonNull(block.getRegistryName()).getPath() + "_bottom"));
-        ModelFile crossUpper = models().getExistingFile(modLoc("block/" + block.getRegistryName().getPath() + "_top"));
+        ModelFile crossLower = models().getExistingFile(modLoc("block/" + Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath() + "_bottom"));
+        ModelFile crossUpper = models().getExistingFile(modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + "_top"));
         getVariantBuilder(block).forAllStatesExcept(state -> ConfiguredModel.builder()
                 .modelFile(state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.LOWER ? crossLower : crossUpper)
                 .build());

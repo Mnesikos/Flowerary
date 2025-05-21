@@ -184,7 +184,7 @@ public final class FloweraryBlocks {
 
     private static <T extends Block> RegistryObject<T> registerWithItem(String name, Supplier<T> block) {
         RegistryObject<T> registryObject = REGISTRAR.register(name, block);
-        FloweraryItems.REGISTRAR.register(name, () -> new BlockItem(registryObject.get(), new Item.Properties().tab(Flowerary.FLOWERARY_GROUP)));
+        FloweraryItems.REGISTRAR.register(name, () -> new BlockItem(registryObject.get(), new Item.Properties()));
         return registryObject;
     }
 

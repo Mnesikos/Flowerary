@@ -4,34 +4,41 @@ import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.data.FloweraryBlockModels;
 import com.github.mnesikos.flowerary.data.FloweraryBlockStates;
 import com.github.mnesikos.flowerary.data.FloweraryItemModels;
+import com.github.mnesikos.flowerary.data.FloweraryTags;
 import com.github.mnesikos.flowerary.item.FlowerComposting;
+import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
 @Mod(Flowerary.MOD_ID)
 public class Flowerary {
     public static final String MOD_ID = "flowerary";
 
-    public static final CreativeModeTab FLOWERARY_GROUP = new CreativeModeTab(MOD_ID + ".flowerary_group") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(FloweraryBlocks.POPPIES.get("pink").get());
-        }
-    };
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Flowerary.MOD_ID);
+    public static final RegistryObject<CreativeModeTab> FLOWERARY_GROUP = CREATIVE_MODE_TABS.register(MOD_ID + ".flowerary_group", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup." + MOD_ID + ".flowerary_group"))
+            .icon(() -> FloweraryBlocks.POPPIES.get(FloweraryColor.PINK.getSerializedName()).get().asItem().getDefaultInstance())
+            .displayItems((itemDisplayParameters, output) -> FloweraryItems.REGISTRAR.getEntries().forEach(item -> output.accept(item.get())))
+            .build());
 
     public Flowerary() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         FloweraryBlocks.REGISTRAR.register(bus);
         FloweraryItems.REGISTRAR.register(bus);
+        FloweraryItems.TABLESS_REGISTRAR.register(bus);
 
         bus.addListener(this::setup);
         bus.addListener(this::gatherData);
@@ -44,12 +51,14 @@ public class Flowerary {
 
     private void gatherData(final GatherDataEvent event) {
         DataGenerator dataGenerator = event.getGenerator();
-        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockModels(dataGenerator, event.getExistingFileHelper()));
-        dataGenerator.addProvider(event.includeClient(), new FloweraryItemModels(dataGenerator, event.getExistingFileHelper()));
-        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockStates(dataGenerator, event.getExistingFileHelper()));
+        PackOutput packOutput = dataGenerator.getPackOutput();
+        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockModels(packOutput, event.getExistingFileHelper()));
+        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockStates(packOutput, event.getExistingFileHelper()));
+        dataGenerator.addProvider(event.includeClient(), new FloweraryItemModels(packOutput, event.getExistingFileHelper()));
 
-//        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryBlockTags(dataGenerator, event.getExistingFileHelper()));
-//        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryItemTags(dataGenerator, event.getExistingFileHelper()));
+//        FloweraryTags.FloweraryBlockTags blockTagsProvider = new FloweraryTags.FloweraryBlockTags(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
+//        dataGenerator.addProvider(event.includeServer(), blockTagsProvider);
+//        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryItemTags(packOutput, event.getLookupProvider(), blockTagsProvider, event.getExistingFileHelper()));
 //        dataGenerator.addProvider(event.includeServer(), new FloweraryLootTables(dataGenerator));
 //        dataGenerator.addProvider(event.includeServer(), new FloweraryRecipes(dataGenerator));
     }

@@ -141,11 +141,11 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
 
     public boolean canGrowUp(BlockGetter level, BlockPos pos) {
         BlockState aboveState = level.getBlockState(pos.above());
-        return aboveState.getBlock() instanceof TallFlowerCropBlock || aboveState.getMaterial().isReplaceable();
+        return aboveState.getBlock() instanceof TallFlowerCropBlock || aboveState.canBeReplaced();
     }
 
     @Override
-    public boolean isValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
         return !isMaxAge(state) && (canGrowUp(level, pos) || getAge(state) < upperSegmentAge - 1);
     }
 
@@ -160,12 +160,6 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
             level.setBlock(pos.above(), getStateForAge(growthAge).setValue(SEGMENT, DoubleBlockHalf.UPPER), 2);
         }
         level.setBlock(pos, getStateForAge(growthAge), 2);
-    }
-
-    @Override
-    public boolean isMaxAge(BlockState state) {
-//        if (state.getValue(SEGMENT) == DoubleBlockHalf.UPPER) return false;
-        return super.isMaxAge(state);
     }
 
     @Override

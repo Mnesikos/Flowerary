@@ -40,6 +40,9 @@ public class FlowerComposting {
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.ROSE_BUSH_SEEDS.get(color).get(), 0.3F);
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.TULIP_SEEDS.get(color).get(), 0.3F);
             ComposterBlock.COMPOSTABLES.put(FloweraryItems.WITHER_ROSE_SEEDS.get(color).get(), 0.3F);
+            ComposterBlock.COMPOSTABLES.put(FloweraryItems.PETALS_SEEDS.get(color).get(), 0.3F);
+            ComposterBlock.COMPOSTABLES.put(FloweraryItems.PITCHER_PLANT_SEEDS.get(color).get(), 0.3F);
+            ComposterBlock.COMPOSTABLES.put(FloweraryItems.TORCHFLOWER_SEEDS.get(color).get(), 0.3F);
 
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.ROSE_BUSHLET.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.POPPIES.get(color).get(), 0.65F);
@@ -74,6 +77,9 @@ public class FlowerComposting {
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.ROSE_BUSH.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.TULIP.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.WITHER_ROSE.get(color).get(), 0.65F);
+            ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.PETALS.get(color).get(), 0.65F);
+            ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.PITCHER_PLANT.get(color).get(), 0.65F);
+            ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.TORCHFLOWER.get(color).get(), 0.65F);
         }
     }
 }

@@ -26,11 +26,14 @@ public class FloweraryItemModels extends ItemModelProvider {
         itemGenerated("oxeye_daisy_pollen_jar", "pollen_jar");
         itemGenerated("cornflower_pollen_jar", "pollen_jar");
         itemGenerated("lily_of_the_valley_pollen_jar", "pollen_jar");
+        itemGenerated("torchflower_pollen_jar", "pollen_jar");
         itemGenerated("wither_rose_pollen_jar", "pollen_jar");
+        itemGenerated("pink_petals_pollen_jar", "pollen_jar");
         itemGenerated("sunflower_pollen_jar", "pollen_jar");
         itemGenerated("lilac_pollen_jar", "pollen_jar");
         itemGenerated("rose_bush_pollen_jar", "pollen_jar");
         itemGenerated("peony_pollen_jar", "pollen_jar");
+        itemGenerated("pitcher_plant_pollen_jar", "pollen_jar");
 
         for (FloweraryColor floweraryColor : FloweraryColor.values()) {
             String color = floweraryColor.getSerializedName();
@@ -59,11 +62,14 @@ public class FloweraryItemModels extends ItemModelProvider {
             blockGenerated(color + "_lily");
             blockGenerated(color + "_orchid");
             blockGenerated(color + "_peony", color + "_peony_top");
+            blockGenerated(color + "_petals");
+            blockGenerated(color + "_pitcher_plant");
             blockGenerated(color + "_poppy");
             blockGenerated(color + "_poppies");
             blockGenerated(color + "_rose_bush", color + "_rose_bush_top");
             blockGenerated(color + "_rose_bushlet");
             blockGenerated(color + "_sunflower");
+            blockGenerated(color + "_torchflower");
             blockGenerated(color + "_tulip");
             blockGenerated(color + "_wildflower");
             blockGenerated(color + "_wither_rose");
@@ -93,11 +99,14 @@ public class FloweraryItemModels extends ItemModelProvider {
             seedsLayered(color, "lily_seeds");
             seedsLayered(color, "orchid_seeds");
             seedsLayered(color, "peony_seeds");
+            seedsLayered(color, "_petals_seeds");
+            seedsLayered(color, "_pitcher_plant_seeds");
             seedsLayered(color, "poppy_seeds");
             seedsLayered(color, "poppies_seeds");
             seedsLayered(color, "rose_bush_seeds");
             seedsLayered(color, "rose_bushlet_seeds");
             seedsLayered(color, "sunflower_seeds");
+            seedsLayered(color, "_torchflower_seeds");
             seedsLayered(color, "tulip_seeds");
             seedsLayered(color, "wildflower_seeds");
             seedsLayered(color, "wither_rose_seeds");

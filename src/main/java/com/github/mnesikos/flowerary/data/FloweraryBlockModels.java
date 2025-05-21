@@ -41,6 +41,8 @@ public class FloweraryBlockModels extends BlockModelProvider {
             cross(color + "_lily", modLoc(BLOCK_FOLDER + "/" + color + "_lily"));
             cross(color + "_orchid", modLoc(BLOCK_FOLDER + "/" + color + "_orchid"));
             doubleCross(color + "_peony", modLoc(BLOCK_FOLDER + "/" + color + "_peony"));
+            petals(color + "_petals", modLoc(BLOCK_FOLDER + "/" + color + "_petals"));
+            doubleCross(color + "_pitcher_plant", modLoc(BLOCK_FOLDER + "/" + color + "_pitcher_plant"));
             cross(color + "_poppy", modLoc(BLOCK_FOLDER + "/" + color + "_poppy"));
             cross(color + "_poppies", modLoc(BLOCK_FOLDER + "/" + color + "_poppies"));
             doubleCross(color + "_rose_bush", modLoc(BLOCK_FOLDER + "/" + color + "_rose_bush"));
@@ -60,6 +62,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
             pottedCross("potted_" + color + "_lily", modLoc(BLOCK_FOLDER + "/" + color + "_lily"));
             pottedCross("potted_" + color + "_orchid", modLoc(BLOCK_FOLDER + "/" + color + "_orchid"));
             pottedCross("potted_" + color + "_poppy", modLoc(BLOCK_FOLDER + "/" + color + "_poppy"));
+            pottedCross("potted_" + color + "_torchflower", modLoc(BLOCK_FOLDER + "/" + color + "_torchflower"));
             pottedCross("potted_" + color + "_tulip", modLoc(BLOCK_FOLDER + "/" + color + "_tulip"));
             pottedCross("potted_" + color + "_wither_rose", modLoc(BLOCK_FOLDER + "/" + color + "_wither_rose"));
         }
@@ -89,11 +92,14 @@ public class FloweraryBlockModels extends BlockModelProvider {
         plant("lily");
         plant("orchid");
         doublePlant("peony");
+        petalsPlant("petals");
+        doublePlant("pitcher_plant");
         plant("poppy");
         plant("poppies");
         doublePlant("rose_bush");
         plant("rose_bushlet");
         sunflowerPlant("sunflower");
+        plant("torchflower");
         plant("tulip");
         plant("wildflower");
         plant("wither_rose");
@@ -110,6 +116,13 @@ public class FloweraryBlockModels extends BlockModelProvider {
 
     public void alyssum(String name, ResourceLocation alyssum) {
         singleTexture(name, modLoc(BLOCK_FOLDER + "/alyssum"), "1", alyssum);
+    }
+
+    public void petals(String name, ResourceLocation petals) {
+        singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_1"), "flowerbed", petals);
+        singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_2"), "flowerbed", petals);
+        singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_3"), "flowerbed", petals);
+        singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_4"), "flowerbed", petals);
     }
 
     public void vine(String name, ResourceLocation vine) {
@@ -166,6 +179,13 @@ public class FloweraryBlockModels extends BlockModelProvider {
         singleTexture(crop + "_stage1", modLoc(BLOCK_FOLDER + "/alyssum"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1"));
         singleTexture(crop + "_stage2", modLoc(BLOCK_FOLDER + "/alyssum"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2"));
         singleTexture(crop + "_stage3", modLoc(BLOCK_FOLDER + "/alyssum"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3"));
+    }
+
+    public void petalsPlant(String crop) {
+        singleTexture(crop + "_stage0", modLoc(BLOCK_FOLDER + "/petals"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0"));
+        singleTexture(crop + "_stage1", modLoc(BLOCK_FOLDER + "/petals"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1"));
+        singleTexture(crop + "_stage2", modLoc(BLOCK_FOLDER + "/petals"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2"));
+        singleTexture(crop + "_stage3", modLoc(BLOCK_FOLDER + "/petals"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3"));
     }
 
     public void sunflowerPlant(String crop) {

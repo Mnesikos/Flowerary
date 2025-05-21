@@ -316,6 +316,30 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
         }
     }
 
+    public static class PitcherPlantCropBlock extends TallFlowerCropBlock {
+        public PitcherPlantCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
+            super(seedItem, properties, 2,
+                    new VoxelShape[]{
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+                            Shapes.block(),
+                            Shapes.block(),
+                            Shapes.block(),
+                            Shapes.block(),
+                            Shapes.block()},
+                    new VoxelShape[]{
+                            Shapes.empty(),
+                            Shapes.empty(),
+                            Shapes.empty(),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                            Shapes.block()});
+        }
+    }
+
     public static class RoseBushCropBlock extends TallFlowerCropBlock {
         public RoseBushCropBlock(Supplier<? extends Item> seedItem, Properties properties) {
             super(seedItem, properties, 2,

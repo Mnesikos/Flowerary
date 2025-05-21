@@ -26,11 +26,13 @@ import java.util.Map;
 import static com.github.mnesikos.flowerary.block.FloweraryBlocks.*;
 
 public class PollenJarItem extends Item {
-    private final FloweraryColor color;
+    private final FloweraryColor primaryColor;
+    private final FloweraryColor secondaryColor;
 
-    public PollenJarItem(FloweraryColor color, Properties properties) {
+    public PollenJarItem(FloweraryColor primaryColor, FloweraryColor secondaryColor, Properties properties) {
         super(properties);
-        this.color = color;
+        this.primaryColor = primaryColor;
+        this.secondaryColor = secondaryColor;
     }
 
     @Override
@@ -40,7 +42,7 @@ public class PollenJarItem extends Item {
         BlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
         Map<String, RegistryObject<Block>> plants = Collections.emptyMap();
-        boolean hybrid = world.getRandom().nextFloat() < 0.2F;
+        boolean hybrid = world.getRandom().nextFloat() <= 0.2F;
 
         if (block.equals(Blocks.DANDELION)) plants = hybrid ? WILDFLOWER_PLANTS : DANDELION_PLANTS;
         else if (block.equals(Blocks.POPPY)) plants = hybrid ? POPPIES_PLANTS : POPPY_PLANTS;
@@ -63,8 +65,11 @@ public class PollenJarItem extends Item {
         else if (block.equals(Blocks.PEONY)) plants = hybrid ? BLAZING_STAR_PLANTS : PEONY_PLANTS;
 
         if (!plants.isEmpty() && context.getPlayer() != null) {
-            Block crop = plants.get(color.getSerializedName()).get();
             Player player = context.getPlayer();
+            String color = primaryColor.getSerializedName();
+            if (world.getRandom().nextFloat() <= 0.1F) color = secondaryColor.getSerializedName();
+            if (world.getRandom().nextFloat() <= 0.02F) color = FloweraryColor.MULTICOLOR.getSerializedName();
+            Block crop = plants.get(color).get();
             world.playSound(player, pos, SoundEvents.COMPOSTER_READY, SoundSource.BLOCKS, 1.0F, 1.0F);
 
             if (!world.isClientSide) {

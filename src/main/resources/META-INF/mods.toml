@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[36.2,)"
+loaderVersion="[47,)"
 license="MIT"
 
 [[mods]] #mandatory
@@ -23,13 +23,13 @@ Once they are fully-grown you can harvest the flowers to place elsewhere.
 [[dependencies.flowerary]]
 modId="forge"
 mandatory=true
-versionRange="[36.2,)"
+versionRange="[47,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.flowerary]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.16.5,1.17)"
+versionRange="[1.20.1,1.20.2)"
 ordering="NONE"
 side="BOTH"

@@ -48,6 +48,7 @@ public class FloweraryItemModels extends ItemModelProvider {
             blockGenerated(color + "_clematis");
             withExistingParent(color + "_clover", modLoc("block/" + color + "_clover"));
             blockGenerated(color + "_cornflower");
+            blockGenerated(color + "_daffodil");
             blockGenerated(color + "_daisy");
             blockGenerated(color + "_dandelion");
             blockGenerated(color + "_dianthus");
@@ -67,6 +68,7 @@ public class FloweraryItemModels extends ItemModelProvider {
             blockGenerated(color + "_pitcher_plant", color + "_pitcher_plant_top");
             blockGenerated(color + "_poppy");
             blockGenerated(color + "_poppies");
+            blockGenerated(color + "_rose");
             blockGenerated(color + "_rose_bush", color + "_rose_bush_top");
             blockGenerated(color + "_rose_bushlet");
             blockGenerated(color + "_sunflower");
@@ -85,6 +87,7 @@ public class FloweraryItemModels extends ItemModelProvider {
             seedsLayered(color, "clematis_seeds");
             seedsLayered(color, "clover_seeds");
             seedsLayered(color, "cornflower_seeds");
+            seedsLayered(color, "daffodil_seeds");
             seedsLayered(color, "daisy_seeds");
             seedsLayered(color, "dandelion_seeds");
             seedsLayered(color, "dianthus_seeds");
@@ -104,6 +107,7 @@ public class FloweraryItemModels extends ItemModelProvider {
             vanillaSeedsLayered(color, "pitcher_plant_seeds", "pitcher_pod");
             seedsLayered(color, "poppy_seeds");
             seedsLayered(color, "poppies_seeds");
+            seedsLayered(color, "rose_seeds");
             seedsLayered(color, "rose_bush_seeds");
             seedsLayered(color, "rose_bushlet_seeds");
             seedsLayered(color, "sunflower_seeds");

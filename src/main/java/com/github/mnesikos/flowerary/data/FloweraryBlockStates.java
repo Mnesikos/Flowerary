@@ -35,6 +35,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             block(FloweraryBlocks.CHICORY.get(color).get());
             rotateYBlock(FloweraryBlocks.CLOVER.get(color).get());
             block(FloweraryBlocks.CORNFLOWER.get(color).get());
+            block(FloweraryBlocks.DAFFODIL.get(color).get());
             block(FloweraryBlocks.DAISY.get(color).get());
             block(FloweraryBlocks.DANDELION.get(color).get());
             block(FloweraryBlocks.DIANTHUS.get(color).get());
@@ -53,6 +54,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             doubleBlock(FloweraryBlocks.PITCHER_PLANT.get(color).get());
             block(FloweraryBlocks.POPPY.get(color).get());
             block(FloweraryBlocks.POPPIES.get(color).get());
+            block(FloweraryBlocks.ROSE.get(color).get());
             doubleBlock(FloweraryBlocks.ROSE_BUSH.get(color).get());
             block(FloweraryBlocks.ROSE_BUSHLET.get(color).get());
             doubleBlock(FloweraryBlocks.SUNFLOWER.get(color).get());
@@ -64,6 +66,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             block(FloweraryBlocks.POTTED_ALLIUMS.get(color).get());
             block(FloweraryBlocks.POTTED_AZURE_BLUETS.get(color).get());
             block(FloweraryBlocks.POTTED_CORNFLOWERS.get(color).get());
+            block(FloweraryBlocks.POTTED_DAFFODILS.get(color).get());
             block(FloweraryBlocks.POTTED_DAISYS.get(color).get());
             block(FloweraryBlocks.POTTED_DANDELIONS.get(color).get());
             block(FloweraryBlocks.POTTED_FAIRY_ROSES.get(color).get());
@@ -71,6 +74,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             block(FloweraryBlocks.POTTED_LILYS.get(color).get());
             block(FloweraryBlocks.POTTED_ORCHIDS.get(color).get());
             block(FloweraryBlocks.POTTED_POPPYS.get(color).get());
+            block(FloweraryBlocks.POTTED_ROSES.get(color).get());
             block(FloweraryBlocks.POTTED_TORCHFLOWERS.get(color).get());
             block(FloweraryBlocks.POTTED_TULIPS.get(color).get());
             block(FloweraryBlocks.POTTED_WITHER_ROSES.get(color).get());
@@ -85,6 +89,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             crop(FloweraryBlocks.CLEMATIS_PLANTS.get(color).get(), color, "clematis");
             crop(FloweraryBlocks.CLOVER_PLANTS.get(color).get(), color, "clover");
             crop(FloweraryBlocks.CORNFLOWER_PLANTS.get(color).get(), color, "cornflower");
+            crop(FloweraryBlocks.DAFFODIL_PLANTS.get(color).get(), color, "daffodil");
             crop(FloweraryBlocks.DAISY_PLANTS.get(color).get(), color, "daisy");
             crop(FloweraryBlocks.DANDELION_PLANTS.get(color).get(), color, "dandelion");
             crop(FloweraryBlocks.DIANTHUS_PLANTS.get(color).get(), color, "dianthus");
@@ -104,6 +109,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             pitcherCrop(FloweraryBlocks.PITCHER_PLANT_PLANTS.get(color).get(), color, "pitcher_plant");
             crop(FloweraryBlocks.POPPY_PLANTS.get(color).get(), color, "poppy");
             crop(FloweraryBlocks.POPPIES_PLANTS.get(color).get(), color, "poppies");
+            crop(FloweraryBlocks.ROSE_PLANTS.get(color).get(), color, "rose");
             doubleCrop(FloweraryBlocks.ROSE_BUSH_PLANTS.get(color).get(), color, "rose_bush");
             crop(FloweraryBlocks.ROSE_BUSHLET_PLANTS.get(color).get(), color, "rose_bushlet");
             doubleCrop(FloweraryBlocks.SUNFLOWER_PLANTS.get(color).get(), color, "sunflower");

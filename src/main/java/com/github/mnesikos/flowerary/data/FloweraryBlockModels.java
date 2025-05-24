@@ -26,6 +26,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
             vine(color + "_clematis", modLoc(BLOCK_FOLDER + "/" + color + "_clematis"));
             clover(color + "_clover", modLoc(BLOCK_FOLDER + "/" + color + "_clover"));
             cross(color + "_cornflower", modLoc(BLOCK_FOLDER + "/" + color + "_cornflower"));
+            cross(color + "_daffodil", modLoc(BLOCK_FOLDER + "/" + color + "_daffodil"));
             cross(color + "_daisy", modLoc(BLOCK_FOLDER + "/" + color + "_daisy"));
             cross(color + "_dandelion", modLoc(BLOCK_FOLDER + "/" + color + "_dandelion"));
             cross(color + "_dianthus", modLoc(BLOCK_FOLDER + "/" + color + "_dianthus"));
@@ -45,6 +46,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
             pitcher(color + "_pitcher_plant", modLoc(BLOCK_FOLDER + "/" + color + "_pitcher_plant"));
             cross(color + "_poppy", modLoc(BLOCK_FOLDER + "/" + color + "_poppy"));
             cross(color + "_poppies", modLoc(BLOCK_FOLDER + "/" + color + "_poppies"));
+            cross(color + "_rose", modLoc(BLOCK_FOLDER + "/" + color + "_rose"));
             doubleCross(color + "_rose_bush", modLoc(BLOCK_FOLDER + "/" + color + "_rose_bush"));
             cross(color + "_rose_bushlet", modLoc(BLOCK_FOLDER + "/" + color + "_rose_bushlet"));
             sunflower(color + "_sunflower", modLoc(BLOCK_FOLDER + "/" + color + "_sunflower"));
@@ -56,6 +58,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
             pottedCross("potted_" + color + "_allium", modLoc(BLOCK_FOLDER + "/" + color + "_allium"));
             pottedCross("potted_" + color + "_azure_bluet", modLoc(BLOCK_FOLDER + "/" + color + "_azure_bluet"));
             pottedCross("potted_" + color + "_cornflower", modLoc(BLOCK_FOLDER + "/" + color + "_cornflower"));
+            pottedCross("potted_" + color + "_daffodil", modLoc(BLOCK_FOLDER + "/" + color + "_daffodil"));
             pottedCross("potted_" + color + "_daisy", modLoc(BLOCK_FOLDER + "/" + color + "_daisy"));
             pottedCross("potted_" + color + "_dandelion", modLoc(BLOCK_FOLDER + "/" + color + "_dandelion"));
             pottedCross("potted_" + color + "_fairy_rose", modLoc(BLOCK_FOLDER + "/" + color + "_fairy_rose"));
@@ -63,6 +66,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
             pottedCross("potted_" + color + "_lily", modLoc(BLOCK_FOLDER + "/" + color + "_lily"));
             pottedCross("potted_" + color + "_orchid", modLoc(BLOCK_FOLDER + "/" + color + "_orchid"));
             pottedCross("potted_" + color + "_poppy", modLoc(BLOCK_FOLDER + "/" + color + "_poppy"));
+            pottedCross("potted_" + color + "_rose", modLoc(BLOCK_FOLDER + "/" + color + "_rose"));
             pottedCross("potted_" + color + "_torchflower", modLoc(BLOCK_FOLDER + "/" + color + "_torchflower"));
             pottedCross("potted_" + color + "_tulip", modLoc(BLOCK_FOLDER + "/" + color + "_tulip"));
             pottedCross("potted_" + color + "_wither_rose", modLoc(BLOCK_FOLDER + "/" + color + "_wither_rose"));
@@ -78,6 +82,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
         vinePlant("clematis");
         //clover
         plant("cornflower");
+        plant("daffodil");
         plant("daisy");
         plant("dandelion");
         plant("dianthus");
@@ -97,6 +102,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
 //        pitcherPlant("pitcher_plant");
         plant("poppy");
         plant("poppies");
+        plant("rose");
         doublePlant("rose_bush");
         plant("rose_bushlet");
         sunflowerPlant("sunflower");

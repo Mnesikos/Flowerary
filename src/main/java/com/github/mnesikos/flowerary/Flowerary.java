@@ -2,10 +2,7 @@ package com.github.mnesikos.flowerary;
 
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.client.color.ColorEvents;
-import com.github.mnesikos.flowerary.data.FloweraryBlockModels;
-import com.github.mnesikos.flowerary.data.FloweraryBlockStates;
-import com.github.mnesikos.flowerary.data.FloweraryItemModels;
-import com.github.mnesikos.flowerary.data.FloweraryRecipes;
+import com.github.mnesikos.flowerary.data.*;
 import com.github.mnesikos.flowerary.item.FlowerComposting;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
@@ -64,9 +61,9 @@ public class Flowerary {
         dataGenerator.addProvider(event.includeClient(), new FloweraryBlockStates(packOutput, event.getExistingFileHelper()));
         dataGenerator.addProvider(event.includeClient(), new FloweraryItemModels(packOutput, event.getExistingFileHelper()));
 
-//        FloweraryTags.FloweraryBlockTags blockTagsProvider = new FloweraryTags.FloweraryBlockTags(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
-//        dataGenerator.addProvider(event.includeServer(), blockTagsProvider);
-//        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryItemTags(packOutput, event.getLookupProvider(), blockTagsProvider, event.getExistingFileHelper()));
+        FloweraryTags.FloweraryBlockTags blockTagsProvider = new FloweraryTags.FloweraryBlockTags(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
+        dataGenerator.addProvider(event.includeServer(), blockTagsProvider);
+        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryItemTags(packOutput, event.getLookupProvider(), blockTagsProvider, event.getExistingFileHelper()));
 //        dataGenerator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
 //                List.of(new LootTableProvider.SubProviderEntry(FloweraryLootTables::new, LootContextParamSets.BLOCK))));
         dataGenerator.addProvider(event.includeServer(), new FloweraryRecipes(packOutput));

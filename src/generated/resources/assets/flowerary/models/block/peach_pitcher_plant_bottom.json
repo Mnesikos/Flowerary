@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pitcher_plant_bottom",
+  "textures": {
+    "bottom": "flowerary:block/peach_pitcher_plant_bottom"
+  }
+}

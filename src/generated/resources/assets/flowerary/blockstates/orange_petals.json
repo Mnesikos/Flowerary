@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/orange_petals"
+      },
+      {
+        "model": "flowerary:block/orange_petals",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/orange_petals",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/orange_petals",
+        "y": 270
+      }
+    ]
+  }
+}

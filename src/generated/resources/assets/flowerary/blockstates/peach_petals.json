@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/peach_petals"
+      },
+      {
+        "model": "flowerary:block/peach_petals",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/peach_petals",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/peach_petals",
+        "y": 270
+      }
+    ]
+  }
+}

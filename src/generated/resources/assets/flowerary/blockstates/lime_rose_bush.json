@@ -1,10 +1,10 @@
 {
   "variants": {
-    "half=upper": {
-      "model": "flowerary:block/lime_rose_bush_top"
-    },
     "half=lower": {
       "model": "flowerary:block/lime_rose_bush_bottom"
+    },
+    "half=upper": {
+      "model": "flowerary:block/lime_rose_bush_top"
     }
   }
 }

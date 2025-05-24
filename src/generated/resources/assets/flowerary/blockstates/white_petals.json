@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/white_petals"
+      },
+      {
+        "model": "flowerary:block/white_petals",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/white_petals",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/white_petals",
+        "y": 270
+      }
+    ]
+  }
+}

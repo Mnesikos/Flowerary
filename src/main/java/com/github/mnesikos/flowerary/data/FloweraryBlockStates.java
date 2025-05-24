@@ -5,6 +5,7 @@ import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.block.TallFlowerCropBlock;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
@@ -100,13 +101,13 @@ public class FloweraryBlockStates extends BlockStateProvider {
             crop(FloweraryBlocks.ORCHID_PLANTS.get(color).get(), color, "orchid");
             doubleCrop(FloweraryBlocks.PEONY_PLANTS.get(color).get(), color, "peony");
             crop(FloweraryBlocks.PETALS_PLANTS.get(color).get(), color, "petals");
-            doubleCrop(FloweraryBlocks.PITCHER_PLANT_PLANTS.get(color).get(), color, "pitcher_plant");
+            pitcherCrop(FloweraryBlocks.PITCHER_PLANT_PLANTS.get(color).get(), color, "pitcher_plant");
             crop(FloweraryBlocks.POPPY_PLANTS.get(color).get(), color, "poppy");
             crop(FloweraryBlocks.POPPIES_PLANTS.get(color).get(), color, "poppies");
             doubleCrop(FloweraryBlocks.ROSE_BUSH_PLANTS.get(color).get(), color, "rose_bush");
             crop(FloweraryBlocks.ROSE_BUSHLET_PLANTS.get(color).get(), color, "rose_bushlet");
             doubleCrop(FloweraryBlocks.SUNFLOWER_PLANTS.get(color).get(), color, "sunflower");
-            crop(FloweraryBlocks.TORCHFLOWER_PLANTS.get(color).get(), color, "torchflower");
+            torchflowerCrop(FloweraryBlocks.TORCHFLOWER_PLANTS.get(color).get(), color, "torchflower");
             crop(FloweraryBlocks.TULIP_PLANTS.get(color).get(), color, "tulip");
             crop(FloweraryBlocks.WILDFLOWER_PLANTS.get(color).get(), color, "wildflower");
             crop(FloweraryBlocks.WITHER_ROSE_PLANTS.get(color).get(), color, "wither_rose");
@@ -162,6 +163,33 @@ public class FloweraryBlockStates extends BlockStateProvider {
         });
     }
 
+    public void torchflowerCrop(Block block, String color, String plant) {
+        ModelFile stage0 = models().getExistingFile(new ResourceLocation("block/torchflower_crop_stage0"));
+        ModelFile stage1 = models().getExistingFile(new ResourceLocation("block/torchflower_crop_stage0"));
+        ModelFile stage2 = models().getExistingFile(new ResourceLocation("block/torchflower_crop_stage1"));
+        ModelFile stage3 = models().getExistingFile(new ResourceLocation("block/torchflower_crop_stage1"));
+        ModelFile stage7 = models().getExistingFile(modLoc("block/" + color + "_" + plant));
+        getVariantBuilder(block).forAllStates(state -> {
+            switch (state.getValue(CropBlock.AGE)) {
+                case 0:
+                    return ConfiguredModel.builder().modelFile(stage0).build();
+                case 1:
+                case 2:
+                    return ConfiguredModel.builder().modelFile(stage1).build();
+                case 3:
+                case 4:
+                    return ConfiguredModel.builder().modelFile(stage2).build();
+                case 5:
+                case 6:
+                    return ConfiguredModel.builder().modelFile(stage3).build();
+                case 7:
+                    return ConfiguredModel.builder().modelFile(stage7).build();
+                default:
+                    throw new IllegalStateException("Unexpected value: " + state.getValue(CropBlock.AGE));
+            }
+        });
+    }
+
     public void doubleCrop(Block block, String color, String plant) {
         ModelFile stage0Lower = models().getExistingFile(modLoc("block/" + plant + "_stage0_bottom"));
         ModelFile stage1Lower = models().getExistingFile(modLoc("block/" + plant + "_stage1_bottom"));
@@ -172,6 +200,39 @@ public class FloweraryBlockStates extends BlockStateProvider {
         ModelFile stage1Upper = models().getExistingFile(modLoc("block/" + plant + "_stage1_top"));
         ModelFile stage2Upper = models().getExistingFile(modLoc("block/" + plant + "_stage2_top"));
         ModelFile stage3Upper = models().getExistingFile(modLoc("block/" + plant + "_stage3_top"));
+        ModelFile stage7Upper = models().getExistingFile(modLoc("block/" + color + "_" + plant + "_top"));
+        getVariantBuilder(block).forAllStates(state -> {
+            DoubleBlockHalf segment = state.getValue(TallFlowerCropBlock.SEGMENT);
+            switch (state.getValue(CropBlock.AGE)) {
+                case 0:
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage0Lower : stage0Upper).build();
+                case 1:
+                case 2:
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage1Lower : stage1Upper).build();
+                case 3:
+                case 4:
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage2Lower : stage2Upper).build();
+                case 5:
+                case 6:
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage3Lower : stage3Upper).build();
+                case 7:
+                    return ConfiguredModel.builder().modelFile(segment == DoubleBlockHalf.LOWER ? stage7Lower : stage7Upper).build();
+                default:
+                    throw new IllegalStateException("Unexpected value: " + state.getValue(CropBlock.AGE));
+            }
+        });
+    }
+
+    public void pitcherCrop(Block block, String color, String plant) {
+        ModelFile stage0Lower = models().getExistingFile(new ResourceLocation("block/pitcher_crop_bottom_stage_0"));
+        ModelFile stage1Lower = models().getExistingFile(new ResourceLocation("block/pitcher_crop_bottom_stage_1"));
+        ModelFile stage2Lower = models().getExistingFile(new ResourceLocation("block/pitcher_crop_bottom_stage_2"));
+        ModelFile stage3Lower = models().getExistingFile(new ResourceLocation("block/pitcher_crop_bottom_stage_3"));
+        ModelFile stage7Lower = models().getExistingFile(modLoc("block/" + color + "_" + plant + "_bottom"));
+        ModelFile stage0Upper = models().getExistingFile(new ResourceLocation("block/pitcher_crop_top_stage_0"));
+        ModelFile stage1Upper = models().getExistingFile(new ResourceLocation("block/pitcher_crop_top_stage_1"));
+        ModelFile stage2Upper = models().getExistingFile(new ResourceLocation("block/pitcher_crop_top_stage_2"));
+        ModelFile stage3Upper = models().getExistingFile(new ResourceLocation("block/pitcher_crop_top_stage_3"));
         ModelFile stage7Upper = models().getExistingFile(modLoc("block/" + color + "_" + plant + "_top"));
         getVariantBuilder(block).forAllStates(state -> {
             DoubleBlockHalf segment = state.getValue(TallFlowerCropBlock.SEGMENT);

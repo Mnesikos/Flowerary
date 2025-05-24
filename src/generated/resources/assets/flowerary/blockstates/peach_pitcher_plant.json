@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "flowerary:block/peach_pitcher_plant_bottom"
+    },
+    "half=upper": {
+      "model": "flowerary:block/peach_pitcher_plant_top"
+    }
+  }
+}

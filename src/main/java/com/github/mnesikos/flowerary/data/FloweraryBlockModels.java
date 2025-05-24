@@ -42,12 +42,13 @@ public class FloweraryBlockModels extends BlockModelProvider {
             cross(color + "_orchid", modLoc(BLOCK_FOLDER + "/" + color + "_orchid"));
             doubleCross(color + "_peony", modLoc(BLOCK_FOLDER + "/" + color + "_peony"));
             petals(color + "_petals", modLoc(BLOCK_FOLDER + "/" + color + "_petals"));
-            doubleCross(color + "_pitcher_plant", modLoc(BLOCK_FOLDER + "/" + color + "_pitcher_plant"));
+            pitcher(color + "_pitcher_plant", modLoc(BLOCK_FOLDER + "/" + color + "_pitcher_plant"));
             cross(color + "_poppy", modLoc(BLOCK_FOLDER + "/" + color + "_poppy"));
             cross(color + "_poppies", modLoc(BLOCK_FOLDER + "/" + color + "_poppies"));
             doubleCross(color + "_rose_bush", modLoc(BLOCK_FOLDER + "/" + color + "_rose_bush"));
             cross(color + "_rose_bushlet", modLoc(BLOCK_FOLDER + "/" + color + "_rose_bushlet"));
             sunflower(color + "_sunflower", modLoc(BLOCK_FOLDER + "/" + color + "_sunflower"));
+            cross(color + "_torchflower", modLoc(BLOCK_FOLDER + "/" + color + "_torchflower"));
             cross(color + "_tulip", modLoc(BLOCK_FOLDER + "/" + color + "_tulip"));
             cross(color + "_wildflower", modLoc(BLOCK_FOLDER + "/" + color + "_wildflower"));
             cross(color + "_wither_rose", modLoc(BLOCK_FOLDER + "/" + color + "_wither_rose"));
@@ -93,13 +94,13 @@ public class FloweraryBlockModels extends BlockModelProvider {
         plant("orchid");
         doublePlant("peony");
         petalsPlant("petals");
-        doublePlant("pitcher_plant");
+//        pitcherPlant("pitcher_plant");
         plant("poppy");
         plant("poppies");
         doublePlant("rose_bush");
         plant("rose_bushlet");
         sunflowerPlant("sunflower");
-        plant("torchflower");
+//        plant("torchflower");
         plant("tulip");
         plant("wildflower");
         plant("wither_rose");
@@ -123,6 +124,11 @@ public class FloweraryBlockModels extends BlockModelProvider {
         singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_2"), "flowerbed", petals);
         singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_3"), "flowerbed", petals);
         singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_4"), "flowerbed", petals);
+    }
+
+    public void pitcher(String name, ResourceLocation pitcher) {
+        singleTexture(name + "_top", new ResourceLocation(BLOCK_FOLDER + "/pitcher_plant_top"), "top", new ResourceLocation(pitcher.getNamespace(), pitcher.getPath() + "_top"));
+        singleTexture(name + "_bottom", new ResourceLocation(BLOCK_FOLDER + "/pitcher_plant_bottom"), "bottom", new ResourceLocation(pitcher.getNamespace(), pitcher.getPath() + "_bottom"));
     }
 
     public void vine(String name, ResourceLocation vine) {
@@ -182,10 +188,10 @@ public class FloweraryBlockModels extends BlockModelProvider {
     }
 
     public void petalsPlant(String crop) {
-        singleTexture(crop + "_stage0", modLoc(BLOCK_FOLDER + "/petals"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage0"));
-        singleTexture(crop + "_stage1", modLoc(BLOCK_FOLDER + "/petals"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage1"));
-        singleTexture(crop + "_stage2", modLoc(BLOCK_FOLDER + "/petals"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage2"));
-        singleTexture(crop + "_stage3", modLoc(BLOCK_FOLDER + "/petals"), "1", modLoc(BLOCK_FOLDER + "/" + crop + "_stage3"));
+        withExistingParent(crop + "_stage0", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage0_stem"));
+        withExistingParent(crop + "_stage1", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage1_stem"));
+        withExistingParent(crop + "_stage2", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage2_stem")).texture("flowerbed", modLoc(BLOCK_FOLDER + "/petals_stage2"));
+        withExistingParent(crop + "_stage3", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage3_stem")).texture("flowerbed", modLoc(BLOCK_FOLDER + "/petals_stage3"));
     }
 
     public void sunflowerPlant(String crop) {

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "flowerary:block/lavender_petals"
+      },
+      {
+        "model": "flowerary:block/lavender_petals",
+        "y": 90
+      },
+      {
+        "model": "flowerary:block/lavender_petals",
+        "y": 180
+      },
+      {
+        "model": "flowerary:block/lavender_petals",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -3,6 +3,7 @@ package com.github.mnesikos.flowerary.data;
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -63,7 +64,7 @@ public class FloweraryItemModels extends ItemModelProvider {
             blockGenerated(color + "_orchid");
             blockGenerated(color + "_peony", color + "_peony_top");
             blockGenerated(color + "_petals");
-            blockGenerated(color + "_pitcher_plant");
+            blockGenerated(color + "_pitcher_plant", color + "_pitcher_plant_top");
             blockGenerated(color + "_poppy");
             blockGenerated(color + "_poppies");
             blockGenerated(color + "_rose_bush", color + "_rose_bush_top");
@@ -99,14 +100,14 @@ public class FloweraryItemModels extends ItemModelProvider {
             seedsLayered(color, "lily_seeds");
             seedsLayered(color, "orchid_seeds");
             seedsLayered(color, "peony_seeds");
-            seedsLayered(color, "_petals_seeds");
-            seedsLayered(color, "_pitcher_plant_seeds");
+            seedsLayered(color, "petals_seeds");
+            vanillaSeedsLayered(color, "pitcher_plant_seeds", "pitcher_pod");
             seedsLayered(color, "poppy_seeds");
             seedsLayered(color, "poppies_seeds");
             seedsLayered(color, "rose_bush_seeds");
             seedsLayered(color, "rose_bushlet_seeds");
             seedsLayered(color, "sunflower_seeds");
-            seedsLayered(color, "_torchflower_seeds");
+            vanillaSeedsLayered(color, "torchflower_seeds", "torchflower_seeds");
             seedsLayered(color, "tulip_seeds");
             seedsLayered(color, "wildflower_seeds");
             seedsLayered(color, "wither_rose_seeds");
@@ -116,6 +117,12 @@ public class FloweraryItemModels extends ItemModelProvider {
     public void seedsLayered(String color, String name) {
         withExistingParent(color + "_" + name, mcLoc("item/generated"))
                 .texture("layer0", modLoc("item/" + name))
+                .texture("layer1", modLoc("item/" + color + "_baggie"));
+    }
+
+    public void vanillaSeedsLayered(String color, String name, String vanillaSeeds) {
+        withExistingParent(color + "_" + name, mcLoc("item/generated"))
+                .texture("layer0", new ResourceLocation("item/" + vanillaSeeds))
                 .texture("layer1", modLoc("item/" + color + "_baggie"));
     }
 

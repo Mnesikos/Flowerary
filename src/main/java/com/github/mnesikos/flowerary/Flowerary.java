@@ -1,6 +1,7 @@
 package com.github.mnesikos.flowerary;
 
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
+import com.github.mnesikos.flowerary.client.color.ColorEvents;
 import com.github.mnesikos.flowerary.data.FloweraryBlockModels;
 import com.github.mnesikos.flowerary.data.FloweraryBlockStates;
 import com.github.mnesikos.flowerary.data.FloweraryItemModels;
@@ -12,12 +13,14 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -43,6 +46,10 @@ public class Flowerary {
         bus.addListener(this::setup);
         bus.addListener(this::gatherData);
         bus.addListener(this::setupClient);
+
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            bus.addListener(ColorEvents::registerColorHandlerBlocks);
+        }
     }
 
     private void setup(final FMLCommonSetupEvent event) {

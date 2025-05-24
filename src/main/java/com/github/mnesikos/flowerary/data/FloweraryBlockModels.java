@@ -126,10 +126,11 @@ public class FloweraryBlockModels extends BlockModelProvider {
     }
 
     public void petals(String name, ResourceLocation petals) {
-        singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_1"), "flowerbed", petals);
-        singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_2"), "flowerbed", petals);
-        singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_3"), "flowerbed", petals);
-        singleTexture(name, ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_4"), "flowerbed", petals);
+        singleTexture(name + "_1", ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_1"), "flowerbed", petals);
+        singleTexture(name + "_2", ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_2"), "flowerbed", petals);
+        singleTexture(name + "_3", ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_3"), "flowerbed", petals);
+        singleTexture(name + "_4", ResourceLocation.parse(BLOCK_FOLDER + "/pink_petals_4"), "flowerbed", petals);
+        withExistingParent(name, modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage3_stem")).texture("flowerbed", petals);
     }
 
     public void pitcher(String name, ResourceLocation pitcher) {
@@ -194,8 +195,8 @@ public class FloweraryBlockModels extends BlockModelProvider {
     }
 
     public void petalsPlant(String crop) {
-        withExistingParent(crop + "_stage0", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage0_stem"));
-        withExistingParent(crop + "_stage1", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage1_stem"));
+        withExistingParent(crop + "_stage0", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage0_stem")).texture("flowerbed", modLoc(BLOCK_FOLDER + "/petals_stage0"));
+        withExistingParent(crop + "_stage1", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage1_stem")).texture("flowerbed", modLoc(BLOCK_FOLDER + "/petals_stage0"));
         withExistingParent(crop + "_stage2", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage2_stem")).texture("flowerbed", modLoc(BLOCK_FOLDER + "/petals_stage2"));
         withExistingParent(crop + "_stage3", modLoc(BLOCK_FOLDER + "/petals")).texture("stem", modLoc(BLOCK_FOLDER + "/petals_stage3_stem")).texture("flowerbed", modLoc(BLOCK_FOLDER + "/petals_stage3"));
     }

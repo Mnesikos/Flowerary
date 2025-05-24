@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/pink_petals_4",
+  "parent": "flowerary:block/petals",
   "textures": {
-    "flowerbed": "flowerary:block/black_petals"
+    "flowerbed": "flowerary:block/black_petals",
+    "stem": "flowerary:block/petals_stage3_stem"
   }
 }

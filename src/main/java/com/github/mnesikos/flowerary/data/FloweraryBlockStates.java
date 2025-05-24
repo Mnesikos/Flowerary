@@ -4,11 +4,17 @@ import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.block.TallFlowerCropBlock;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.blockstates.Condition;
+import net.minecraft.data.models.blockstates.MultiPartGenerator;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -50,7 +56,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
             block(FloweraryBlocks.LILY.get(color).get());
             block(FloweraryBlocks.ORCHID.get(color).get());
             doubleBlock(FloweraryBlocks.PEONY.get(color).get());
-            rotateYBlock(FloweraryBlocks.PETALS.get(color).get());
+            petals(FloweraryBlocks.PETALS.get(color).get());
             doubleBlock(FloweraryBlocks.PITCHER_PLANT.get(color).get());
             block(FloweraryBlocks.POPPY.get(color).get());
             block(FloweraryBlocks.POPPIES.get(color).get());
@@ -127,6 +133,31 @@ public class FloweraryBlockStates extends BlockStateProvider {
                 .addModels(new ConfiguredModel(model, 0, 90, false))
                 .addModels(new ConfiguredModel(model, 0, 180, false))
                 .addModels(new ConfiguredModel(model, 0, 270, false));
+    }
+
+    public void petals(Block block) {
+        ModelFile model1 = models().getExistingFile(ForgeRegistries.BLOCKS.getKey(block).withSuffix("_1"));
+        ModelFile model2 = models().getExistingFile(ForgeRegistries.BLOCKS.getKey(block).withSuffix("_2"));
+        ModelFile model3 = models().getExistingFile(ForgeRegistries.BLOCKS.getKey(block).withSuffix("_3"));
+        ModelFile model4 = models().getExistingFile(ForgeRegistries.BLOCKS.getKey(block).withSuffix("_4"));
+
+        getMultipartBuilder(block)
+                .part().modelFile(model1).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 1, 2, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH).end()
+                .part().modelFile(model1).rotationY(90).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 1, 2, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST).end()
+                .part().modelFile(model1).rotationY(180).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 1, 2, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH).end()
+                .part().modelFile(model1).rotationY(270).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 1, 2, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST).end()
+                .part().modelFile(model2).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 2, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH).end()
+                .part().modelFile(model2).rotationY(90).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 2, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST).end()
+                .part().modelFile(model2).rotationY(180).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 2, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH).end()
+                .part().modelFile(model2).rotationY(270).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 2, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST).end()
+                .part().modelFile(model3).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH).end()
+                .part().modelFile(model3).rotationY(90).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST).end()
+                .part().modelFile(model3).rotationY(180).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH).end()
+                .part().modelFile(model3).rotationY(270).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 3, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST).end()
+                .part().modelFile(model4).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH).end()
+                .part().modelFile(model4).rotationY(90).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST).end()
+                .part().modelFile(model4).rotationY(180).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH).end()
+                .part().modelFile(model4).rotationY(270).addModel().condition(BlockStateProperties.FLOWER_AMOUNT, 4).condition(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST).end();
     }
 
     public void block(Block block) {

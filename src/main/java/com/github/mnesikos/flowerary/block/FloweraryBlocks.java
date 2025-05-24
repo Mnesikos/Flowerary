@@ -7,10 +7,7 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.VineBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -157,7 +154,7 @@ public final class FloweraryBlocks {
             registerFlowerAndCrop(color, "orchid", ORCHID, ORCHID_PLANTS, FloweraryItems.ORCHID_SEEDS, POTTED_ORCHIDS);
             registerTallFlower(color, "peony", PEONY);
             PEONY_PLANTS.put(color, REGISTRAR.register(color + "_peony_plant", () -> new TallFlowerCropBlock.PeonyCropBlock(FloweraryItems.PEONY_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
-            registerFlowerCarpetAndCrop(color, "petals", PETALS, PETALS_PLANTS, FloweraryItems.PETALS_SEEDS);
+            registerPetalsAndCrop(color, "petals", PETALS, PETALS_PLANTS, FloweraryItems.PETALS_SEEDS);
             registerTallFlower(color, "pitcher_plant", PITCHER_PLANT);
             PITCHER_PLANT_PLANTS.put(color, REGISTRAR.register(color + "_pitcher_plant_plant", () -> new TallFlowerCropBlock.PitcherPlantCropBlock(FloweraryItems.PITCHER_PLANT_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerAndCrop(color, "poppy", POPPY, POPPY_PLANTS, FloweraryItems.POPPY_SEEDS, POTTED_POPPYS);
@@ -188,6 +185,11 @@ public final class FloweraryBlocks {
 
     private static void registerFlowerCarpetAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap) {
         flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new FlowerCarpetBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).offsetType(BlockBehaviour.OffsetType.NONE))));
+        cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
+    }
+
+    private static void registerPetalsAndCrop(String color, String flower, Map<String, RegistryObject<Block>> flowersMap, Map<String, RegistryObject<Block>> cropsMap, Map<String, RegistryObject<Item>> seedsMap) {
+        flowersMap.put(color, registerWithItem(color + "_" + flower, () -> new PinkPetalsBlock(BlockBehaviour.Properties.copy(Blocks.POPPY).offsetType(BlockBehaviour.OffsetType.NONE))));
         cropsMap.put(color, REGISTRAR.register(color + "_" + flower + "_plant", () -> new FlowerCropBlock(seedsMap.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
     }
 

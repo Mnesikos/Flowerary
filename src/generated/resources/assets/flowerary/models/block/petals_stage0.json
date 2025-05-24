@@ -1,6 +1,7 @@
 {
   "parent": "flowerary:block/petals",
   "textures": {
+    "flowerbed": "flowerary:block/petals_stage0",
     "stem": "flowerary:block/petals_stage0_stem"
   }
 }

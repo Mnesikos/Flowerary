@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/pink_petals_2",
-  "textures": {
-    "flowerbed": "flowerary:block/purple_petals"
-  }
-}

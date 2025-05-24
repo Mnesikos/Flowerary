@@ -1,7 +1,0 @@
-{
-  "parent": "flowerary:block/petals",
-  "textures": {
-    "flowerbed": "flowerary:block/wilted_petals",
-    "stem": "flowerary:block/petals_stage3_stem"
-  }
-}

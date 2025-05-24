@@ -5,6 +5,7 @@ import com.github.mnesikos.flowerary.client.color.ColorEvents;
 import com.github.mnesikos.flowerary.data.FloweraryBlockModels;
 import com.github.mnesikos.flowerary.data.FloweraryBlockStates;
 import com.github.mnesikos.flowerary.data.FloweraryItemModels;
+import com.github.mnesikos.flowerary.data.FloweraryRecipes;
 import com.github.mnesikos.flowerary.item.FlowerComposting;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
@@ -68,7 +69,7 @@ public class Flowerary {
 //        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryItemTags(packOutput, event.getLookupProvider(), blockTagsProvider, event.getExistingFileHelper()));
 //        dataGenerator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
 //                List.of(new LootTableProvider.SubProviderEntry(FloweraryLootTables::new, LootContextParamSets.BLOCK))));
-//        dataGenerator.addProvider(event.includeServer(), new FloweraryRecipes(packOutput));
+        dataGenerator.addProvider(event.includeServer(), new FloweraryRecipes(packOutput));
     }
 
     private void setupClient(final FMLClientSetupEvent event) {

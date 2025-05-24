@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "lime_dye",
+  "ingredients": [
+    {
+      "item": "flowerary:lime_poppies"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lime_dye"
+  }
+}

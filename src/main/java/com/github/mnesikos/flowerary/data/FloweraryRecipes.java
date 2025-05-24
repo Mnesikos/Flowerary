@@ -100,6 +100,6 @@ public class FloweraryRecipes extends RecipeProvider {
     public static void emptyPollenJarRecipe(Consumer<FinishedRecipe> consumer, ItemLike pollenJar) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, FloweraryItems.EMPTY_POLLEN_JAR.get()).requires(pollenJar)
                 .unlockedBy("has_pollen", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(pollenJar).build()))
-                .save(consumer, "empty_" + BuiltInRegistries.ITEM.getKey(pollenJar.asItem()));
+                .save(consumer, BuiltInRegistries.ITEM.getKey(pollenJar.asItem()).withPrefix("empty_"));
     }
 }

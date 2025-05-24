@@ -7,14 +7,12 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
 
@@ -25,6 +23,13 @@ public class FloweraryRecipes extends RecipeProvider {
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, FloweraryItems.EMPTY_POLLEN_JAR.get())
+                .pattern("g g")
+                .pattern(" g ")
+                .define('g', Tags.Items.GLASS_PANES)
+                .unlockedBy("has_glass_pane", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(Tags.Items.GLASS_PANES).build()))
+                .save(consumer);
+
         emptyPollenJarRecipe(consumer, FloweraryItems.DANDELION_POLLEN_JAR.get());
         emptyPollenJarRecipe(consumer, FloweraryItems.POPPY_POLLEN_JAR.get());
         emptyPollenJarRecipe(consumer, FloweraryItems.BLUE_ORCHID_POLLEN_JAR.get());

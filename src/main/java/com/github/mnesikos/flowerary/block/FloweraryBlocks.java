@@ -36,6 +36,7 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> CLEMATIS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CLOVER = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CORNFLOWER = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> DAFFODIL = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> DAISY = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> DANDELION = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> DIANTHUS = new HashMap<>();
@@ -55,6 +56,7 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> PITCHER_PLANT = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POPPY = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POPPIES = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> ROSE = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> ROSE_BUSH = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> ROSE_BUSHLET = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> SUNFLOWER = new HashMap<>();
@@ -67,6 +69,7 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> POTTED_ALLIUMS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_AZURE_BLUETS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_CORNFLOWERS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> POTTED_DAFFODILS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_DAISYS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_DANDELIONS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_FAIRY_ROSES = new HashMap<>();
@@ -74,6 +77,7 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> POTTED_LILYS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_ORCHIDS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_POPPYS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> POTTED_ROSES = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_TORCHFLOWERS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_TULIPS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POTTED_WITHER_ROSES = new HashMap<>();
@@ -89,6 +93,7 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> CLEMATIS_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CLOVER_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> CORNFLOWER_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> DAFFODIL_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> DAISY_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> DANDELION_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> DIANTHUS_PLANTS = new HashMap<>();
@@ -108,6 +113,7 @@ public final class FloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> PITCHER_PLANT_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POPPY_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> POPPIES_PLANTS = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> ROSE_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> ROSE_BUSH_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> ROSE_BUSHLET_PLANTS = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> SUNFLOWER_PLANTS = new HashMap<>();
@@ -130,6 +136,7 @@ public final class FloweraryBlocks {
             registerFlowerVineAndCrop(color, "clematis", CLEMATIS, CLEMATIS_PLANTS, FloweraryItems.CLEMATIS_SEEDS);
             registerFlowerCarpetAndCrop(color, "clover", CLOVER, CLOVER_PLANTS, FloweraryItems.CLOVER_SEEDS);
             registerFlowerAndCrop(color, "cornflower", CORNFLOWER, CORNFLOWER_PLANTS, FloweraryItems.CORNFLOWER_SEEDS, POTTED_CORNFLOWERS);
+            registerFlowerAndCrop(color, "daffodil", DAFFODIL, DAFFODIL_PLANTS, FloweraryItems.DAFFODIL_SEEDS, POTTED_DAFFODILS);
             registerFlowerAndCrop(color, "daisy", DAISY, DAISY_PLANTS, FloweraryItems.DAISY_SEEDS, POTTED_DAISYS);
             registerFlowerAndCrop(color, "dandelion", DANDELION, DANDELION_PLANTS, FloweraryItems.DANDELION_SEEDS, POTTED_DANDELIONS);
             registerFlowerAndCrop(color, "dianthus", DIANTHUS, DIANTHUS_PLANTS, FloweraryItems.DIANTHUS_SEEDS, null);
@@ -155,6 +162,7 @@ public final class FloweraryBlocks {
             PITCHER_PLANT_PLANTS.put(color, REGISTRAR.register(color + "_pitcher_plant_plant", () -> new TallFlowerCropBlock.PitcherPlantCropBlock(FloweraryItems.PITCHER_PLANT_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerAndCrop(color, "poppy", POPPY, POPPY_PLANTS, FloweraryItems.POPPY_SEEDS, POTTED_POPPYS);
             registerFlowerBushAndCrop(color, "poppies", POPPIES, POPPIES_PLANTS, FloweraryItems.POPPIES_SEEDS);
+            registerFlowerAndCrop(color, "rose", ROSE, ROSE_PLANTS, FloweraryItems.ROSE_SEEDS, POTTED_ROSES);
             registerTallFlower(color, "rose_bush", ROSE_BUSH);
             ROSE_BUSH_PLANTS.put(color, REGISTRAR.register(color + "_rose_bush_plant", () -> new TallFlowerCropBlock.RoseBushCropBlock(FloweraryItems.ROSE_BUSH_SEEDS.get(color), BlockBehaviour.Properties.copy(Blocks.WHEAT))));
             registerFlowerBushAndCrop(color, "rose_bushlet", ROSE_BUSHLET, ROSE_BUSHLET_PLANTS, FloweraryItems.ROSE_BUSHLET_SEEDS);

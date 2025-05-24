@@ -56,12 +56,13 @@ public class PollenJarItem extends Item {
         else if (block.equals(Blocks.OXEYE_DAISY)) plants = hybrid ? DIANTHUS_PLANTS : DAISY_PLANTS;
         else if (block.equals(Blocks.CORNFLOWER)) plants = hybrid ? CHICORY_PLANTS : CORNFLOWER_PLANTS;
         else if (block.equals(Blocks.LILY_OF_THE_VALLEY)) plants = hybrid ? HIBISCUS_PLANTS : LILY_PLANTS;
-        else if (block.equals(Blocks.TORCHFLOWER)) plants = TORCHFLOWER_PLANTS;
+        else if (block.equals(Blocks.TORCHFLOWER)) plants = hybrid ? DAFFODIL_PLANTS : TORCHFLOWER_PLANTS;
         else if (block.equals(Blocks.WITHER_ROSE)) plants = hybrid ? FAIRY_ROSE_PLANTS : WITHER_ROSE_PLANTS;
         else if (block.equals(Blocks.PINK_PETALS)) plants = hybrid ? ALYSSUM_PLANTS : PETALS_PLANTS;
         else if (block.equals(Blocks.SUNFLOWER)) plants = hybrid ? IMPALA_LILY_PLANTS : SUNFLOWER_PLANTS;
         else if (block.equals(Blocks.LILAC)) plants = hybrid ? LAVENDER_PLANTS : LILAC_PLANTS;
-        else if (block.equals(Blocks.ROSE_BUSH)) plants = hybrid ? ROSE_BUSHLET_PLANTS : ROSE_BUSH_PLANTS;
+        else if (block.equals(Blocks.ROSE_BUSH))
+            plants = hybrid ? (world.getRandom().nextBoolean() ? ROSE_PLANTS : ROSE_BUSHLET_PLANTS) : ROSE_BUSH_PLANTS;
         else if (block.equals(Blocks.PEONY)) plants = hybrid ? BLAZING_STAR_PLANTS : PEONY_PLANTS;
         else if (block.equals(Blocks.PITCHER_PLANT)) plants = hybrid ? FOXGLOVE_PLANTS : PITCHER_PLANT_PLANTS;
 

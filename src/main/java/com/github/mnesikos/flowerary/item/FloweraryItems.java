@@ -47,6 +47,7 @@ public final class FloweraryItems {
     public static final Map<String, RegistryObject<Item>> CLEMATIS_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> CLOVER_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> CORNFLOWER_SEEDS = new HashMap<>();
+    public static final Map<String, RegistryObject<Item>> DAFFODIL_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> DAISY_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> DANDELION_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> DIANTHUS_SEEDS = new HashMap<>();
@@ -66,6 +67,7 @@ public final class FloweraryItems {
     public static final Map<String, RegistryObject<Item>> PITCHER_PLANT_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> POPPY_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> POPPIES_SEEDS = new HashMap<>();
+    public static final Map<String, RegistryObject<Item>> ROSE_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> ROSE_BUSH_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> ROSE_BUSHLET_SEEDS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> SUNFLOWER_SEEDS = new HashMap<>();
@@ -87,6 +89,7 @@ public final class FloweraryItems {
             CLEMATIS_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_clematis_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.CLEMATIS_PLANTS.get(color).get(), new Item.Properties())));
             CLOVER_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_clover_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.CLOVER_PLANTS.get(color).get(), new Item.Properties())));
             CORNFLOWER_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_cornflower_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.CORNFLOWER_PLANTS.get(color).get(), new Item.Properties())));
+            DAFFODIL_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_daffodil_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.DAFFODIL_PLANTS.get(color).get(), new Item.Properties())));
             DAISY_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_daisy_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.DAISY_PLANTS.get(color).get(), new Item.Properties())));
             DANDELION_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_dandelion_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.DANDELION_PLANTS.get(color).get(), new Item.Properties())));
             DIANTHUS_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_dianthus_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.DIANTHUS_PLANTS.get(color).get(), new Item.Properties())));
@@ -106,6 +109,7 @@ public final class FloweraryItems {
             PITCHER_PLANT_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_pitcher_plant_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.PITCHER_PLANT_PLANTS.get(color).get(), new Item.Properties())));
             POPPY_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_poppy_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.POPPY_PLANTS.get(color).get(), new Item.Properties())));
             POPPIES_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_poppies_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.POPPIES_PLANTS.get(color).get(), new Item.Properties())));
+            ROSE_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_rose_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.ROSE_PLANTS.get(color).get(), new Item.Properties())));
             ROSE_BUSH_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_rose_bush_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.ROSE_BUSH_PLANTS.get(color).get(), new Item.Properties())));
             ROSE_BUSHLET_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_rose_bushlet_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.ROSE_BUSHLET_PLANTS.get(color).get(), new Item.Properties())));
             SUNFLOWER_SEEDS.put(color, TABLESS_REGISTRAR.register(color + "_sunflower_seeds", () -> new ItemNameBlockItem(FloweraryBlocks.SUNFLOWER_PLANTS.get(color).get(), new Item.Properties())));

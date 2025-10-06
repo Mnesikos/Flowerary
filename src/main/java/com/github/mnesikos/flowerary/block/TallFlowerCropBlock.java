@@ -35,7 +35,7 @@ import java.util.function.Supplier;
 
 public class TallFlowerCropBlock extends FlowerCropBlock {
     public static final EnumProperty<DoubleBlockHalf> SEGMENT = BlockStateProperties.DOUBLE_BLOCK_HALF;
-    protected final int upperSegmentAge;
+    private final int upperSegmentAge;
     private final VoxelShape[] bottomShape;
     private final VoxelShape[] topShape;
 
@@ -70,6 +70,10 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
         return getAge(state) >= upperSegmentAge;
     }
 
+    public int getUpperSegmentAge() {
+        return upperSegmentAge;
+    }
+
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -95,7 +99,7 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
         int age = getAge(state);
         if (isValidBonemealTarget(level, pos, state, level.isClientSide) && state.getValue(SEGMENT) == DoubleBlockHalf.LOWER && level.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(5) == 0)) {
             int growthAge = age + 1;
-            if (growthAge >= upperSegmentAge)
+            if (growthAge >= getUpperSegmentAge())
                 level.setBlockAndUpdate(pos.above(), defaultBlockState().setValue(getAgeProperty(), growthAge).setValue(SEGMENT, DoubleBlockHalf.UPPER));
             level.setBlock(pos, state.setValue(getAgeProperty(), growthAge), 2);
             ForgeHooks.onCropsGrowPost(level, pos, state);
@@ -146,7 +150,7 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
 
     @Override
     public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
-        return !isMaxAge(state) && (canGrowUp(level, pos) || getAge(state) < upperSegmentAge - 1);
+        return !isMaxAge(state) && (canGrowUp(level, pos) || getAge(state) < getUpperSegmentAge() - 1);
     }
 
     @Override
@@ -155,7 +159,7 @@ public class TallFlowerCropBlock extends FlowerCropBlock {
         int growthAge = getAge(state) + getBonemealAgeIncrease(level);
         growthAge = Math.min(growthAge, getMaxAge());
 
-        if (growthAge >= upperSegmentAge) {
+        if (growthAge >= getUpperSegmentAge()) {
             if (!canGrowUp(level, pos)) return;
             level.setBlock(pos.above(), getStateForAge(growthAge).setValue(SEGMENT, DoubleBlockHalf.UPPER), 2);
         }

@@ -6,6 +6,7 @@ import com.github.mnesikos.flowerary.item.FloweraryColor;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -73,6 +74,57 @@ public class FloweraryTags {
                         FloweraryBlocks.ROSE_PLANTS.get(color).get(), FloweraryBlocks.ROSE_BUSH_PLANTS.get(color).get(), FloweraryBlocks.ROSE_BUSHLET_PLANTS.get(color).get(),
                         FloweraryBlocks.SUNFLOWER_PLANTS.get(color).get(), FloweraryBlocks.TORCHFLOWER_PLANTS.get(color).get(), FloweraryBlocks.TULIP_PLANTS.get(color).get(),
                         FloweraryBlocks.WILDFLOWER_PLANTS.get(color).get(), FloweraryBlocks.WITHER_ROSE_PLANTS.get(color).get());
+
+                tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "spicy_flowers"))).add(
+                        FloweraryBlocks.ALLIUM.get(color).get(),
+                        FloweraryBlocks.CORNFLOWER.get(color).get(),
+                        FloweraryBlocks.PEONY.get(color).get(),
+                        FloweraryBlocks.ALYSSUM.get(color).get(),
+                        FloweraryBlocks.CHICORY.get(color).get()
+                );
+                tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "warm_flowers"))).add(
+                        FloweraryBlocks.FAIRY_ROSE.get(color).get(),
+                        FloweraryBlocks.ROSE.get(color).get(),
+                        FloweraryBlocks.ROSE_BUSH.get(color).get(),
+                        FloweraryBlocks.ROSE_BUSHLET.get(color).get(),
+                        FloweraryBlocks.TULIP.get(color).get(),
+                        FloweraryBlocks.BOUGAINVILLEA.get(color).get(),
+                        FloweraryBlocks.JASMINE.get(color).get()
+                );
+                tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "bright_flowers"))).add(
+                        FloweraryBlocks.AZURE_BLUET.get(color).get(),
+                        FloweraryBlocks.POPPY.get(color).get(),
+                        FloweraryBlocks.POPPIES.get(color).get(),
+                        FloweraryBlocks.SUNFLOWER.get(color).get(),
+                        FloweraryBlocks.TORCHFLOWER.get(color).get(),
+                        FloweraryBlocks.BLAZING_STAR.get(color).get(),
+                        FloweraryBlocks.BROMELIAD.get(color).get(),
+                        FloweraryBlocks.DIANTHUS.get(color).get()
+                );
+                tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "lively_flowers"))).add(
+                        FloweraryBlocks.DAISY.get(color).get(),
+                        FloweraryBlocks.LILY.get(color).get(),
+                        FloweraryBlocks.PETALS.get(color).get(),
+                        FloweraryBlocks.CLOVER.get(color).get(),
+                        FloweraryBlocks.LAVENDER.get(color).get(),
+                        FloweraryBlocks.HIBISCUS.get(color).get()
+                );
+                tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "cool_flowers"))).add(
+                        FloweraryBlocks.DANDELION.get(color).get(),
+                        FloweraryBlocks.LILAC.get(color).get(),
+                        FloweraryBlocks.ORCHID.get(color).get(),
+                        FloweraryBlocks.PITCHER_PLANT.get(color).get(),
+                        FloweraryBlocks.HYACINTH.get(color).get(),
+                        FloweraryBlocks.WILDFLOWER.get(color).get()
+                );
+                tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "strange_flowers"))).add(
+                        FloweraryBlocks.WITHER_ROSE.get(color).get(),
+                        FloweraryBlocks.FOXGLOVE.get(color).get(),
+                        FloweraryBlocks.CLEMATIS.get(color).get(),
+                        FloweraryBlocks.DAFFODIL.get(color).get(),
+                        FloweraryBlocks.IMPALA_LILY.get(color).get(),
+                        FloweraryBlocks.LANTANAS.get(color).get()
+                );
             }
         }
     }

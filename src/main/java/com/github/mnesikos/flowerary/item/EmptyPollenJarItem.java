@@ -1,5 +1,8 @@
 package com.github.mnesikos.flowerary.item;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -14,7 +17,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -22,6 +25,29 @@ import java.util.List;
 import static net.minecraft.world.level.block.Blocks.*;
 
 public class EmptyPollenJarItem extends Item {
+    public static final Object2ObjectMap<Block, RegistryObject<Item>> POLLENS_BY_BLOCK = Util.make(new Object2ObjectOpenHashMap<>(), (map) -> {
+        map.put(DANDELION, FloweraryItems.DANDELION_POLLEN_JAR);
+        map.put(POPPY, FloweraryItems.POPPY_POLLEN_JAR);
+        map.put(BLUE_ORCHID, FloweraryItems.BLUE_ORCHID_POLLEN_JAR);
+        map.put(ALLIUM, FloweraryItems.ALLIUM_POLLEN_JAR);
+        map.put(AZURE_BLUET, FloweraryItems.AZURE_BLUET_POLLEN_JAR);
+        map.put(RED_TULIP, FloweraryItems.RED_TULIP_POLLEN_JAR);
+        map.put(ORANGE_TULIP, FloweraryItems.ORANGE_TULIP_POLLEN_JAR);
+        map.put(WHITE_TULIP, FloweraryItems.WHITE_TULIP_POLLEN_JAR);
+        map.put(PINK_TULIP, FloweraryItems.PINK_TULIP_POLLEN_JAR);
+        map.put(OXEYE_DAISY, FloweraryItems.OXEYE_DAISY_POLLEN_JAR);
+        map.put(CORNFLOWER, FloweraryItems.CORNFLOWER_POLLEN_JAR);
+        map.put(LILY_OF_THE_VALLEY, FloweraryItems.LILY_OF_THE_VALLEY_POLLEN_JAR);
+        map.put(TORCHFLOWER, FloweraryItems.TORCHFLOWER_POLLEN_JAR);
+        map.put(WITHER_ROSE, FloweraryItems.WITHER_ROSE_POLLEN_JAR);
+        map.put(PINK_PETALS, FloweraryItems.PINK_PETALS_POLLEN_JAR);
+        map.put(SUNFLOWER, FloweraryItems.SUNFLOWER_POLLEN_JAR);
+        map.put(LILAC, FloweraryItems.LILAC_POLLEN_JAR);
+        map.put(ROSE_BUSH, FloweraryItems.ROSE_BUSH_POLLEN_JAR);
+        map.put(PEONY, FloweraryItems.PEONY_POLLEN_JAR);
+        map.put(PITCHER_PLANT, FloweraryItems.PITCHER_PLANT_POLLEN_JAR);
+    });
+
     public EmptyPollenJarItem(Properties properties) {
         super(properties);
     }
@@ -30,38 +56,15 @@ public class EmptyPollenJarItem extends Item {
     public InteractionResult useOn(UseOnContext context) {
         Level world = context.getLevel();
         BlockPos pos = context.getClickedPos();
-        BlockState state = world.getBlockState(pos);
-        Block block = state.getBlock();
-        Item crop = null;
+        RegistryObject<Item> pollenRegistryObject = POLLENS_BY_BLOCK.getOrDefault(world.getBlockState(pos).getBlock(), null);
+        ItemStack pollen = pollenRegistryObject != null ? pollenRegistryObject.get().getDefaultInstance() : ItemStack.EMPTY;
 
-        if (block.equals(DANDELION)) crop = FloweraryItems.DANDELION_POLLEN_JAR.get();
-        else if (block.equals(POPPY)) crop = FloweraryItems.POPPY_POLLEN_JAR.get();
-        else if (block.equals(BLUE_ORCHID)) crop = FloweraryItems.BLUE_ORCHID_POLLEN_JAR.get();
-        else if (block.equals(ALLIUM)) crop = FloweraryItems.ALLIUM_POLLEN_JAR.get();
-        else if (block.equals(AZURE_BLUET)) crop = FloweraryItems.AZURE_BLUET_POLLEN_JAR.get();
-        else if (block.equals(RED_TULIP)) crop = FloweraryItems.RED_TULIP_POLLEN_JAR.get();
-        else if (block.equals(ORANGE_TULIP)) crop = FloweraryItems.ORANGE_TULIP_POLLEN_JAR.get();
-        else if (block.equals(WHITE_TULIP)) crop = FloweraryItems.WHITE_TULIP_POLLEN_JAR.get();
-        else if (block.equals(PINK_TULIP)) crop = FloweraryItems.PINK_TULIP_POLLEN_JAR.get();
-        else if (block.equals(OXEYE_DAISY)) crop = FloweraryItems.OXEYE_DAISY_POLLEN_JAR.get();
-        else if (block.equals(CORNFLOWER)) crop = FloweraryItems.CORNFLOWER_POLLEN_JAR.get();
-        else if (block.equals(LILY_OF_THE_VALLEY)) crop = FloweraryItems.LILY_OF_THE_VALLEY_POLLEN_JAR.get();
-        else if (block.equals(TORCHFLOWER)) crop = FloweraryItems.TORCHFLOWER_POLLEN_JAR.get();
-        else if (block.equals(WITHER_ROSE)) crop = FloweraryItems.WITHER_ROSE_POLLEN_JAR.get();
-        else if (block.equals(PINK_PETALS)) crop = FloweraryItems.PINK_PETALS_POLLEN_JAR.get();
-        else if (block.equals(SUNFLOWER)) crop = FloweraryItems.SUNFLOWER_POLLEN_JAR.get();
-        else if (block.equals(LILAC)) crop = FloweraryItems.LILAC_POLLEN_JAR.get();
-        else if (block.equals(ROSE_BUSH)) crop = FloweraryItems.ROSE_BUSH_POLLEN_JAR.get();
-        else if (block.equals(PEONY)) crop = FloweraryItems.PEONY_POLLEN_JAR.get();
-        else if (block.equals(PITCHER_PLANT)) crop = FloweraryItems.PITCHER_PLANT_POLLEN_JAR.get();
-
-        if (crop != null && context.getPlayer() != null) {
+        if (!pollen.isEmpty() && context.getPlayer() != null) {
             Player player = context.getPlayer();
             world.playSound(player, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
 
             if (!world.isClientSide) {
                 ItemStack jar = context.getItemInHand();
-                ItemStack pollen = crop.getDefaultInstance();
                 player.awardStat(Stats.ITEM_USED.get(this));
                 if (!player.getAbilities().instabuild) jar.shrink(1);
                 if (!player.getInventory().add(pollen)) player.drop(pollen, false);

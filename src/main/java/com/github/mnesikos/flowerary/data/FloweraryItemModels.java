@@ -104,14 +104,14 @@ public class FloweraryItemModels extends ItemModelProvider {
             seedsLayered(color, "orchid_seeds");
             seedsLayered(color, "peony_seeds");
             seedsLayered(color, "petals_seeds");
-            vanillaSeedsLayered(color, "pitcher_plant_seeds", "pitcher_pod");
+            seedsLayered(color, "pitcher_plant_seeds");
             seedsLayered(color, "poppy_seeds");
             seedsLayered(color, "poppies_seeds");
             seedsLayered(color, "rose_seeds");
             seedsLayered(color, "rose_bush_seeds");
             seedsLayered(color, "rose_bushlet_seeds");
             seedsLayered(color, "sunflower_seeds");
-            vanillaSeedsLayered(color, "torchflower_seeds", "torchflower_seeds");
+            seedsLayered(color, "torchflower_seeds");
             seedsLayered(color, "tulip_seeds");
             seedsLayered(color, "wildflower_seeds");
             seedsLayered(color, "wither_rose_seeds");
@@ -121,12 +121,6 @@ public class FloweraryItemModels extends ItemModelProvider {
     public void seedsLayered(String color, String name) {
         withExistingParent(color + "_" + name, mcLoc("item/generated"))
                 .texture("layer0", modLoc("item/" + name))
-                .texture("layer1", modLoc("item/" + color + "_jar"));
-    }
-
-    public void vanillaSeedsLayered(String color, String name, String vanillaSeeds) {
-        withExistingParent(color + "_" + name, mcLoc("item/generated"))
-                .texture("layer0", new ResourceLocation("item/" + vanillaSeeds))
                 .texture("layer1", modLoc("item/" + color + "_jar"));
     }
 

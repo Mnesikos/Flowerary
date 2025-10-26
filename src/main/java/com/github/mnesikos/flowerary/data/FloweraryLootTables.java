@@ -149,7 +149,7 @@ public class FloweraryLootTables extends VanillaBlockLoot {
         LootItemCondition.Builder dropGrownCropCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7));
         add(cropBlock, applyExplosionDecay(cropBlock, LootTable.lootTable()
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(flowerItem).when(dropGrownCropCondition).otherwise(LootItem.lootTableItem(seedsItem))))
-                .withPool(LootPool.lootPool().when(dropGrownCropCondition).add(LootItem.lootTableItem(seedsItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
+        ));
     }
 
     public void dropDoubleTallFlowerCrop(Block cropBlock, Item flowerItem, Item seedsItem) {
@@ -158,9 +158,6 @@ public class FloweraryLootTables extends VanillaBlockLoot {
                 .withPool(LootPool.lootPool()
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
                         .add(LootItem.lootTableItem(flowerItem).when(dropGrownCropCondition).otherwise(LootItem.lootTableItem(seedsItem))))
-                .withPool(LootPool.lootPool()
-                        .when(dropGrownCropCondition)
-                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
-                        .add(LootItem.lootTableItem(seedsItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
+        ));
     }
 }

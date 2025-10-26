@@ -7,45 +7,6 @@ public class FlowerComposting {
     public static void registerCompostables() {
         for (FloweraryColor floweraryColor : FloweraryColor.values()) {
             String color = floweraryColor.getSerializedName();
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.ALLIUM_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.ALYSSUM_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.AZURE_BLUET_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.BLAZING_STAR_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.BOUGAINVILLEA_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.BROMELIAD_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.CHICORY_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.CLEMATIS_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.CLOVER_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.CORNFLOWER_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.DAFFODIL_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.DAISY_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.DANDELION_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.DIANTHUS_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.FAIRY_ROSE_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.FOXGLOVE_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.HIBISCUS_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.HYACINTH_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.IMPALA_LILY_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.JASMINE_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.LANTANAS_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.LAVENDER_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.LILAC_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.LILY_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.ORCHID_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.PEONY_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.PETALS_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.PITCHER_PLANT_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.POPPY_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.POPPIES_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.ROSE_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.ROSE_BUSH_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.ROSE_BUSHLET_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.SUNFLOWER_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.TORCHFLOWER_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.TULIP_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.WILDFLOWER_SEEDS.get(color).get(), 0.3F);
-            ComposterBlock.COMPOSTABLES.put(FloweraryItems.WITHER_ROSE_SEEDS.get(color).get(), 0.3F);
-
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.ALLIUM.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.ALYSSUM.get(color).get(), 0.65F);
             ComposterBlock.COMPOSTABLES.put(FloweraryBlocks.AZURE_BLUET.get(color).get(), 0.65F);

@@ -15,26 +15,26 @@ public class FloweraryItemModels extends ItemModelProvider {
     @Override
     protected void registerModels() {
         itemGenerated("empty_pollen_jar");
-        itemGenerated("dandelion_pollen_jar", "pollen_jar");
-        itemGenerated("poppy_pollen_jar", "pollen_jar");
-        itemGenerated("blue_orchid_pollen_jar", "pollen_jar");
-        itemGenerated("allium_pollen_jar", "pollen_jar");
-        itemGenerated("azure_bluet_pollen_jar", "pollen_jar");
-        itemGenerated("red_tulip_pollen_jar", "pollen_jar");
-        itemGenerated("orange_tulip_pollen_jar", "pollen_jar");
-        itemGenerated("white_tulip_pollen_jar", "pollen_jar");
-        itemGenerated("pink_tulip_pollen_jar", "pollen_jar");
-        itemGenerated("oxeye_daisy_pollen_jar", "pollen_jar");
-        itemGenerated("cornflower_pollen_jar", "pollen_jar");
-        itemGenerated("lily_of_the_valley_pollen_jar", "pollen_jar");
-        itemGenerated("torchflower_pollen_jar", "pollen_jar");
-        itemGenerated("wither_rose_pollen_jar", "pollen_jar");
-        itemGenerated("pink_petals_pollen_jar", "pollen_jar");
-        itemGenerated("sunflower_pollen_jar", "pollen_jar");
-        itemGenerated("lilac_pollen_jar", "pollen_jar");
-        itemGenerated("rose_bush_pollen_jar", "pollen_jar");
-        itemGenerated("peony_pollen_jar", "pollen_jar");
-        itemGenerated("pitcher_plant_pollen_jar", "pollen_jar");
+        itemGenerated("dandelion_pollen_jar", "yellow_pollen_jar");
+        itemGenerated("poppy_pollen_jar", "red_pollen_jar");
+        itemGenerated("blue_orchid_pollen_jar", "light_blue_pollen_jar");
+        itemGenerated("allium_pollen_jar", "magenta_pollen_jar");
+        itemGenerated("azure_bluet_pollen_jar", "white_pollen_jar");
+        itemGenerated("red_tulip_pollen_jar", "red_pollen_jar");
+        itemGenerated("orange_tulip_pollen_jar", "orange_pollen_jar");
+        itemGenerated("white_tulip_pollen_jar", "white_pollen_jar");
+        itemGenerated("pink_tulip_pollen_jar", "pink_pollen_jar");
+        itemGenerated("oxeye_daisy_pollen_jar", "white_pollen_jar");
+        itemGenerated("cornflower_pollen_jar", "blue_pollen_jar");
+        itemGenerated("lily_of_the_valley_pollen_jar", "white_pollen_jar");
+        itemGenerated("torchflower_pollen_jar", "orange_pollen_jar");
+        itemGenerated("wither_rose_pollen_jar", "black_pollen_jar");
+        itemGenerated("pink_petals_pollen_jar", "pink_pollen_jar");
+        itemGenerated("sunflower_pollen_jar", "yellow_pollen_jar");
+        itemGenerated("lilac_pollen_jar", "magenta_pollen_jar");
+        itemGenerated("rose_bush_pollen_jar", "red_pollen_jar");
+        itemGenerated("peony_pollen_jar", "pink_pollen_jar");
+        itemGenerated("pitcher_plant_pollen_jar", "cyan_pollen_jar");
 
         for (FloweraryColor floweraryColor : FloweraryColor.values()) {
             String color = floweraryColor.getSerializedName();
@@ -121,13 +121,13 @@ public class FloweraryItemModels extends ItemModelProvider {
     public void seedsLayered(String color, String name) {
         withExistingParent(color + "_" + name, mcLoc("item/generated"))
                 .texture("layer0", modLoc("item/" + name))
-                .texture("layer1", modLoc("item/" + color + "_baggie"));
+                .texture("layer1", modLoc("item/" + color + "_jar"));
     }
 
     public void vanillaSeedsLayered(String color, String name, String vanillaSeeds) {
         withExistingParent(color + "_" + name, mcLoc("item/generated"))
                 .texture("layer0", new ResourceLocation("item/" + vanillaSeeds))
-                .texture("layer1", modLoc("item/" + color + "_baggie"));
+                .texture("layer1", modLoc("item/" + color + "_jar"));
     }
 
     public void blockGenerated(String name) {

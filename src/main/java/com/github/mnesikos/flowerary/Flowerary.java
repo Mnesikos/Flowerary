@@ -2,6 +2,8 @@ package com.github.mnesikos.flowerary;
 
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.client.color.ColorEvents;
+import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatch;
+import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
 import com.github.mnesikos.flowerary.data.*;
 import com.github.mnesikos.flowerary.item.FlowerComposting;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
@@ -11,11 +13,16 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -53,6 +60,13 @@ public class Flowerary {
         if (FMLEnvironment.dist == Dist.CLIENT) {
             bus.addListener(ColorEvents::registerColorHandlerBlocks);
         }
+
+        if (ModList.get().isLoaded("flowerpatch")) {
+            FloweraryPatchBlocks.REGISTRAR.register(bus);
+            bus.addListener(FloweraryPatch::setupClient);
+            MinecraftForge.EVENT_BUS.addListener(FloweraryPatch::onBlockInteraction);
+            MinecraftForge.EVENT_BUS.addListener(FloweraryPatch::onBonemeal);
+        }
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -62,16 +76,27 @@ public class Flowerary {
     private void gatherData(final GatherDataEvent event) {
         DataGenerator dataGenerator = event.getGenerator();
         PackOutput packOutput = dataGenerator.getPackOutput();
-        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockModels(packOutput, event.getExistingFileHelper()));
-        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockStates(packOutput, event.getExistingFileHelper()));
-        dataGenerator.addProvider(event.includeClient(), new FloweraryItemModels(packOutput, event.getExistingFileHelper()));
+        ExistingFileHelper existingFileHelper = ignoreResources(event.getExistingFileHelper());
 
-        FloweraryTags.FloweraryBlockTags blockTagsProvider = new FloweraryTags.FloweraryBlockTags(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
+        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockModels(packOutput, existingFileHelper));
+        dataGenerator.addProvider(event.includeClient(), new FloweraryBlockStates(packOutput, existingFileHelper));
+        dataGenerator.addProvider(event.includeClient(), new FloweraryItemModels(packOutput, existingFileHelper));
+
+        FloweraryTags.FloweraryBlockTags blockTagsProvider = new FloweraryTags.FloweraryBlockTags(packOutput, event.getLookupProvider(), existingFileHelper);
         dataGenerator.addProvider(event.includeServer(), blockTagsProvider);
-        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryItemTags(packOutput, event.getLookupProvider(), blockTagsProvider, event.getExistingFileHelper()));
+        dataGenerator.addProvider(event.includeServer(), new FloweraryTags.FloweraryItemTags(packOutput, event.getLookupProvider(), blockTagsProvider, existingFileHelper));
         dataGenerator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(FloweraryLootTables::new, LootContextParamSets.BLOCK))));
         dataGenerator.addProvider(event.includeServer(), new FloweraryRecipes(packOutput));
+    }
+
+    private static ExistingFileHelper ignoreResources(ExistingFileHelper existingFileHelper) {
+        String flowerpatch = "flowerpatch";
+        for (int flowers = 2; flowers < 5; flowers++) {
+            existingFileHelper.trackGenerated(new ResourceLocation(flowerpatch, "block/patch" + flowers), PackType.CLIENT_RESOURCES, ".json", "models");
+        }
+
+        return existingFileHelper;
     }
 
     private void setupClient(final FMLClientSetupEvent event) {

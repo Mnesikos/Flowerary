@@ -1,11 +1,17 @@
 package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
+import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
+import com.mrbysco.flowerpatch.block.PatchBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class FloweraryBlockModels extends BlockModelProvider {
     public FloweraryBlockModels(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
@@ -110,6 +116,27 @@ public class FloweraryBlockModels extends BlockModelProvider {
         plant("tulip");
         plant("wildflower");
         plant("wither_rose");
+
+        if (ModList.get().isLoaded("flowerpatch")) {
+            for (RegistryObject<Block> registryObject : FloweraryPatchBlocks.REGISTRAR.getEntries()) {
+                if (registryObject.get() instanceof PatchBlock) {
+                    crossPatchBlock(registryObject.get());
+                }
+            }
+        }
+    }
+
+    private void crossPatchBlock(Block block) {
+        patchBlock(block, 2);
+        patchBlock(block, 3);
+        patchBlock(block, 4);
+    }
+
+    private void patchBlock(Block block, int flowers) {
+        String path = ForgeRegistries.BLOCKS.getKey(block).getPath() + "_" + flowers;
+        ResourceLocation patchDelegate = ForgeRegistries.BLOCKS.getKey(((PatchBlock) block).getPatchDelegate().get());
+        singleTexture(path, new ResourceLocation("flowerpatch",BLOCK_FOLDER + "/patch" + flowers),
+                "cross", new ResourceLocation(patchDelegate.getNamespace(), BLOCK_FOLDER + "/" + patchDelegate.getPath())).renderType("cutout");
     }
 
     public void doubleCross(String name, ResourceLocation cross) {

@@ -136,7 +136,6 @@ public class FloweraryLootTables extends VanillaBlockLoot {
                 String color = floweraryColor.getSerializedName();
                 dropFlowerPatch(FloweraryPatchBlocks.ALLIUM_PATCH.get(color).get());
                 dropFlowerPatch(FloweraryPatchBlocks.AZURE_BLUET_PATCH.get(color).get());
-                dropFlowerPatch(FloweraryPatchBlocks.CLOVER_PATCH.get(color).get());
                 dropFlowerPatch(FloweraryPatchBlocks.CORNFLOWER_PATCH.get(color).get());
                 dropFlowerPatch(FloweraryPatchBlocks.DAFFODIL_PATCH.get(color).get());
                 dropFlowerPatch(FloweraryPatchBlocks.DAISY_PATCH.get(color).get());

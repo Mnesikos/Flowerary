@@ -1,35 +1,28 @@
-modLoader="javafml" #mandatory
-loaderVersion="[47,)"
-license="MIT"
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 
-[[mods]] #mandatory
-modId="flowerary" #mandatory
-version="${file.jarVersion}" #mandatory
-displayName="Flowerary" #mandatory
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
 #updateJSONURL=""
 #displayURL=""
 logoFile="logo.png"
 #credits=""
-authors="LDShadowLady, anar4732, Mnesikos, SnazzyGator" #optional
-description='''
-This mod allows you to cross-pollinate vanilla flowers to create different flowers in a variety of colours.
+authors="${mod_authors}"
+description='''${mod_description}'''
 
-Craft an empty pollen jar to begin, use it to right-click a vanilla flower to collect pollen.
-Transfer the pollen onto another vanilla flower to receive seeds.
-The seeds can be planted and farmed like vanilla crops.
-Once they are fully-grown you can harvest the flowers to place elsewhere.
-'''
+[[dependencies.${mod_id}]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
 
-[[dependencies.flowerary]]
-modId="forge"
-mandatory=true
-versionRange="[47,)"
-ordering="NONE"
-side="BOTH"
-
-[[dependencies.flowerary]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.20.1,1.20.2)"
-ordering="NONE"
-side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"

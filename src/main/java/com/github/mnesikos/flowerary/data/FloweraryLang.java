@@ -7,6 +7,7 @@ import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.fml.ModList;
 
 public class FloweraryLang extends LanguageProvider {
     public FloweraryLang(PackOutput output) {
@@ -139,22 +140,24 @@ public class FloweraryLang extends LanguageProvider {
             add(FloweraryItems.WILDFLOWER_SEEDS.get(color).get(), colorLang + " Wildflower Seeds");
             add(FloweraryItems.WITHER_ROSE_SEEDS.get(color).get(), colorLang + " Wither Rose Seeds");
 
-            add(FloweraryPatchBlocks.ALLIUM_PATCH.get(color).get(), colorLang + " Allium Patch");
-            add(FloweraryPatchBlocks.AZURE_BLUET_PATCH.get(color).get(), colorLang + " Azure Bluet Patch");
-            add(FloweraryPatchBlocks.CORNFLOWER_PATCH.get(color).get(), colorLang + " Cornflower Patch");
-            add(FloweraryPatchBlocks.DAFFODIL_PATCH.get(color).get(), colorLang + " Daffodil Patch");
-            add(FloweraryPatchBlocks.DAISY_PATCH.get(color).get(), colorLang + " Daisy Patch");
-            add(FloweraryPatchBlocks.DANDELION_PATCH.get(color).get(), colorLang + " Dandelion Patch");
-            add(FloweraryPatchBlocks.DIANTHUS_PATCH.get(color).get(), colorLang + " Dianthus Patch");
-            add(FloweraryPatchBlocks.FAIRY_ROSE_PATCH.get(color).get(), colorLang + " Fairy Rose Patch");
-            add(FloweraryPatchBlocks.HYACINTH_PATCH.get(color).get(), colorLang + " Hyacinth Patch");
-            add(FloweraryPatchBlocks.LILY_PATCH.get(color).get(), colorLang + " Lily Patch");
-            add(FloweraryPatchBlocks.ORCHID_PATCH.get(color).get(), colorLang + " Orchid Patch");
-            add(FloweraryPatchBlocks.POPPY_PATCH.get(color).get(), colorLang + " Poppy Patch");
-            add(FloweraryPatchBlocks.ROSE_PATCH.get(color).get(), colorLang + " Rose Patch");
-            add(FloweraryPatchBlocks.TORCHFLOWER_PATCH.get(color).get(), colorLang + " Torchflower Patch");
-            add(FloweraryPatchBlocks.TULIP_PATCH.get(color).get(), colorLang + " Tulip Patch");
-            add(FloweraryPatchBlocks.WITHER_ROSE_PATCH.get(color).get(), colorLang + " Wither Rose Patch");
+            if (ModList.get().isLoaded("flowerpatch")) {
+                add(FloweraryPatchBlocks.ALLIUM_PATCH.get(color).get(), colorLang + " Allium Patch");
+                add(FloweraryPatchBlocks.AZURE_BLUET_PATCH.get(color).get(), colorLang + " Azure Bluet Patch");
+                add(FloweraryPatchBlocks.CORNFLOWER_PATCH.get(color).get(), colorLang + " Cornflower Patch");
+                add(FloweraryPatchBlocks.DAFFODIL_PATCH.get(color).get(), colorLang + " Daffodil Patch");
+                add(FloweraryPatchBlocks.DAISY_PATCH.get(color).get(), colorLang + " Daisy Patch");
+                add(FloweraryPatchBlocks.DANDELION_PATCH.get(color).get(), colorLang + " Dandelion Patch");
+                add(FloweraryPatchBlocks.DIANTHUS_PATCH.get(color).get(), colorLang + " Dianthus Patch");
+                add(FloweraryPatchBlocks.FAIRY_ROSE_PATCH.get(color).get(), colorLang + " Fairy Rose Patch");
+                add(FloweraryPatchBlocks.HYACINTH_PATCH.get(color).get(), colorLang + " Hyacinth Patch");
+                add(FloweraryPatchBlocks.LILY_PATCH.get(color).get(), colorLang + " Lily Patch");
+                add(FloweraryPatchBlocks.ORCHID_PATCH.get(color).get(), colorLang + " Orchid Patch");
+                add(FloweraryPatchBlocks.POPPY_PATCH.get(color).get(), colorLang + " Poppy Patch");
+                add(FloweraryPatchBlocks.ROSE_PATCH.get(color).get(), colorLang + " Rose Patch");
+                add(FloweraryPatchBlocks.TORCHFLOWER_PATCH.get(color).get(), colorLang + " Torchflower Patch");
+                add(FloweraryPatchBlocks.TULIP_PATCH.get(color).get(), colorLang + " Tulip Patch");
+                add(FloweraryPatchBlocks.WITHER_ROSE_PATCH.get(color).get(), colorLang + " Wither Rose Patch");
+            }
         }
     }
 }

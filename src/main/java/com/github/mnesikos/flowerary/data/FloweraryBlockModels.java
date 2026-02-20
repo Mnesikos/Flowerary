@@ -124,6 +124,13 @@ public class FloweraryBlockModels extends BlockModelProvider {
                 }
             }
         }
+
+        if (ModList.get().isLoaded("serene_shrubbery")) {
+            for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+                String color = floweraryColor.getSerializedName();
+                butterflyBush(color + "_butterfly_bush", modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + color + "_butterfly_bush"));
+            }
+        }
     }
 
     private void crossPatchBlock(Block block) {
@@ -137,6 +144,13 @@ public class FloweraryBlockModels extends BlockModelProvider {
         ResourceLocation patchDelegate = ForgeRegistries.BLOCKS.getKey(((PatchBlock) block).getPatchDelegate().get());
         singleTexture(path, new ResourceLocation("flowerpatch",BLOCK_FOLDER + "/patch" + flowers),
                 "cross", new ResourceLocation(patchDelegate.getNamespace(), BLOCK_FOLDER + "/" + patchDelegate.getPath())).renderType("cutout");
+    }
+
+    public void butterflyBush(String name, ResourceLocation location) {
+        withExistingParent(name, new ResourceLocation("serene_shrubbery", BLOCK_FOLDER + "/butterfly_bush"))
+                .texture("all", location)
+                .texture("particle", location)
+                .texture("0", location);
     }
 
     public void doubleCross(String name, ResourceLocation cross) {

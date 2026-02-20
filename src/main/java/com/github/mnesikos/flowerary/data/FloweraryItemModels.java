@@ -6,6 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.ModList;
 
 public class FloweraryItemModels extends ItemModelProvider {
     public FloweraryItemModels(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
@@ -115,6 +116,21 @@ public class FloweraryItemModels extends ItemModelProvider {
             seedsLayered(color, "tulip_seeds");
             seedsLayered(color, "wildflower_seeds");
             seedsLayered(color, "wither_rose_seeds");
+        }
+
+        if (ModList.get().isLoaded("serene_shrubbery")) {
+            for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+                String color = floweraryColor.getSerializedName();
+//                itemGenerated(color + "_blanket_flower", "serene_shrubbery/" + color + "_blanket_flower");
+                itemGenerated(color + "_butterfly_bush", "serene_shrubbery/" + color + "_butterfly_bush");
+//                itemGenerated(color + "_fireweed", "serene_shrubbery/" + color + "_fireweed");
+//                itemGenerated(color + "_serene_foxglove", "serene_shrubbery/" + color + "_serene_foxglove");
+//                itemGenerated(color + "_hydrangea", "serene_shrubbery/" + color + "_hydrangea");
+//                itemGenerated(color + "_liverwort", "serene_shrubbery/" + color + "_liverwort");
+//                itemGenerated(color + "_lupine", "serene_shrubbery/" + color + "_lupine");
+//                itemGenerated(color + "_pansies", "serene_shrubbery/" + color + "_pansies");
+//                itemGenerated(color + "_twinflower", "serene_shrubbery/" + color + "_twinflower");
+            }
         }
     }
 

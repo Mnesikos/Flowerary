@@ -4,14 +4,11 @@ import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.block.TallFlowerCropBlock;
 import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
+import com.github.mnesikos.flowerary.compat.serene_shrubbery.SereneFloweraryBlocks;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.mrbysco.flowerpatch.block.PatchBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.models.blockstates.Condition;
-import net.minecraft.data.models.blockstates.MultiPartGenerator;
-import net.minecraft.data.models.blockstates.Variant;
-import net.minecraft.data.models.blockstates.VariantProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
@@ -134,6 +131,21 @@ public class FloweraryBlockStates extends BlockStateProvider {
                 if (registryObject.get() instanceof PatchBlock) {
                     generatePatchState(registryObject.get());
                 }
+            }
+        }
+
+        if (ModList.get().isLoaded("serene_shrubbery")) {
+            for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+                String color = floweraryColor.getSerializedName();
+//                (SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get());
+                block(SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get());
+//                (SereneFloweraryBlocks.FIREWEED.get(color).get());
+//                (SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get());
+//                (SereneFloweraryBlocks.HYDRANGEA.get(color).get());
+//                (SereneFloweraryBlocks.LIVERWORT.get(color).get());
+//                (SereneFloweraryBlocks.LUPINE.get(color).get());
+//                (SereneFloweraryBlocks.PANSIES.get(color).get());
+//                block(SereneFloweraryBlocks.TWINFLOWER.get(color).get());
             }
         }
     }

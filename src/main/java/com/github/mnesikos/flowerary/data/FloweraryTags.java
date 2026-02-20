@@ -2,6 +2,7 @@ package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
+import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
 import net.minecraft.core.HolderLookup;
@@ -147,23 +148,22 @@ public class FloweraryTags {
                         FloweraryBlocks.WITHER_ROSE.get(color).get()
                 );
                 tag(BlockTags.FLOWERS).add(
-                        FloweraryBlocks.ALLIUM.get(color).get(),
-                        FloweraryBlocks.AZURE_BLUET.get(color).get(),
-                        FloweraryBlocks.CLOVER.get(color).get(),
-                        FloweraryBlocks.CORNFLOWER.get(color).get(),
-                        FloweraryBlocks.DAFFODIL.get(color).get(),
-                        FloweraryBlocks.DAISY.get(color).get(),
-                        FloweraryBlocks.DANDELION.get(color).get(),
-                        FloweraryBlocks.DIANTHUS.get(color).get(),
-                        FloweraryBlocks.FAIRY_ROSE.get(color).get(),
-                        FloweraryBlocks.HYACINTH.get(color).get(),
-                        FloweraryBlocks.LILY.get(color).get(),
-                        FloweraryBlocks.ORCHID.get(color).get(),
-                        FloweraryBlocks.POPPY.get(color).get(),
-                        FloweraryBlocks.ROSE.get(color).get(),
-                        FloweraryBlocks.TORCHFLOWER.get(color).get(),
-                        FloweraryBlocks.TULIP.get(color).get(),
-                        FloweraryBlocks.WITHER_ROSE.get(color).get()
+                        FloweraryPatchBlocks.ALLIUM_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.AZURE_BLUET_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.CORNFLOWER_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.DAFFODIL_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.DAISY_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.DANDELION_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.DIANTHUS_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.FAIRY_ROSE_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.HYACINTH_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.LILY_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.ORCHID_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.POPPY_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.ROSE_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.TORCHFLOWER_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.TULIP_PATCH.get(color).get(),
+                        FloweraryPatchBlocks.WITHER_ROSE_PATCH.get(color).get()
                 );
             }
         }

@@ -3,6 +3,7 @@ package com.github.mnesikos.flowerary.data;
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
+import com.github.mnesikos.flowerary.compat.serene_shrubbery.SereneFloweraryBlocks;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
 import net.minecraft.data.PackOutput;
@@ -157,6 +158,17 @@ public class FloweraryLang extends LanguageProvider {
                 add(FloweraryPatchBlocks.TORCHFLOWER_PATCH.get(color).get(), colorLang + " Torchflower Patch");
                 add(FloweraryPatchBlocks.TULIP_PATCH.get(color).get(), colorLang + " Tulip Patch");
                 add(FloweraryPatchBlocks.WITHER_ROSE_PATCH.get(color).get(), colorLang + " Wither Rose Patch");
+            }
+            if (ModList.get().isLoaded("serene_shrubbery")) {
+                add(SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get(), colorLang + " Blanket Flower");
+                add(SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get(), colorLang + " Butterfly Bush");
+                add(SereneFloweraryBlocks.FIREWEED.get(color).get(), colorLang + " Fireweed");
+                add(SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get(), colorLang + " Serene Foxglove");
+                add(SereneFloweraryBlocks.HYDRANGEA.get(color).get(), colorLang + " Hydrangea");
+                add(SereneFloweraryBlocks.LIVERWORT.get(color).get(), colorLang + " Liverwort");
+                add(SereneFloweraryBlocks.LUPINE.get(color).get(), colorLang + " Lupine");
+                add(SereneFloweraryBlocks.PANSIES.get(color).get(), colorLang + " Pansies");
+                add(SereneFloweraryBlocks.TWINFLOWER.get(color).get(), colorLang + " Twinflower");
             }
         }
     }

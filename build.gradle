@@ -143,6 +143,7 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
     compileOnly fg.deobf("curse.maven:flower-patch-641038:4929868")
+    implementation fg.deobf("curse.maven:serene-shrubbery-473451:7544064")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

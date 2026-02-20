@@ -4,6 +4,7 @@ import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.client.color.ColorEvents;
 import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatch;
 import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
+import com.github.mnesikos.flowerary.compat.serene_shrubbery.SereneFloweraryBlocks;
 import com.github.mnesikos.flowerary.data.*;
 import com.github.mnesikos.flowerary.item.FlowerComposting;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
@@ -16,11 +17,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
@@ -67,6 +70,11 @@ public class Flowerary {
             MinecraftForge.EVENT_BUS.addListener(FloweraryPatch::onBlockInteraction);
             MinecraftForge.EVENT_BUS.addListener(FloweraryPatch::onBonemeal);
         }
+        if (ModList.get().isLoaded("serene_shrubbery")) {
+            SereneFloweraryBlocks.REGISTRAR.register(bus);
+            SereneFloweraryBlocks.ITEMS_REGISTRAR.register(bus);
+            bus.addListener(this::addCreativeTabs);
+        }
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -102,5 +110,13 @@ public class Flowerary {
 
     private void setupClient(final FMLClientSetupEvent event) {
         FloweraryBlocks.setRenderLayers();
+    }
+
+    private void addCreativeTabs(BuildCreativeModeTabContentsEvent event) {
+        if (ModList.get().isLoaded("serene_shrubbery")) {
+            for (RegistryObject<Item> item : SereneFloweraryBlocks.ITEMS_REGISTRAR.getEntries()) {
+                if (event.getTabKey() == FLOWERARY_GROUP.getKey()) event.accept(item.get());
+            }
+        }
     }
 }

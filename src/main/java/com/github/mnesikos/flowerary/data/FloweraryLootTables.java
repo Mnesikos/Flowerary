@@ -3,22 +3,22 @@ package com.github.mnesikos.flowerary.data;
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
+import com.github.mnesikos.flowerary.compat.serene_shrubbery.BlanketFlowerBlock;
+import com.github.mnesikos.flowerary.compat.serene_shrubbery.SereneFloweraryBlocks;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
-import com.github.mnesikos.flowerary.item.FloweraryItems;
 import com.mrbysco.flowerpatch.block.PatchBlock;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.packs.VanillaBlockLoot;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.PinkPetalsBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -62,7 +62,7 @@ public class FloweraryLootTables extends VanillaBlockLoot {
             dropSelf(FloweraryBlocks.LILY.get(color).get());
             dropSelf(FloweraryBlocks.ORCHID.get(color).get());
             dropDoubleTallSelf(FloweraryBlocks.PEONY.get(color).get());
-            dropPetals(FloweraryBlocks.PETALS.get(color).get());
+            dropPropertyAmount(FloweraryBlocks.PETALS.get(color).get(), PinkPetalsBlock.AMOUNT, 1, 4);
             dropDoubleTallSelf(FloweraryBlocks.PITCHER_PLANT.get(color).get());
             dropSelf(FloweraryBlocks.POPPY.get(color).get());
             dropSelf(FloweraryBlocks.POPPIES.get(color).get());
@@ -152,6 +152,21 @@ public class FloweraryLootTables extends VanillaBlockLoot {
                 dropFlowerPatch(FloweraryPatchBlocks.WITHER_ROSE_PATCH.get(color).get());
             }
         }
+
+        if (ModList.get().isLoaded("serene_shrubbery")) {
+            for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+                String color = floweraryColor.getSerializedName();
+                dropPropertyAmount(SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get(), BlanketFlowerBlock.AMOUNT, 1, 4);
+                dropSelf(SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get());
+                dropSelf(SereneFloweraryBlocks.FIREWEED.get(color).get());
+                dropSelf(SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get());
+                dropSelf(SereneFloweraryBlocks.HYDRANGEA.get(color).get());
+                dropSelf(SereneFloweraryBlocks.LIVERWORT.get(color).get());
+                dropSelf(SereneFloweraryBlocks.LUPINE.get(color).get());
+                dropSelf(SereneFloweraryBlocks.PANSIES.get(color).get());
+                dropSelf(SereneFloweraryBlocks.TWINFLOWER.get(color).get());
+            }
+        }
     }
 
     @Override
@@ -171,9 +186,9 @@ public class FloweraryLootTables extends VanillaBlockLoot {
         }
     }
 
-    public void dropPetals(Block block) {
+    public void dropPropertyAmount(Block block, IntegerProperty property, int min, int max) {
         add(block, LootTable.lootTable()
-                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(applyExplosionDecay(block, LootItem.lootTableItem(block).apply(IntStream.rangeClosed(1, 4).boxed().toList(), (i) -> SetItemCountFunction.setCount(ConstantValue.exactly((float) i)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PinkPetalsBlock.AMOUNT, i))))))));
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(applyExplosionDecay(block, LootItem.lootTableItem(block).apply(IntStream.rangeClosed(min, max).boxed().toList(), (i) -> SetItemCountFunction.setCount(ConstantValue.exactly((float) i)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, i))))))));
     }
 
     public void dropDoubleTallSelf(Block block) {

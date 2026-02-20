@@ -3,6 +3,7 @@ package com.github.mnesikos.flowerary.data;
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
+import com.github.mnesikos.flowerary.compat.serene_shrubbery.SereneFloweraryBlocks;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
 import net.minecraft.core.HolderLookup;
@@ -14,6 +15,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.ModList;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -79,92 +81,58 @@ public class FloweraryTags {
                         FloweraryBlocks.WILDFLOWER_PLANTS.get(color).get(), FloweraryBlocks.WITHER_ROSE_PLANTS.get(color).get());
 
                 tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "spicy_flowers"))).add(
-                        FloweraryBlocks.ALLIUM.get(color).get(),
-                        FloweraryBlocks.CORNFLOWER.get(color).get(),
-                        FloweraryBlocks.PEONY.get(color).get(),
-                        FloweraryBlocks.ALYSSUM.get(color).get(),
-                        FloweraryBlocks.CHICORY.get(color).get()
+                        FloweraryBlocks.ALLIUM.get(color).get(), FloweraryBlocks.CORNFLOWER.get(color).get(), FloweraryBlocks.PEONY.get(color).get(),
+                        FloweraryBlocks.ALYSSUM.get(color).get(), FloweraryBlocks.CHICORY.get(color).get()
                 );
                 tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "warm_flowers"))).add(
-                        FloweraryBlocks.FAIRY_ROSE.get(color).get(),
-                        FloweraryBlocks.ROSE.get(color).get(),
-                        FloweraryBlocks.ROSE_BUSH.get(color).get(),
-                        FloweraryBlocks.ROSE_BUSHLET.get(color).get(),
-                        FloweraryBlocks.TULIP.get(color).get(),
-                        FloweraryBlocks.BOUGAINVILLEA.get(color).get(),
+                        FloweraryBlocks.FAIRY_ROSE.get(color).get(), FloweraryBlocks.ROSE.get(color).get(), FloweraryBlocks.ROSE_BUSH.get(color).get(),
+                        FloweraryBlocks.ROSE_BUSHLET.get(color).get(), FloweraryBlocks.TULIP.get(color).get(), FloweraryBlocks.BOUGAINVILLEA.get(color).get(),
                         FloweraryBlocks.JASMINE.get(color).get()
                 );
                 tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "bright_flowers"))).add(
-                        FloweraryBlocks.AZURE_BLUET.get(color).get(),
-                        FloweraryBlocks.POPPY.get(color).get(),
-                        FloweraryBlocks.POPPIES.get(color).get(),
-                        FloweraryBlocks.SUNFLOWER.get(color).get(),
-                        FloweraryBlocks.TORCHFLOWER.get(color).get(),
-                        FloweraryBlocks.BLAZING_STAR.get(color).get(),
-                        FloweraryBlocks.BROMELIAD.get(color).get(),
-                        FloweraryBlocks.DIANTHUS.get(color).get()
+                        FloweraryBlocks.AZURE_BLUET.get(color).get(), FloweraryBlocks.POPPY.get(color).get(), FloweraryBlocks.POPPIES.get(color).get(),
+                        FloweraryBlocks.SUNFLOWER.get(color).get(), FloweraryBlocks.TORCHFLOWER.get(color).get(), FloweraryBlocks.BLAZING_STAR.get(color).get(),
+                        FloweraryBlocks.BROMELIAD.get(color).get(), FloweraryBlocks.DIANTHUS.get(color).get()
                 );
                 tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "lively_flowers"))).add(
-                        FloweraryBlocks.DAISY.get(color).get(),
-                        FloweraryBlocks.LILY.get(color).get(),
-                        FloweraryBlocks.PETALS.get(color).get(),
-                        FloweraryBlocks.CLOVER.get(color).get(),
-                        FloweraryBlocks.LAVENDER.get(color).get(),
-                        FloweraryBlocks.HIBISCUS.get(color).get()
+                        FloweraryBlocks.DAISY.get(color).get(), FloweraryBlocks.LILY.get(color).get(), FloweraryBlocks.PETALS.get(color).get(),
+                        FloweraryBlocks.CLOVER.get(color).get(), FloweraryBlocks.LAVENDER.get(color).get(), FloweraryBlocks.HIBISCUS.get(color).get()
                 );
                 tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "cool_flowers"))).add(
-                        FloweraryBlocks.DANDELION.get(color).get(),
-                        FloweraryBlocks.LILAC.get(color).get(),
-                        FloweraryBlocks.ORCHID.get(color).get(),
-                        FloweraryBlocks.PITCHER_PLANT.get(color).get(),
-                        FloweraryBlocks.HYACINTH.get(color).get(),
-                        FloweraryBlocks.WILDFLOWER.get(color).get()
+                        FloweraryBlocks.DANDELION.get(color).get(), FloweraryBlocks.LILAC.get(color).get(), FloweraryBlocks.ORCHID.get(color).get(),
+                        FloweraryBlocks.PITCHER_PLANT.get(color).get(), FloweraryBlocks.HYACINTH.get(color).get(), FloweraryBlocks.WILDFLOWER.get(color).get()
                 );
                 tag(BlockTags.create(new ResourceLocation("betterbeekeeping", "strange_flowers"))).add(
-                        FloweraryBlocks.WITHER_ROSE.get(color).get(),
-                        FloweraryBlocks.FOXGLOVE.get(color).get(),
-                        FloweraryBlocks.CLEMATIS.get(color).get(),
-                        FloweraryBlocks.DAFFODIL.get(color).get(),
-                        FloweraryBlocks.IMPALA_LILY.get(color).get(),
-                        FloweraryBlocks.LANTANAS.get(color).get()
+                        FloweraryBlocks.WITHER_ROSE.get(color).get(), FloweraryBlocks.FOXGLOVE.get(color).get(), FloweraryBlocks.CLEMATIS.get(color).get(),
+                        FloweraryBlocks.DAFFODIL.get(color).get(), FloweraryBlocks.IMPALA_LILY.get(color).get(), FloweraryBlocks.LANTANAS.get(color).get()
                 );
-                tag(BlockTags.create(new ResourceLocation("flowerpatch", "bonemeal_able_flowers"))).add(
-                        FloweraryBlocks.ALLIUM.get(color).get(),
-                        FloweraryBlocks.AZURE_BLUET.get(color).get(),
-                        FloweraryBlocks.CLOVER.get(color).get(),
-                        FloweraryBlocks.CORNFLOWER.get(color).get(),
-                        FloweraryBlocks.DAFFODIL.get(color).get(),
-                        FloweraryBlocks.DAISY.get(color).get(),
-                        FloweraryBlocks.DANDELION.get(color).get(),
-                        FloweraryBlocks.DIANTHUS.get(color).get(),
-                        FloweraryBlocks.FAIRY_ROSE.get(color).get(),
-                        FloweraryBlocks.HYACINTH.get(color).get(),
-                        FloweraryBlocks.LILY.get(color).get(),
-                        FloweraryBlocks.ORCHID.get(color).get(),
-                        FloweraryBlocks.POPPY.get(color).get(),
-                        FloweraryBlocks.ROSE.get(color).get(),
-                        FloweraryBlocks.TORCHFLOWER.get(color).get(),
-                        FloweraryBlocks.TULIP.get(color).get(),
-                        FloweraryBlocks.WITHER_ROSE.get(color).get()
-                );
-                tag(BlockTags.FLOWERS).add(
-                        FloweraryPatchBlocks.ALLIUM_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.AZURE_BLUET_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.CORNFLOWER_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.DAFFODIL_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.DAISY_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.DANDELION_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.DIANTHUS_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.FAIRY_ROSE_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.HYACINTH_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.LILY_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.ORCHID_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.POPPY_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.ROSE_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.TORCHFLOWER_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.TULIP_PATCH.get(color).get(),
-                        FloweraryPatchBlocks.WITHER_ROSE_PATCH.get(color).get()
-                );
+
+                if (ModList.get().isLoaded("flowerpatch")) {
+                    tag(BlockTags.create(new ResourceLocation("flowerpatch", "bonemeal_able_flowers"))).add(
+                            FloweraryBlocks.ALLIUM.get(color).get(), FloweraryBlocks.AZURE_BLUET.get(color).get(), FloweraryBlocks.CLOVER.get(color).get(),
+                            FloweraryBlocks.CORNFLOWER.get(color).get(), FloweraryBlocks.DAFFODIL.get(color).get(), FloweraryBlocks.DAISY.get(color).get(),
+                            FloweraryBlocks.DANDELION.get(color).get(), FloweraryBlocks.DIANTHUS.get(color).get(), FloweraryBlocks.FAIRY_ROSE.get(color).get(),
+                            FloweraryBlocks.HYACINTH.get(color).get(), FloweraryBlocks.LILY.get(color).get(), FloweraryBlocks.ORCHID.get(color).get(),
+                            FloweraryBlocks.POPPY.get(color).get(), FloweraryBlocks.ROSE.get(color).get(), FloweraryBlocks.TORCHFLOWER.get(color).get(),
+                            FloweraryBlocks.TULIP.get(color).get(), FloweraryBlocks.WITHER_ROSE.get(color).get()
+                    );
+                    tag(BlockTags.FLOWERS).add(
+                            FloweraryPatchBlocks.ALLIUM_PATCH.get(color).get(), FloweraryPatchBlocks.AZURE_BLUET_PATCH.get(color).get(), FloweraryPatchBlocks.CORNFLOWER_PATCH.get(color).get(),
+                            FloweraryPatchBlocks.DAFFODIL_PATCH.get(color).get(), FloweraryPatchBlocks.DAISY_PATCH.get(color).get(), FloweraryPatchBlocks.DANDELION_PATCH.get(color).get(),
+                            FloweraryPatchBlocks.DIANTHUS_PATCH.get(color).get(), FloweraryPatchBlocks.FAIRY_ROSE_PATCH.get(color).get(), FloweraryPatchBlocks.HYACINTH_PATCH.get(color).get(),
+                            FloweraryPatchBlocks.LILY_PATCH.get(color).get(), FloweraryPatchBlocks.ORCHID_PATCH.get(color).get(), FloweraryPatchBlocks.POPPY_PATCH.get(color).get(),
+                            FloweraryPatchBlocks.ROSE_PATCH.get(color).get(), FloweraryPatchBlocks.TORCHFLOWER_PATCH.get(color).get(), FloweraryPatchBlocks.TULIP_PATCH.get(color).get(),
+                            FloweraryPatchBlocks.WITHER_ROSE_PATCH.get(color).get()
+                    );
+                }
+
+                if (ModList.get().isLoaded("serene_shrubbery")) {
+                    tag(BlockTags.FLOWERS).add(
+                            SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get(), SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get(), SereneFloweraryBlocks.FIREWEED.get(color).get(),
+                            SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get(), SereneFloweraryBlocks.HYDRANGEA.get(color).get(), SereneFloweraryBlocks.LIVERWORT.get(color).get(),
+                            SereneFloweraryBlocks.LUPINE.get(color).get(), SereneFloweraryBlocks.PANSIES.get(color).get(), SereneFloweraryBlocks.TWINFLOWER.get(color).get()
+                    );
+                }
             }
         }
     }
@@ -236,6 +204,19 @@ public class FloweraryTags {
                         FloweraryBlocks.SUNFLOWER.get(color).get().asItem(), FloweraryBlocks.TORCHFLOWER.get(color).get().asItem(), FloweraryBlocks.TULIP.get(color).get().asItem(),
                         FloweraryBlocks.WILDFLOWER.get(color).get().asItem(), FloweraryBlocks.WITHER_ROSE.get(color).get().asItem()
                 );
+
+                if (ModList.get().isLoaded("serene_shrubbery")) {
+                    tag(ItemTags.create(new ResourceLocation("flowerary", dyeColor.getName() + "_flowers"))).add(
+                            SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get().asItem(), SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get().asItem(), SereneFloweraryBlocks.FIREWEED.get(color).get().asItem(),
+                            SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get().asItem(), SereneFloweraryBlocks.HYDRANGEA.get(color).get().asItem(), SereneFloweraryBlocks.LIVERWORT.get(color).get().asItem(),
+                            SereneFloweraryBlocks.LUPINE.get(color).get().asItem(), SereneFloweraryBlocks.PANSIES.get(color).get().asItem(), SereneFloweraryBlocks.TWINFLOWER.get(color).get().asItem()
+                    );
+                    tag(ItemTags.FLOWERS).add(
+                            SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get().asItem(), SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get().asItem(), SereneFloweraryBlocks.FIREWEED.get(color).get().asItem(),
+                            SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get().asItem(), SereneFloweraryBlocks.HYDRANGEA.get(color).get().asItem(), SereneFloweraryBlocks.LIVERWORT.get(color).get().asItem(),
+                            SereneFloweraryBlocks.LUPINE.get(color).get().asItem(), SereneFloweraryBlocks.PANSIES.get(color).get().asItem(), SereneFloweraryBlocks.TWINFLOWER.get(color).get().asItem()
+                    );
+                }
             }
         }
     }

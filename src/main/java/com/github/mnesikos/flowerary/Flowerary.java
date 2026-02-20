@@ -114,9 +114,7 @@ public class Flowerary {
 
     private void addCreativeTabs(BuildCreativeModeTabContentsEvent event) {
         if (ModList.get().isLoaded("serene_shrubbery")) {
-            for (RegistryObject<Item> item : SereneFloweraryBlocks.ITEMS_REGISTRAR.getEntries()) {
-                if (event.getTabKey() == FLOWERARY_GROUP.getKey()) event.accept(item.get());
-            }
+            if (event.getTabKey() == FLOWERARY_GROUP.getKey()) SereneFloweraryBlocks.ITEMS_REGISTRAR.getEntries().forEach(item -> event.accept(item.get()));
         }
     }
 }

@@ -127,6 +127,44 @@ public class FloweraryTags {
                         FloweraryBlocks.IMPALA_LILY.get(color).get(),
                         FloweraryBlocks.LANTANAS.get(color).get()
                 );
+                tag(BlockTags.create(new ResourceLocation("flowerpatch", "bonemeal_able_flowers"))).add(
+                        FloweraryBlocks.ALLIUM.get(color).get(),
+                        FloweraryBlocks.AZURE_BLUET.get(color).get(),
+                        FloweraryBlocks.CLOVER.get(color).get(),
+                        FloweraryBlocks.CORNFLOWER.get(color).get(),
+                        FloweraryBlocks.DAFFODIL.get(color).get(),
+                        FloweraryBlocks.DAISY.get(color).get(),
+                        FloweraryBlocks.DANDELION.get(color).get(),
+                        FloweraryBlocks.DIANTHUS.get(color).get(),
+                        FloweraryBlocks.FAIRY_ROSE.get(color).get(),
+                        FloweraryBlocks.HYACINTH.get(color).get(),
+                        FloweraryBlocks.LILY.get(color).get(),
+                        FloweraryBlocks.ORCHID.get(color).get(),
+                        FloweraryBlocks.POPPY.get(color).get(),
+                        FloweraryBlocks.ROSE.get(color).get(),
+                        FloweraryBlocks.TORCHFLOWER.get(color).get(),
+                        FloweraryBlocks.TULIP.get(color).get(),
+                        FloweraryBlocks.WITHER_ROSE.get(color).get()
+                );
+                tag(BlockTags.FLOWERS).add(
+                        FloweraryBlocks.ALLIUM.get(color).get(),
+                        FloweraryBlocks.AZURE_BLUET.get(color).get(),
+                        FloweraryBlocks.CLOVER.get(color).get(),
+                        FloweraryBlocks.CORNFLOWER.get(color).get(),
+                        FloweraryBlocks.DAFFODIL.get(color).get(),
+                        FloweraryBlocks.DAISY.get(color).get(),
+                        FloweraryBlocks.DANDELION.get(color).get(),
+                        FloweraryBlocks.DIANTHUS.get(color).get(),
+                        FloweraryBlocks.FAIRY_ROSE.get(color).get(),
+                        FloweraryBlocks.HYACINTH.get(color).get(),
+                        FloweraryBlocks.LILY.get(color).get(),
+                        FloweraryBlocks.ORCHID.get(color).get(),
+                        FloweraryBlocks.POPPY.get(color).get(),
+                        FloweraryBlocks.ROSE.get(color).get(),
+                        FloweraryBlocks.TORCHFLOWER.get(color).get(),
+                        FloweraryBlocks.TULIP.get(color).get(),
+                        FloweraryBlocks.WITHER_ROSE.get(color).get()
+                );
             }
         }
     }

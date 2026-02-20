@@ -2,8 +2,10 @@ package com.github.mnesikos.flowerary.data;
 
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
+import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
 import com.github.mnesikos.flowerary.item.FloweraryItems;
+import com.mrbysco.flowerpatch.block.PatchBlock;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.packs.VanillaBlockLoot;
 import net.minecraft.world.item.Item;
@@ -21,8 +23,10 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -126,6 +130,28 @@ public class FloweraryLootTables extends VanillaBlockLoot {
             dropFlowerCrop(FloweraryBlocks.WILDFLOWER_PLANTS.get(color).get(), FloweraryBlocks.WILDFLOWER.get(color).get().asItem());
             dropFlowerCrop(FloweraryBlocks.WITHER_ROSE_PLANTS.get(color).get(), FloweraryBlocks.WITHER_ROSE.get(color).get().asItem());
         }
+
+        if (ModList.get().isLoaded("flowerpatch")) {
+            for (FloweraryColor floweraryColor : FloweraryColor.values()) {
+                String color = floweraryColor.getSerializedName();
+                dropFlowerPatch(FloweraryPatchBlocks.ALLIUM_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.AZURE_BLUET_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.CORNFLOWER_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.DAFFODIL_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.DAISY_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.DANDELION_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.DIANTHUS_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.FAIRY_ROSE_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.HYACINTH_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.LILY_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.ORCHID_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.POPPY_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.ROSE_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.TORCHFLOWER_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.TULIP_PATCH.get(color).get());
+                dropFlowerPatch(FloweraryPatchBlocks.WITHER_ROSE_PATCH.get(color).get());
+            }
+        }
     }
 
     @Override
@@ -134,6 +160,15 @@ public class FloweraryLootTables extends VanillaBlockLoot {
                 .filter(e -> e.getKey().location().getNamespace().equals(Flowerary.MOD_ID))
                 .map(Map.Entry::getValue)
                 .collect(Collectors.toList());
+    }
+
+    public void dropFlowerPatch(Block block) {
+        if (block instanceof PatchBlock patchBlock) {
+            add(block, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                    .add(applyExplosionDecay(block, LootItem.lootTableItem(patchBlock.getPatchDelegate().get()).apply(List.of(2, 3, 4), (value) ->
+                            SetItemCountFunction.setCount(ConstantValue.exactly((float) value)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(patchBlock.getProperty(), value))))))));
+        }
     }
 
     public void dropPetals(Block block) {

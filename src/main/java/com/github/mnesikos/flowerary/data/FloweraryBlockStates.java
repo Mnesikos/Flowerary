@@ -3,7 +3,9 @@ package com.github.mnesikos.flowerary.data;
 import com.github.mnesikos.flowerary.Flowerary;
 import com.github.mnesikos.flowerary.block.FloweraryBlocks;
 import com.github.mnesikos.flowerary.block.TallFlowerCropBlock;
+import com.github.mnesikos.flowerary.compat.flowerpatch.FloweraryPatchBlocks;
 import com.github.mnesikos.flowerary.item.FloweraryColor;
+import com.mrbysco.flowerpatch.block.PatchBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.blockstates.Condition;
@@ -20,7 +22,9 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Objects;
 
@@ -124,6 +128,40 @@ public class FloweraryBlockStates extends BlockStateProvider {
             crop(FloweraryBlocks.WILDFLOWER_PLANTS.get(color).get(), color, "wildflower");
             crop(FloweraryBlocks.WITHER_ROSE_PLANTS.get(color).get(), color, "wither_rose");
         }
+
+        if (ModList.get().isLoaded("flowerpatch")) {
+            for (RegistryObject<Block> registryObject : FloweraryPatchBlocks.REGISTRAR.getEntries()) {
+                if (registryObject.get() instanceof PatchBlock) {
+                    generatePatchState(registryObject.get());
+                }
+            }
+        }
+    }
+
+    protected void generatePatchState(Block block) {
+        ModelFile patchModel2 = models().getExistingFile(modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + "_2"));
+        ModelFile patchModel3 = models().getExistingFile(modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + "_3"));
+        ModelFile patchModel4 = models().getExistingFile(modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + "_4"));
+        PatchBlock patchBlock = (PatchBlock) block;
+        getVariantBuilder(block)
+                .partialState().with(patchBlock.getProperty(), 2)
+                .addModels(
+                        new ConfiguredModel(patchModel2),
+                        new ConfiguredModel(patchModel2, 0, 90, false),
+                        new ConfiguredModel(patchModel2, 0, 180, false),
+                        new ConfiguredModel(patchModel2, 0, 270, false))
+                .partialState().with(patchBlock.getProperty(), 3)
+                .addModels(
+                        new ConfiguredModel(patchModel3),
+                        new ConfiguredModel(patchModel3, 0, 90, false),
+                        new ConfiguredModel(patchModel3, 0, 180, false),
+                        new ConfiguredModel(patchModel3, 0, 270, false))
+                .partialState().with(patchBlock.getProperty(), 4)
+                .addModels(
+                        new ConfiguredModel(patchModel4),
+                        new ConfiguredModel(patchModel4, 0, 90, false),
+                        new ConfiguredModel(patchModel4, 0, 180, false),
+                        new ConfiguredModel(patchModel4, 0, 270, false));
     }
 
     public void rotateYBlock(Block block) {

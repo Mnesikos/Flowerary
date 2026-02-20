@@ -65,6 +65,7 @@ public class Flowerary {
         dataGenerator.addProvider(event.includeClient(), new FloweraryBlockModels(packOutput, event.getExistingFileHelper()));
         dataGenerator.addProvider(event.includeClient(), new FloweraryBlockStates(packOutput, event.getExistingFileHelper()));
         dataGenerator.addProvider(event.includeClient(), new FloweraryItemModels(packOutput, event.getExistingFileHelper()));
+        dataGenerator.addProvider(event.includeClient(), new FloweraryLang(packOutput));
 
         FloweraryTags.FloweraryBlockTags blockTagsProvider = new FloweraryTags.FloweraryBlockTags(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
         dataGenerator.addProvider(event.includeServer(), blockTagsProvider);

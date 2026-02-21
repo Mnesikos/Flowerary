@@ -25,6 +25,7 @@ public class SereneFloweraryBlocks {
     public static final Map<String, RegistryObject<Block>> FIREWEED = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> SERENE_FOXGLOVE = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> HYDRANGEA = new HashMap<>();
+    public static final Map<String, RegistryObject<Block>> DARKLEAF_HYDRANGEA = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> LIVERWORT = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> LUPINE = new HashMap<>();
     public static final Map<String, RegistryObject<Block>> PANSIES = new HashMap<>();
@@ -38,6 +39,7 @@ public class SereneFloweraryBlocks {
             FIREWEED.put(color, registerWithItem(color + "_fireweed", SFFireweedBlock::new));
             SERENE_FOXGLOVE.put(color, registerWithItem(color + "_serene_foxglove", SereneFoxgloveBlock::new));
             HYDRANGEA.put(color, registerWithItem(color + "_hydrangea", SFHydrangeaBlock::new));
+            DARKLEAF_HYDRANGEA.put(color, registerWithItem(color + "_darkleaf_hydrangea", SFHydrangeaBlock::new));
             LIVERWORT.put(color, registerWithItem(color + "_liverwort", BlueLiverwortBlock::new));
             LUPINE.put(color, registerWithItem(color + "_lupine", SFLupineBlock::new));
             PANSIES.put(color, registerWithItem(color + "_pansies", SFPansiesBlock::new));

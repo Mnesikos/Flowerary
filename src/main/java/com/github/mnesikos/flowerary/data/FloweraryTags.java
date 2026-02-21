@@ -129,8 +129,9 @@ public class FloweraryTags {
                 if (ModList.get().isLoaded("serene_shrubbery")) {
                     tag(BlockTags.FLOWERS).add(
                             SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get(), SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get(), SereneFloweraryBlocks.FIREWEED.get(color).get(),
-                            SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get(), SereneFloweraryBlocks.HYDRANGEA.get(color).get(), SereneFloweraryBlocks.LIVERWORT.get(color).get(),
-                            SereneFloweraryBlocks.LUPINE.get(color).get(), SereneFloweraryBlocks.PANSIES.get(color).get(), SereneFloweraryBlocks.TWINFLOWER.get(color).get()
+                            SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get(), SereneFloweraryBlocks.HYDRANGEA.get(color).get(), SereneFloweraryBlocks.DARKLEAF_HYDRANGEA.get(color).get(),
+                            SereneFloweraryBlocks.LIVERWORT.get(color).get(), SereneFloweraryBlocks.LUPINE.get(color).get(), SereneFloweraryBlocks.PANSIES.get(color).get(),
+                            SereneFloweraryBlocks.TWINFLOWER.get(color).get()
                     );
                 }
             }
@@ -208,13 +209,15 @@ public class FloweraryTags {
                 if (ModList.get().isLoaded("serene_shrubbery")) {
                     tag(ItemTags.create(new ResourceLocation("flowerary", dyeColor.getName() + "_flowers"))).add(
                             SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get().asItem(), SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get().asItem(), SereneFloweraryBlocks.FIREWEED.get(color).get().asItem(),
-                            SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get().asItem(), SereneFloweraryBlocks.HYDRANGEA.get(color).get().asItem(), SereneFloweraryBlocks.LIVERWORT.get(color).get().asItem(),
-                            SereneFloweraryBlocks.LUPINE.get(color).get().asItem(), SereneFloweraryBlocks.PANSIES.get(color).get().asItem(), SereneFloweraryBlocks.TWINFLOWER.get(color).get().asItem()
+                            SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get().asItem(), SereneFloweraryBlocks.HYDRANGEA.get(color).get().asItem(), SereneFloweraryBlocks.DARKLEAF_HYDRANGEA.get(color).get().asItem(),
+                            SereneFloweraryBlocks.LIVERWORT.get(color).get().asItem(), SereneFloweraryBlocks.LUPINE.get(color).get().asItem(), SereneFloweraryBlocks.PANSIES.get(color).get().asItem(),
+                            SereneFloweraryBlocks.TWINFLOWER.get(color).get().asItem()
                     );
                     tag(ItemTags.FLOWERS).add(
                             SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get().asItem(), SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get().asItem(), SereneFloweraryBlocks.FIREWEED.get(color).get().asItem(),
-                            SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get().asItem(), SereneFloweraryBlocks.HYDRANGEA.get(color).get().asItem(), SereneFloweraryBlocks.LIVERWORT.get(color).get().asItem(),
-                            SereneFloweraryBlocks.LUPINE.get(color).get().asItem(), SereneFloweraryBlocks.PANSIES.get(color).get().asItem(), SereneFloweraryBlocks.TWINFLOWER.get(color).get().asItem()
+                            SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get().asItem(), SereneFloweraryBlocks.HYDRANGEA.get(color).get().asItem(), SereneFloweraryBlocks.DARKLEAF_HYDRANGEA.get(color).get().asItem(),
+                            SereneFloweraryBlocks.LIVERWORT.get(color).get().asItem(), SereneFloweraryBlocks.LUPINE.get(color).get().asItem(), SereneFloweraryBlocks.PANSIES.get(color).get().asItem(),
+                            SereneFloweraryBlocks.TWINFLOWER.get(color).get().asItem()
                     );
                 }
             }

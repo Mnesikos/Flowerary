@@ -161,6 +161,7 @@ public class FloweraryLootTables extends VanillaBlockLoot {
                 dropSelf(SereneFloweraryBlocks.FIREWEED.get(color).get());
                 dropSelf(SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get());
                 dropSelf(SereneFloweraryBlocks.HYDRANGEA.get(color).get());
+                dropSelf(SereneFloweraryBlocks.DARKLEAF_HYDRANGEA.get(color).get());
                 dropSelf(SereneFloweraryBlocks.LIVERWORT.get(color).get());
                 dropSelf(SereneFloweraryBlocks.LUPINE.get(color).get());
                 dropSelf(SereneFloweraryBlocks.PANSIES.get(color).get());

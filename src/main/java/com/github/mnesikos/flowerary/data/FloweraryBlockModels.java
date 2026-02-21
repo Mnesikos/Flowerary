@@ -128,7 +128,9 @@ public class FloweraryBlockModels extends BlockModelProvider {
         if (ModList.get().isLoaded("serene_shrubbery")) {
             for (FloweraryColor floweraryColor : FloweraryColor.values()) {
                 String color = floweraryColor.getSerializedName();
-                butterflyBush(color + "_butterfly_bush", modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + color + "_butterfly_bush"));
+                sereneBlock(color + "_butterfly_bush", modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + color + "_butterfly_bush"), "butterfly_bush");
+                sereneBlock(color + "_hydrangea", modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + color + "_hydrangea"), "hydrangea");
+                sereneBlock(color + "_darkleaf_hydrangea", modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + color + "_darkleaf_hydrangea"), "hydrangea");
             }
         }
     }
@@ -146,8 +148,8 @@ public class FloweraryBlockModels extends BlockModelProvider {
                 "cross", new ResourceLocation(patchDelegate.getNamespace(), BLOCK_FOLDER + "/" + patchDelegate.getPath())).renderType("cutout");
     }
 
-    public void butterflyBush(String name, ResourceLocation location) {
-        withExistingParent(name, new ResourceLocation("serene_shrubbery", BLOCK_FOLDER + "/butterfly_bush"))
+    public void sereneBlock(String name, ResourceLocation location, String parent) {
+        withExistingParent(name, modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + parent))
                 .texture("all", location)
                 .texture("particle", location)
                 .texture("0", location);

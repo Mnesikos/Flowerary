@@ -165,6 +165,7 @@ public class FloweraryLang extends LanguageProvider {
                 add(SereneFloweraryBlocks.FIREWEED.get(color).get(), colorLang + " Fireweed");
                 add(SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get(), colorLang + " Serene Foxglove");
                 add(SereneFloweraryBlocks.HYDRANGEA.get(color).get(), colorLang + " Hydrangea");
+                add(SereneFloweraryBlocks.DARKLEAF_HYDRANGEA.get(color).get(), colorLang + " Darkleaf Hydrangea");
                 add(SereneFloweraryBlocks.LIVERWORT.get(color).get(), colorLang + " Liverwort");
                 add(SereneFloweraryBlocks.LUPINE.get(color).get(), colorLang + " Lupine");
                 add(SereneFloweraryBlocks.PANSIES.get(color).get(), colorLang + " Pansies");

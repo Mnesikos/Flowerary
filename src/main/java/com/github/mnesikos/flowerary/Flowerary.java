@@ -105,8 +105,6 @@ public class Flowerary {
             existingFileHelper.trackGenerated(new ResourceLocation(flowerpatch, "block/patch" + flowers), PackType.CLIENT_RESOURCES, ".json", "models");
         }
 
-        existingFileHelper.trackGenerated(new ResourceLocation("serene_shrubbery", "block/butterfly_bush"), PackType.CLIENT_RESOURCES, ".json", "models");
-
         return existingFileHelper;
     }
 

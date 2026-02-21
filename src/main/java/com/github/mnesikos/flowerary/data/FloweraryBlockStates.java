@@ -137,14 +137,15 @@ public class FloweraryBlockStates extends BlockStateProvider {
         if (ModList.get().isLoaded("serene_shrubbery")) {
             for (FloweraryColor floweraryColor : FloweraryColor.values()) {
                 String color = floweraryColor.getSerializedName();
-//                (SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get());
+//                block(SereneFloweraryBlocks.BLANKET_FLOWER.get(color).get());
                 block(SereneFloweraryBlocks.BUTTERFLY_BUSH.get(color).get());
-//                (SereneFloweraryBlocks.FIREWEED.get(color).get());
-//                (SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get());
-//                (SereneFloweraryBlocks.HYDRANGEA.get(color).get());
-//                (SereneFloweraryBlocks.LIVERWORT.get(color).get());
-//                (SereneFloweraryBlocks.LUPINE.get(color).get());
-//                (SereneFloweraryBlocks.PANSIES.get(color).get());
+//                block(SereneFloweraryBlocks.FIREWEED.get(color).get());
+//                block(SereneFloweraryBlocks.SERENE_FOXGLOVE.get(color).get());
+                block(SereneFloweraryBlocks.HYDRANGEA.get(color).get());
+                block(SereneFloweraryBlocks.DARKLEAF_HYDRANGEA.get(color).get());
+//                block(SereneFloweraryBlocks.LIVERWORT.get(color).get());
+//                block(SereneFloweraryBlocks.LUPINE.get(color).get());
+//                block(SereneFloweraryBlocks.PANSIES.get(color).get());
 //                block(SereneFloweraryBlocks.TWINFLOWER.get(color).get());
             }
         }

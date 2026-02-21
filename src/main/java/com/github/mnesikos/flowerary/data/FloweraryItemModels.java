@@ -125,7 +125,8 @@ public class FloweraryItemModels extends ItemModelProvider {
                 itemGenerated(color + "_butterfly_bush", "serene_shrubbery/" + color + "_butterfly_bush");
 //                itemGenerated(color + "_fireweed", "serene_shrubbery/" + color + "_fireweed");
 //                itemGenerated(color + "_serene_foxglove", "serene_shrubbery/" + color + "_serene_foxglove");
-//                itemGenerated(color + "_hydrangea", "serene_shrubbery/" + color + "_hydrangea");
+                itemGenerated(color + "_hydrangea", "serene_shrubbery/" + color + "_hydrangea");
+                itemGenerated(color + "_darkleaf_hydrangea", "serene_shrubbery/" + color + "_darkleaf_hydrangea");
 //                itemGenerated(color + "_liverwort", "serene_shrubbery/" + color + "_liverwort");
 //                itemGenerated(color + "_lupine", "serene_shrubbery/" + color + "_lupine");
 //                itemGenerated(color + "_pansies", "serene_shrubbery/" + color + "_pansies");

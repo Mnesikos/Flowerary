@@ -131,6 +131,7 @@ public class FloweraryBlockModels extends BlockModelProvider {
                 sereneBlock(color + "_butterfly_bush", modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + color + "_butterfly_bush"), "butterfly_bush");
                 sereneBlock(color + "_hydrangea", modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + color + "_hydrangea"), "hydrangea");
                 sereneBlock(color + "_darkleaf_hydrangea", modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + color + "_darkleaf_hydrangea"), "hydrangea");
+                sereneBlock(color + "_pansies", modLoc(BLOCK_FOLDER + "/serene_shrubbery/" + color + "_pansies"), "pansies");
             }
         }
     }

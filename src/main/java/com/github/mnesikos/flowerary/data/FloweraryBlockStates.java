@@ -145,7 +145,7 @@ public class FloweraryBlockStates extends BlockStateProvider {
                 block(SereneFloweraryBlocks.DARKLEAF_HYDRANGEA.get(color).get());
 //                block(SereneFloweraryBlocks.LIVERWORT.get(color).get());
 //                block(SereneFloweraryBlocks.LUPINE.get(color).get());
-//                block(SereneFloweraryBlocks.PANSIES.get(color).get());
+                block(SereneFloweraryBlocks.PANSIES.get(color).get());
 //                block(SereneFloweraryBlocks.TWINFLOWER.get(color).get());
             }
         }
